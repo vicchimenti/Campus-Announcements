@@ -22,7 +22,7 @@
 
     importClass(com.terminalfour.media.utils.ImageInfo)
 
-    // String conversion needed to be removed since we need the InputStream object type.
+    // we need the InputStream object type.
     function readMedia(mediaID) {
         var oMM = com.terminalfour.media.MediaManager.getManager();
         var oMedia = oMM.get(dbStatement, mediaID, language);
