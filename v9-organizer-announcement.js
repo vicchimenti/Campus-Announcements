@@ -23,7 +23,7 @@
     importClass(com.terminalfour.media.utils.ImageInfo);
     importClass(com.terminalfour.media.MediaMetaData);
 
-    // we need the InputStream object type.
+    // we need the InputStream object type
     function readMedia(mediaID) {
         var oMM = com.terminalfour.media.MediaManager.getManager();
         var oMedia = oMM.get(dbStatement, mediaID, language);
@@ -31,6 +31,19 @@
         return oMediaStream;
     }
 
+    // we need string conversion
+    function readMediaMeta(mediaID) {
+        var oMM = com.terminalfour.media.MediaManager.getManager();
+        var oMedia = oMM.get(dbStatement, mediaID, language);
+        var oMediaStream = oMedia.getMedia();
+        var oScanner = new java.util.Scanner(oMediaStream).useDelimiter("\\A");
+        var sMedia = "";
+        while (oScanner.hasNext()) {
+          sMedia += oScanner.next();
+        }
+        return sMedia; 
+    }
+    
 
 
     /***
@@ -113,13 +126,14 @@
         var info = new ImageInfo;
         info.setInput(media);
 
-        var mediaMeta = new MediaMetaData;
+        var mediaMeta = new readMediaMeta(imageID);
+        var metaInfo = new MediaMetaData;
 
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            var imageName = mediaMeta.getName();
-            var imageDescription = mediaMeta.getDescription();
+            var imageName = metaInfo.getName();
+            var imageDescription = metaInfo.getDescription();
             imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="lazy" />';
 
         } else {
@@ -129,6 +143,34 @@
         openImageWrapper = '<div class="col-md-4">';
     }
 
+
+    var fieldToBeEvaluated = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, '<t4 type="content" name="Category" output="normal" display_field="value" delimiter=";" />');
+var optionToTestFor = "suLawInTheNews"; //edit this to change the option
+var contentTypeLayout = 'output/gridfeed'; //edit this to change the Content Layout to use for output
+var n = fieldToBeEvaluated.indexOf(optionToTestFor); /* determines starting character of string */
+
+
+/***
+ *  send correct layout to the document
+ * 
+ */
+try {
+
+    /* if content exists, it'll start at 0 or later, so process this */
+    if ((n >= 0)) {
+        var sw = new java.io.StringWriter();
+        var t4w = new com.terminalfour.utils.T4StreamWriter(sw);
+        new com.terminalfour.publish.ContentPublisher().write(t4w, dbStatement, publishCache, section, content, contentTypeLayout, isPreview);
+        output = sw.toString();
+
+        // write to page document
+        document.write(output);
+    }
+
+
+} catch (err) {
+    document.write(err.message);
+}
 
 
 
