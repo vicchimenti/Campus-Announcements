@@ -8,12 +8,13 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.9
+   *     @version 5.10
    */
 
 
 
-  
+//    <img src="<t4 type="content" name="Media" output="file" modifiers="" />" alt="<t4 type="content" name="Description" output="normal" modifiers="striptags,htmlentities" />" <t4 type="media" attribute="title" format=" title="$value"" />/>
+
 
    
    try {
@@ -59,7 +60,9 @@
     var publishDate = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Publish Date' output='normal' date_format='MMMM d, yyyy' />");
     var articleImage = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Image' output='normal' formatter='path/*' />");
     // var articleImageAlt = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Image' output='normal' formatter='image/alt' />");
-    // var articleImageTitle = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='media' name='Image' attribute='Name' />");
+    var articleImageAlt = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='media' name='Image' attribute='Description' />");
+
+    var articleImageTitle = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='media' name='Image' attribute='Name' />");
     var externalLink = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='External Link' output='normal' modifiers='striptags,htmlentities' />");
     var externalLinkText = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='External Link Text' output='normal' modifiers='striptags,htmlentities' />");
     var articleFullBody = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Article Body' output='normal' display_field='value' />");
@@ -134,7 +137,7 @@
             var imageWidth = info.getWidth();
             var imageName = metaInfo.getName();
             var imageDescription = metaInfo.getDescription();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleImageTitle + '" alt="' + articleImageAlt + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="lazy" />';
 
         } else {
             imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="lazy" />';
