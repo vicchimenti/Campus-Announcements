@@ -54,14 +54,6 @@
 
 
 
-  //   var imageName = content.get('Image').getName();
-  //   imageInfo.setInput(imageID) 
-  //   imageInfo.check();
-  //   var imageHeight = content.get('Image').getHeight();
-  //   var imageWidth = imageInfo.getWidth();
-
-  // height="' + imageHeight + '" width="' + imageWidth + '" 
-
     
     /***
      *  default initializations
