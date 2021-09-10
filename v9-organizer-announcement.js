@@ -60,9 +60,7 @@
     var fullTextLink = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Name' output='fulltext' use-element='true' filename-element='Article Title' modifiers='striptags,htmlentities' />");
     var contentID = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='meta' meta='content_id' />");
 
-    var imageID = content.get('Image').getID();
-    var media = readMedia(imageID) // is an InputStream
-    var info = new ImageInfo // Initializes ImageInfo object
+
 
   //   var imageName = content.get('Image').getName();
   //   imageInfo.setInput(imageID) 
@@ -121,8 +119,22 @@
      * 
      * */
     if (articleImage != "") {
+
+        var imageID = content.get('Image').getID();
+        var media = readMedia(imageID) // is an InputStream
+        var info = new ImageInfo // Initializes ImageInfo object
+        info.setInput(media) // Loads image in ImageInfo class
+
+        if (info.check()) {
+            var imageHeight = info.getHeight();
+            var imageWidth = info.getWidth();
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" />';
+
+        } else {
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" />';
+        }
+
         openImageWrapper = '<div class="col-md-4">';
-        imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" />';
     }
 
 
