@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.3
+   *     @version 5.5
    */
 
 
@@ -21,6 +21,7 @@
 
 
     importClass(com.terminalfour.media.utils.ImageInfo)
+    importClass(com.terminalfour.media.Media)
 
     // we need the InputStream object type.
     function readMedia(mediaID) {
@@ -105,6 +106,9 @@
     if (articleImage != "") {
 
         var imageID = content.get('Image').getID();
+        var imageName = content.get('Image').getName();
+        var imageDescription = content.get('Image').getDescription();
+
         var media = readMedia(imageID) 
         var info = new ImageInfo 
         info.setInput(media)
@@ -112,10 +116,10 @@
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleTitle + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleTitle + '" alt="' + contentName + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" loading="lazy" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
