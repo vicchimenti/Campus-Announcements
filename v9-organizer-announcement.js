@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.2
+   *     @version 5.3
    */
 
 
@@ -105,17 +105,17 @@
     if (articleImage != "") {
 
         var imageID = content.get('Image').getID();
-        var media = readMedia(imageID) // is an InputStream
-        var info = new ImageInfo // Initializes ImageInfo object
-        info.setInput(media) // Loads image in ImageInfo class
+        var media = readMedia(imageID) 
+        var info = new ImageInfo 
+        info.setInput(media)
 
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleTitle + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleTitle + '" alt="' + contentName + '" loading="lazy" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
