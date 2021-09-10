@@ -20,6 +20,23 @@
 
 
 
+    importClass(com.terminalfour.media.utils.ImageInfo)
+
+    // String conversion needed to be removed since we need the InputStream object type.
+    function readMedia(mediaID) {
+        var oMM = com.terminalfour.media.MediaManager.getManager();
+        var oMedia = oMM.get(dbStatement, mediaID, language);
+        var oMediaStream = oMedia.getMedia(); // InputStream
+        return oMediaStream;
+    }
+    
+    var media = readMedia(1376806) // is an InputStream
+    var info = new ImageInfo // Initializes ImageInfo object
+    info.setInput(media) // Loads image in ImageInfo class
+    document.write(info.check() + ' ') // Checks if image has loaded
+    document.write(info.getWidth()) // Displays width
+    document.write('x')
+    document.write(info.getHeight()) // Displays height
 
 
 
@@ -28,9 +45,9 @@
      * 
      * */
 
-     var contentName = content.get("Name");
+    //  var contentName = content.get("Name");
 
-  //   var name = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Name' output='normal' modifiers='striptags,htmlentities' />");
+    var contentName = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Name' output='normal' modifiers='striptags,htmlentities' />");
     var articleTitle = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Article Title' output='normal' display_field='value' />");
     var articleSummary = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Summary' output='normal' display_field='value' />");
     var publishDate = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Publish Date' output='normal' date_format='MMMM d, yyyy' />");
@@ -44,6 +61,9 @@
     var contentID = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='meta' meta='content_id' />");
 
     var imageID = content.get('Image').getID();
+    var media = readMedia(imageID) // is an InputStream
+    var info = new ImageInfo // Initializes ImageInfo object
+
   //   var imageName = content.get('Image').getName();
   //   imageInfo.setInput(imageID) 
   //   imageInfo.check();
