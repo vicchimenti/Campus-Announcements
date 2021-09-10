@@ -21,7 +21,7 @@
 
 
     importClass(com.terminalfour.media.utils.ImageInfo)
-    importClass(com.terminalfour.media.Media)
+    importClass(com.terminalfour.media.MediaMetaData)
 
     // we need the InputStream object type.
     function readMedia(mediaID) {
@@ -113,12 +113,14 @@
         var info = new ImageInfo;
         info.setInput(media);
 
+        var mediaMeta = new MediaMetaData;
+
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            // var imageName = info.getName();
-            // var imageDescription = info.getDescription();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
+            var imageName = mediaMeta.getName();
+            var imageDescription = mediaMeta.getDescription();
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
             imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="lazy" />';
