@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.1
+   *     @version 5.2
    */
 
 
@@ -120,10 +120,10 @@
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" id="mediaID' + imageID + '" title="' + articleTitle + '" alt="' + contentName + '" loading="lazy" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
