@@ -106,8 +106,8 @@
     if (articleImage != "") {
 
         var imageID = content.get('Image').getID();
-        var imageName = content.get('Image').getName();
-        var imageDescription = content.get('Image').getDescription();
+        // var imageName = content.get('Image').getName();
+        // var imageDescription = content.get('Image').getDescription();
 
         var media = readMedia(imageID) 
         var info = new ImageInfo 
@@ -116,10 +116,10 @@
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleImageTitle + '" alt="' + articleImageAlt + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleImageTitle + '" alt="' + articleImageAlt + '" loading="lazy" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
