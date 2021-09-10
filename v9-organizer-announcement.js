@@ -116,9 +116,9 @@
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            var imageName = info.getName();
-            var imageDescription = info.getDescription();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
+            // var imageName = info.getName();
+            // var imageDescription = info.getDescription();
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
             imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="lazy" />';
