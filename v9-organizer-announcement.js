@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.7
+   *     @version 5.8
    */
 
 
@@ -21,7 +21,7 @@
 
 
     importClass(com.terminalfour.media.utils.ImageInfo)
-    importClass(com.terminalfour.media.MediaMetaData)
+    importClass(com.terminalfour.media.Media)
 
     // we need the InputStream object type.
     function readMedia(mediaID) {
@@ -113,7 +113,7 @@
         var info = new ImageInfo;
         info.setInput(media);
 
-        var mediaMeta = new MediaMetaData;
+        var mediaMeta = new Media;
 
         if (info.check()) {
             var imageHeight = info.getHeight();
