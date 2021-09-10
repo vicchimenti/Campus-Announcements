@@ -20,8 +20,8 @@
 
 
 
-    importClass(com.terminalfour.media.utils.ImageInfo)
-    importClass(com.terminalfour.media.Media)
+    importClass(com.terminalfour.media.utils.ImageInfo);
+    importClass(com.terminalfour.media.MediaMetaData);
 
     // we need the InputStream object type.
     function readMedia(mediaID) {
@@ -113,7 +113,7 @@
         var info = new ImageInfo;
         info.setInput(media);
 
-        var mediaMeta = new Media;
+        var mediaMeta = new MediaMetaData;
 
         if (info.check()) {
             var imageHeight = info.getHeight();
