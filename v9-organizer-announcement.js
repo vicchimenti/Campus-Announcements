@@ -1,14 +1,14 @@
   /***
    *     @author Victor Chimenti, MSCS-SE '20
-   *     @file v9-organizer-blogwithimage.js
-   *     v9/organizer/blogwithimage
+   *     @file v9-organizer-announcement.js
+   *     v9/organizer/announcement
    *
    *     This content type will work in conjunction with the Organizer and each item
-   *     will contain one article.
+   *     will contain one announcement.
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.0
+   *     @version 5.1
    */
 
 
@@ -29,14 +29,6 @@
         var oMediaStream = oMedia.getMedia(); // InputStream
         return oMediaStream;
     }
-    
-    var media = readMedia(1376806) // is an InputStream
-    var info = new ImageInfo // Initializes ImageInfo object
-    info.setInput(media) // Loads image in ImageInfo class
-    document.write(info.check() + ' ') // Checks if image has loaded
-    document.write(info.getWidth()) // Displays width
-    document.write('x')
-    document.write(info.getHeight()) // Displays height
 
 
 
