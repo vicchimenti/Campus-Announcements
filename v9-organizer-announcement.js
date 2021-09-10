@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.6
+   *     @version 5.7
    */
 
 
@@ -109,14 +109,16 @@
         // var imageName = content.get('Image').getName();
         // var imageDescription = content.get('Image').getDescription();
 
-        var media = readMedia(imageID) 
-        var info = new ImageInfo 
-        info.setInput(media)
+        var media = readMedia(imageID);
+        var info = new ImageInfo;
+        info.setInput(media);
 
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
+            var imageName = info.getName();
+            var imageDescription = info.getDescription();
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" height="' + imageHeight + '" width="' + imageWidth + '" loading="lazy" />';
 
         } else {
             imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="lazy" />';
