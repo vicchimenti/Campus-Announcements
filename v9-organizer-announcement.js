@@ -76,6 +76,18 @@
         return oMedia;
     }
 
+
+
+
+    /***
+     *      Write the document
+     */
+    function writeDocument(array) {
+        for(var i = 0; i < array.length; i++) {
+            document.write(array[i])
+        }
+    }
+
     
 
 
@@ -94,7 +106,7 @@
         fullTextLink: getContentValues("<t4 type='content' name='Name' output='fulltext' use-element='true' filename-element='Article Title' modifiers='striptags,htmlentities' />"),
         contentID: getContentValues("<t4 type='meta' meta='content_id' />")
     }
-    
+
     // var contentName = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Name' output='normal' modifiers='striptags,htmlentities' />");
     // var articleTitle = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Article Title' output='normal' display_field='value' />");
     // var articleSummary = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Summary' output='normal' display_field='value' />");
@@ -113,11 +125,11 @@
      *  default initializations
      * 
      * */
-    var beginningHTML = '<div class="newsItemWrapper contentItem card" id="id' + contentID + '" aria-label="' + articleTitle + '"><div class="newsItem standardContent">';
+    var beginningHTML = '<div class="newsItemWrapper contentItem card" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
     var endingHTML = '</div></div>';
     var openRow = '<div class="row no-gutters">';
     var closeRow = '</div>';
-    var titleLink = '<h3 class="card-title">' + articleTitle + '</h3>';
+    var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
     var openBodyWrapper = '<div class="col-md-8">';
     var closeBodyWrapper = '</div>';
     var openSummaryWrapper = '<div class="articleSummary card-body">';
@@ -125,8 +137,8 @@
     var openImageWrapper = '<div class="newsImage col-md-4 hidden visually-hidden">';
     var closeImageWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
-    var summaryString = '<p class="card-text">' + articleSummary + '</p>';
-    var dateString = '<p class="card-text"><em class="publishDate text-muted">' + publishDate + '</em></p>';
+    var summaryString = '<p class="card-text">' + contentDict.articleSummary.content + '</p>';
+    var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var externalLinkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var readMoreString = '<p class="readmore hidden visually-hidden">No Article Body Entered</p>';
 
@@ -137,9 +149,9 @@
      *  check for fulltext content
      * 
      * */
-    if (articleFullBody != "") {
-        titleLink = '<h3><a href="' + fullTextLink + '" title="Read the full post ' + articleTitle + '">' + articleTitle + '</a></h3>';
-        readMoreString = '<p class="readmore"><a href="' + fullTextLink + '" title="Read the full post ' + articleTitle + '">Read More <span class="sr-only sr-only-focusable">about ' + articleTitle + '</span></a></p>';
+    if (contentDict.articleFullBody.content) {
+        titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+        readMoreString = '<p class="readmore"><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">Read More <span class="sr-only sr-only-focusable">about ' + contentDict.articleTitle.content + '</span></a></p>';
     }
 
 
