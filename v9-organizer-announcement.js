@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.10
+   *     @version 5.11
    */
 
 
@@ -22,7 +22,7 @@
 
 
     importClass(com.terminalfour.media.utils.ImageInfo);
-    importClass(com.terminalfour.media.MediaManager)
+    importClass(com.terminalfour.media.MediaManager);
 
     // we need the InputStream object type
     function readMedia(mediaID) {
