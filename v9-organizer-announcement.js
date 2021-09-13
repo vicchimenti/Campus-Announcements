@@ -18,16 +18,39 @@
 
 
     /***
-     *  Import T4 Libraries
-     * 
-     * */
+     *      Import T4 Utilities
+     */
+    importClass(com.terminalfour.publish.utils.BrokerUtils);
     importClass(com.terminalfour.media.utils.ImageInfo);
     importClass(com.terminalfour.media.MediaManager);
 
 
 
 
-    // Returns a media stream object
+    /***
+     *      Extract values from T4 element tags
+     *      and confirm valid existing content item field
+     */
+    function getContentValues (tag) {
+        try {
+            return {
+                isError: false,
+                content: BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+            }
+        } catch (error) {
+            return {
+                isError: true,
+                message: error.message
+            }
+        }
+    }
+
+
+
+
+    /***
+     *      Returns a media stream object
+     */
     function readMedia(mediaID) {
 
         var oMM = com.terminalfour.media.MediaManager.getManager();
@@ -40,7 +63,11 @@
     }
 
 
-    // Returns a media object
+
+    
+    /***
+     *      Returns a media object
+     */
     function getMediaInfo(mediaID) {
 
         var oMM = MediaManager.getManager();
