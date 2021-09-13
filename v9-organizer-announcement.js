@@ -13,75 +13,52 @@
 
 
 
-//    <img src="<t4 type="content" name="Media" output="file" modifiers="" />" alt="<t4 type="content" name="Description" output="normal" modifiers="striptags,htmlentities" />" <t4 type="media" attribute="title" format=" title="$value"" />/>
-
-
    
    try {
 
 
-
+    /***
+     *  Import T4 Libraries
+     * 
+     * */
     importClass(com.terminalfour.media.utils.ImageInfo);
     importClass(com.terminalfour.media.MediaManager);
 
-    // we need the InputStream object type
+
+    // Returns a media stream object
     function readMedia(mediaID) {
+
         var oMM = com.terminalfour.media.MediaManager.getManager();
         var oMedia = oMM.get(dbStatement, mediaID, language);
-        var oMediaStream = oMedia.getMedia(); // InputStream
+
+        // Convert to InputStream
+        var oMediaStream = oMedia.getMedia();
+
         return oMediaStream;
     }
 
 
-    // we need the InputStream object type
+    // Returns a media object
     function getMediaInfo(mediaID) {
+
         var oMM = MediaManager.getManager();
         var oMedia = oMM.get(dbStatement, mediaID, language);
+
         return oMedia;
     }
 
-
-    
-// var mediaID = 1376806
-// Acessing media manager
-// var oMM = MediaManager.getManager();
-// Getting media object
-// var oMedia = oMM.get(dbStatement, mediaID, language);
-// Accessing media object functions
-// document.write(oMedia.getName() + ": " + oMedia.getDescription())
-
-
-    // we need string conversion
-    // function readMediaMeta(mediaID) {
-    //     var oMM = com.terminalfour.media.MediaManager.getManager();
-    //     var oMedia = oMM.get(dbStatement, mediaID, language);
-    //     var oMediaStream = oMedia.getMedia();
-    //     var oScanner = new java.util.Scanner(oMediaStream).useDelimiter("\\A");
-    //     var sMedia = "";
-    //     while (oScanner.hasNext()) {
-    //       sMedia += oScanner.next();
-    //     }
-    //     return sMedia; 
-    // }
     
 
 
     /***
-     *  default declarations
+     *  default declarations for content data fields
      * 
      * */
-
-    //  var contentName = content.get("Name");
-
     var contentName = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Name' output='normal' modifiers='striptags,htmlentities' />");
     var articleTitle = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Article Title' output='normal' display_field='value' />");
     var articleSummary = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Summary' output='normal' display_field='value' />");
     var publishDate = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Publish Date' output='normal' date_format='MMMM d, yyyy' />");
     var articleImage = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Image' output='normal' formatter='path/*' />");
-    // var articleImageAlt = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Image' output='normal' formatter='image/alt' />");
-    var articleImageAlt = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='media' name='Image' attribute='Description' />");
-
-    var articleImageTitle = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='media' name='Image' attribute='Name' />");
     var externalLink = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='External Link' output='normal' modifiers='striptags,htmlentities' />");
     var externalLinkText = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='External Link Text' output='normal' modifiers='striptags,htmlentities' />");
     var articleFullBody = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='content' name='Article Body' output='normal' display_field='value' />");
@@ -141,16 +118,9 @@
     if (articleImage != "") {
 
         var imageID = content.get('Image').getID();
-        // var imageName = content.get('Image').getName();
-        // var imageDescription = content.get('Image').getDescription();
-
         var media = readMedia(imageID);
         var info = new ImageInfo;
         info.setInput(media);
-
-        // var mediaMeta = new readMediaMeta(imageID);
-        // var metaInfo = new MediaMetaData;
-
         var mediaInfo = getMediaInfo(imageID);
 
         if (info.check()) {
@@ -168,10 +138,10 @@
     }
 
 
-    var fieldToBeEvaluated = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, '<t4 type="content" name="Category" output="normal" display_field="value" delimiter=";" />');
-var optionToTestFor = "suLawInTheNews"; //edit this to change the option
-var contentTypeLayout = 'output/gridfeed'; //edit this to change the Content Layout to use for output
-var n = fieldToBeEvaluated.indexOf(optionToTestFor); /* determines starting character of string */
+//     var fieldToBeEvaluated = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, '<t4 type="content" name="Category" output="normal" display_field="value" delimiter=";" />');
+// var optionToTestFor = "suLawInTheNews"; //edit this to change the option
+// var contentTypeLayout = 'output/gridfeed'; //edit this to change the Content Layout to use for output
+// var n = fieldToBeEvaluated.indexOf(optionToTestFor); /* determines starting character of string */
 
 
 /***
