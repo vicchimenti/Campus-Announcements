@@ -95,10 +95,10 @@
      *      Dictionary of content
      * */
     var contentDict = {
-        contentName: getContentValues("<t4 type='content' name='Name' output='normal' modifiers='striptags,htmlentities' />"),
-        articleTitle: getContentValues("<t4 type='content' name='Article Title' output='normal' display_field='value' />"),
-        articleSummary: getContentValues("<t4 type='content' name='Summary' output='normal' display_field='value' />"),
-        publishDate: getContentValues("<t4 type='content' name='Publish Date' output='normal' date_format='MMMM d, yyyy' />"),
+        contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
+        articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
+        articleSummary: getContentValues('<t4 type="Scontent" name="Summary" output="normal" display_field="value" />'),
+        publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
         articleImage: getContentValues("<t4 type='content' name='Image' output='normal' formatter='path/*' />"),
         externalLink: getContentValues("<t4 type='content' name='External Link' output='normal' modifiers='striptags,htmlentities' />"),
         externalLinkText: getContentValues("<t4 type='content' name='External Link Text' output='normal' modifiers='striptags,htmlentities' />"),
