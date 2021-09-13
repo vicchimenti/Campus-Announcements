@@ -2,6 +2,9 @@
 *       Custom Styles for the Campus Announcement Content Type
 *       ID: 5580
 */
+
+
+/* expand small images to fill available space on all browsers */
 .newsItemWrapper.announcement .standardContent img.card-img {
     width: 100%;
     width: -moz-available;
