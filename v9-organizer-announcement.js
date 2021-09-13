@@ -22,7 +22,7 @@
 
 
     importClass(com.terminalfour.media.utils.ImageInfo);
-    importClass(com.terminalfour.media.MediaMetaData);
+    importClass(com.terminalfour.media.MediaManager)
 
     // we need the InputStream object type
     function readMedia(mediaID) {
@@ -31,6 +31,25 @@
         var oMediaStream = oMedia.getMedia(); // InputStream
         return oMediaStream;
     }
+
+
+    // we need the InputStream object type
+    function getMediaAttributes(mediaID) {
+        var oMM = MediaManager.getManager();
+        var oMedia = oMM.get(dbStatement, mediaID, language);
+        return oMedia;
+    }
+
+
+    
+// var mediaID = 1376806
+// Acessing media manager
+// var oMM = MediaManager.getManager();
+// Getting media object
+// var oMedia = oMM.get(dbStatement, mediaID, language);
+// Accessing media object functions
+// document.write(oMedia.getName() + ": " + oMedia.getDescription())
+
 
     // we need string conversion
     function readMediaMeta(mediaID) {
