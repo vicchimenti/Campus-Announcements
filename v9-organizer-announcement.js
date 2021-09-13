@@ -213,6 +213,8 @@
             summaryString,
             dateString,
             closeSummaryWrapper,
+            openSortFields,
+            closeSortFields,
             closeBodyWrapper,
             closeRow,
             endingHTML
