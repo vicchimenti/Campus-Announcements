@@ -157,7 +157,7 @@
      * 
      * */
     if (contentDict.articleFullBody.content != "") {
-        titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+        titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
     }
 
 
@@ -168,7 +168,7 @@
      * 
      * */
     if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
-        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
+        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" class="card-link" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
 
 
