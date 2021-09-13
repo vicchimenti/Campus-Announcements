@@ -129,7 +129,7 @@
     var summaryString = '<p class="card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var externalLinkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
-    var readMoreString = '<p class="readmore hidden visually-hidden">No Article Body Entered</p>';
+    // var readMoreString = '<p class="readmore hidden visually-hidden">No Article Body Entered</p>';
 
 
 
@@ -140,7 +140,7 @@
      * */
     if (contentDict.articleFullBody.content != "") {
         titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-        readMoreString = '<p class="readmore"><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">Read More <span class="sr-only sr-only-focusable">about ' + contentDict.articleTitle.content + '</span></a></p>';
+        // readMoreString = '<p class="readmore"><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">Read More <span class="sr-only sr-only-focusable">about ' + contentDict.articleTitle.content + '</span></a></p>';
     }
 
 
@@ -203,7 +203,6 @@
             externalLinkString,
             summaryString,
             dateString,
-            readMoreString,
             closeSummaryWrapper,
             closeBodyWrapper,
             closeRow,
