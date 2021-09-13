@@ -34,7 +34,7 @@
 
 
     // we need the InputStream object type
-    function getMediaAttributes(mediaID) {
+    function getMediaInfo(mediaID) {
         var oMM = MediaManager.getManager();
         var oMedia = oMM.get(dbStatement, mediaID, language);
         return oMedia;
@@ -52,17 +52,17 @@
 
 
     // we need string conversion
-    function readMediaMeta(mediaID) {
-        var oMM = com.terminalfour.media.MediaManager.getManager();
-        var oMedia = oMM.get(dbStatement, mediaID, language);
-        var oMediaStream = oMedia.getMedia();
-        var oScanner = new java.util.Scanner(oMediaStream).useDelimiter("\\A");
-        var sMedia = "";
-        while (oScanner.hasNext()) {
-          sMedia += oScanner.next();
-        }
-        return sMedia; 
-    }
+    // function readMediaMeta(mediaID) {
+    //     var oMM = com.terminalfour.media.MediaManager.getManager();
+    //     var oMedia = oMM.get(dbStatement, mediaID, language);
+    //     var oMediaStream = oMedia.getMedia();
+    //     var oScanner = new java.util.Scanner(oMediaStream).useDelimiter("\\A");
+    //     var sMedia = "";
+    //     while (oScanner.hasNext()) {
+    //       sMedia += oScanner.next();
+    //     }
+    //     return sMedia; 
+    // }
     
 
 
@@ -148,15 +148,17 @@
         var info = new ImageInfo;
         info.setInput(media);
 
-        var mediaMeta = new readMediaMeta(imageID);
-        var metaInfo = new MediaMetaData;
+        // var mediaMeta = new readMediaMeta(imageID);
+        // var metaInfo = new MediaMetaData;
+
+        var mediaInfo = getMediaInfo(imageID);
 
         if (info.check()) {
             var imageHeight = info.getHeight();
             var imageWidth = info.getWidth();
-            var imageName = metaInfo.getName();
-            var imageDescription = metaInfo.getDescription();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + articleImageTitle + '" alt="' + articleImageAlt + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="lazy" />';
+            var imageName = mediaInfo.getName();
+            var imageDescription = mediaInfo.getDescription();
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="lazy" />';
 
         } else {
             imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="lazy" />';
