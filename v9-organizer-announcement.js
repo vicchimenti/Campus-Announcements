@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.30
+   *     @version 6.0
    */
 
 
@@ -20,9 +20,11 @@
     /***
      *      Import T4 Utilities
      */
+    importClass(com.terminalfour.media.IMediaManager);
+    importClass(com.terminalfour.spring.ApplicationContextProvider);
     importClass(com.terminalfour.publish.utils.BrokerUtils);
     importClass(com.terminalfour.media.utils.ImageInfo);
-    importClass(com.terminalfour.media.MediaManager);
+    // importClass(com.terminalfour.media.MediaManager);
 
 
 
