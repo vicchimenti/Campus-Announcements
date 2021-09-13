@@ -226,14 +226,13 @@
         info.setInput(media);
 
         if (info.check()) {
-            // var imageHeight = info.getHeight();
-            // var imageWidth = info.getWidth();
-            // var imageName = mediaInfo.getName();
-            // var imageDescription = mediaInfo.getDescription();
+
             imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
 
         } else {
+
             imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+            
         }
 
         openImageWrapper = '<div class="col-md-4">';
