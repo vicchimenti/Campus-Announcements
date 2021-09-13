@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.16
+   *     @version 5.17
    */
 
 
@@ -84,7 +84,7 @@
      */
     function writeDocument(array) {
         for(var i = 0; i < array.length; i++) {
-            document.write(array[i])
+            document.write(array[i]);
         }
     }
 
@@ -105,7 +105,7 @@
         articleFullBody: getContentValues("<t4 type='content' name='Article Body' output='normal' display_field='value' />"),
         fullTextLink: getContentValues("<t4 type='content' name='Name' output='fulltext' use-element='true' filename-element='Article Title' modifiers='striptags,htmlentities' />"),
         contentID: getContentValues("<t4 type='meta' meta='content_id' />")
-    }
+    };
 
 
     
@@ -208,25 +208,7 @@
             closeBodyWrapper,
             closeRow,
             endingHTML
-    ])
-
-
-    // document.write(beginningHTML);
-    // document.write(titleLink);
-    // document.write(openRow);
-    // document.write(openImageWrapper);
-    // document.write(imageString);
-    // document.write(closeImageWrapper);
-    // document.write(openBodyWrapper);
-    // document.write(openSummaryWrapper);
-    // document.write(externalLinkString);
-    // document.write(summaryString);
-    // document.write(dateString);
-    // document.write(readMoreString);
-    // document.write(closeSummaryWrapper);
-    // document.write(closeBodyWrapper);
-    // document.write(closeRow);
-    // document.write(endingHTML);
+    ]);
 
 
 
