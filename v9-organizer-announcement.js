@@ -24,15 +24,9 @@
     importClass(com.terminalfour.spring.ApplicationContextProvider);
     importClass(com.terminalfour.publish.utils.BrokerUtils);
     importClass(com.terminalfour.media.utils.ImageInfo);
-    importClass(com.terminalfour.media.MediaManager);
+    // importClass(com.terminalfour.media.MediaManager);
 
 
-    // Initializes the new media manager without having to collect and initalize everything ourselves.
-    // var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-    // Get media
-    // var media = mediaManager.get(1376806, language)
-    // Access media methods
-    // document.write(media.getName() + ": " + media.getDescription())
 
     /***
      *      Extract values from T4 element tags
@@ -75,20 +69,10 @@
     function readMedia(mediaID) {
 
         var mediaObj = getMediaInfo(mediaID);
-
-        // var oMM = com.terminalfour.media.MediaManager.getManager();
-        // var oMedia = oMM.get(dbStatement, mediaID, language);
-
-        // Convert to InputStream
         var oMediaStream = mediaObj.getMedia();
 
         return oMediaStream;
     }
-
-
-
-    
-
 
 
 
