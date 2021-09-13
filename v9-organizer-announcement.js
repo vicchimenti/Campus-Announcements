@@ -135,6 +135,9 @@
     var summaryString = '<p class="card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var externalLinkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
+    var openSortFields = '<div class="sortFields hidden visually-hidden">';
+    var closeSortFields = '</div>';
+
 //     <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Toggle button</button>
 // <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Disabled toggle button</button>
 
