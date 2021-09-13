@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.15
+   *     @version 5.16
    */
 
 
@@ -111,7 +111,7 @@
     
 
     /***
-     *  default initializations
+     *  default html initializations
      * 
      * */
     var beginningHTML = '<div class="newsItemWrapper contentItem card" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
@@ -144,6 +144,8 @@
     }
 
 
+
+
     /***
      *  Parse for external link
      * 
@@ -151,6 +153,8 @@
     if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
         externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
+
+
 
 
     /***
@@ -206,23 +210,23 @@
             endingHTML
     ])
 
-    
-    document.write(beginningHTML);
-    document.write(titleLink);
-    document.write(openRow);
-    document.write(openImageWrapper);
-    document.write(imageString);
-    document.write(closeImageWrapper);
-    document.write(openBodyWrapper);
-    document.write(openSummaryWrapper);
-    document.write(externalLinkString);
-    document.write(summaryString);
-    document.write(dateString);
-    document.write(readMoreString);
-    document.write(closeSummaryWrapper);
-    document.write(closeBodyWrapper);
-    document.write(closeRow);
-    document.write(endingHTML);
+
+    // document.write(beginningHTML);
+    // document.write(titleLink);
+    // document.write(openRow);
+    // document.write(openImageWrapper);
+    // document.write(imageString);
+    // document.write(closeImageWrapper);
+    // document.write(openBodyWrapper);
+    // document.write(openSummaryWrapper);
+    // document.write(externalLinkString);
+    // document.write(summaryString);
+    // document.write(dateString);
+    // document.write(readMoreString);
+    // document.write(closeSummaryWrapper);
+    // document.write(closeBodyWrapper);
+    // document.write(closeRow);
+    // document.write(endingHTML);
 
 
 
