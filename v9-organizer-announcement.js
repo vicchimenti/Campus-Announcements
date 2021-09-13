@@ -103,6 +103,7 @@
         externalLink: getContentValues('<t4 type="content" name="External Link" output="normal" modifiers="striptags,htmlentities" />'),
         externalLinkText: getContentValues('<t4 type="content" name="External Link Text" output="normal" modifiers="striptags,htmlentities" />'),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
+        audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
