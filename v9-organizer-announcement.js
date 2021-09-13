@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.27
+   *     @version 5.28
    */
 
 
@@ -143,11 +143,6 @@
     var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
     var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
-
-
-
-//     <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Toggle button</button>
-// <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Disabled toggle button</button>
 
 
 
