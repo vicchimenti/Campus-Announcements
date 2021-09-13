@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.1
+   *     @version 6.2
    */
 
 
@@ -56,15 +56,31 @@
 
 
     /***
+     *      Returns a media object
+     */
+        function getMediaInfo(mediaID) {
+
+            var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+            var media = mediaManager.get(mediaID, language);
+
+        return media;
+    }
+
+
+
+
+    /***
      *      Returns a media stream object
      */
     function readMedia(mediaID) {
 
-        var oMM = com.terminalfour.media.MediaManager.getManager();
-        var oMedia = oMM.get(dbStatement, mediaID, language);
+        var mediaObj = getMediaInfo(mediaID);
+
+        // var oMM = com.terminalfour.media.MediaManager.getManager();
+        // var oMedia = oMM.get(dbStatement, mediaID, language);
 
         // Convert to InputStream
-        var oMediaStream = oMedia.getMedia();
+        var oMediaStream = mediaObj.getMedia();
 
         return oMediaStream;
     }
@@ -72,16 +88,7 @@
 
 
     
-    /***
-     *      Returns a media object
-     */
-    function getMediaInfo(mediaID) {
 
-        var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-        var media = mediaManager.get(mediaID, language);
-
-        return media;
-    }
 
 
 
