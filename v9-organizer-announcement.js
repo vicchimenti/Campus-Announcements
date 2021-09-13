@@ -168,7 +168,7 @@
      *  Parse for image
      * 
      * */
-    if (articleImage != "") {
+    if (contentDict.articleImage.content) {
 
         var imageID = content.get('Image').getID();
         var media = readMedia(imageID);
@@ -181,10 +181,10 @@
             var imageWidth = info.getWidth();
             var imageName = mediaInfo.getName();
             var imageDescription = mediaInfo.getDescription();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="auto" />';
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="auto" />';
 
         } else {
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="auto" />';
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + contentDict.contentName.content + '" alt="' + contentDict.contentName.content + '" loading="auto" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
