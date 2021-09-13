@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.2
+   *     @version 6.3
    */
 
 
@@ -220,20 +220,20 @@
     if (contentDict.articleImage.content !="") {
 
         var imageID = content.get('Image').getID();
+        var mediaInfo = getMediaInfo(imageID);
         var media = readMedia(imageID);
         var info = new ImageInfo;
         info.setInput(media);
-        var mediaInfo = getMediaInfo(imageID);
 
         if (info.check()) {
-            var imageHeight = info.getHeight();
-            var imageWidth = info.getWidth();
-            var imageName = mediaInfo.getName();
-            var imageDescription = mediaInfo.getDescription();
-            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="auto" />';
+            // var imageHeight = info.getHeight();
+            // var imageWidth = info.getWidth();
+            // var imageName = mediaInfo.getName();
+            // var imageDescription = mediaInfo.getDescription();
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
 
         } else {
-            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + contentDict.contentName.content + '" alt="' + contentDict.contentName.content + '" loading="auto" />';
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
