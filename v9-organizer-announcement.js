@@ -141,6 +141,9 @@
     var closeSortFields = '</div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
+    var buttonString1 = '<button type="button" class="btn btn-primary hidden visually-hidden" data-bs-toggle="button" autocomplete="off">No link created</button>';
+    var buttonString2 = '<button type="button" class="btn btn-primary hidden visually-hidden" data-bs-toggle="button" autocomplete="off">No link created</button>';
+
 
 
 //     <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Toggle button</button>
@@ -241,6 +244,8 @@
             externalLinkString,
             summaryString,
             dateString,
+            buttonString1,
+            buttonString2,
             closeSummaryWrapper,
             openSortFields,
             prioityString,
