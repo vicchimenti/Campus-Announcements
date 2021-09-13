@@ -109,7 +109,7 @@
 
 
     
-    
+
     /***
      *  default initializations
      * 
@@ -186,6 +186,27 @@
      *  write document once
      * 
      * */
+    writeDocument (
+        [
+            beginningHTML,
+            titleLink,
+            openRow,
+            openImageWrapper,
+            imageString,
+            closeImageWrapper,
+            openBodyWrapper,
+            openSummaryWrapper,
+            externalLinkString,
+            summaryString,
+            dateString,
+            readMoreString,
+            closeSummaryWrapper,
+            closeBodyWrapper,
+            closeRow,
+            endingHTML
+    ])
+
+    
     document.write(beginningHTML);
     document.write(titleLink);
     document.write(openRow);
