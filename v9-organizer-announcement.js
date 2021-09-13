@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.0
+   *     @version 6.1
    */
 
 
@@ -24,10 +24,15 @@
     importClass(com.terminalfour.spring.ApplicationContextProvider);
     importClass(com.terminalfour.publish.utils.BrokerUtils);
     importClass(com.terminalfour.media.utils.ImageInfo);
-    // importClass(com.terminalfour.media.MediaManager);
+    importClass(com.terminalfour.media.MediaManager);
 
 
-
+    // Initializes the new media manager without having to collect and initalize everything ourselves.
+    // var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+    // Get media
+    // var media = mediaManager.get(1376806, language)
+    // Access media methods
+    // document.write(media.getName() + ": " + media.getDescription())
 
     /***
      *      Extract values from T4 element tags
@@ -72,10 +77,13 @@
      */
     function getMediaInfo(mediaID) {
 
-        var oMM = MediaManager.getManager();
-        var oMedia = oMM.get(dbStatement, mediaID, language);
+        var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+        var media = mediaManager.get(mediaID, language);
 
-        return oMedia;
+        // var oMM = MediaManager.getManager();
+        // var oMedia = oMM.get(dbStatement, mediaID, language);
+
+        return media;
     }
 
 
