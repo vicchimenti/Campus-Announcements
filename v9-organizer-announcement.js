@@ -177,7 +177,19 @@
      * 
      * */
     if (contentDict.priority.content != "") {
-        prioityString = '<span class="priority ">' + contentDict.priority.content + '</span>';
+        prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
+    }
+
+
+
+
+    /***
+     *  Parse for Audience
+     *  Currently a hidden sort field
+     * 
+     * */
+    if (contentDict.audience.content != "") {
+        audienceString = '<span class="audience">' + contentDict.audience.content + '</span>';
     }
 
 
