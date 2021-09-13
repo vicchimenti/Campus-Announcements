@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.29
+   *     @version 5.30
    */
 
 
@@ -163,7 +163,7 @@
      * 
      * */
     if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
-        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" class="card-link" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
+        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" class="card-link" title="For more information visit: ' + contentDict.articleTitle.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
 
 
