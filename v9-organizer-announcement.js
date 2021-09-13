@@ -139,6 +139,9 @@
     var externalLinkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
+    var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
+    var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
+
 
 //     <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Toggle button</button>
 // <button type="button" class="btn btn-primary" disabled data-bs-toggle="button" autocomplete="off">Disabled toggle button</button>
@@ -163,6 +166,18 @@
      * */
     if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
         externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
+    }
+
+
+
+
+    /***
+     *  Parse for Priority
+     *  Currently a hidden sort field
+     * 
+     * */
+    if (contentDict.priority.content != "") {
+        prioityString = '<span class="priority ">' + contentDict.priority.content + '</span>';
     }
 
 
@@ -216,6 +231,8 @@
             dateString,
             closeSummaryWrapper,
             openSortFields,
+            prioityString,
+            audienceString,
             closeSortFields,
             closeBodyWrapper,
             closeRow,
