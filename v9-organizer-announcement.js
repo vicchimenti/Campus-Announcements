@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.28
+   *     @version 5.29
    */
 
 
@@ -163,7 +163,7 @@
      * 
      * */
     if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
-        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" class="card-link" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
+        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" class="card-link" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
 
 
@@ -174,18 +174,18 @@
      * 
      * */
     if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
-        buttonString1 = '<a href="' + contentDict.sectionLink1.content + '" class="card-link" title"' + contentDict.sectionLinkText1.content + '" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button></a>';
+        buttonString1 = '<a href="' + contentDict.sectionLink1.content + '" class="card-link" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button></a>';
     }
 
 
 
 
     /***
-     *  Parse for Section Link 1
+     *  Parse for Section Link 2
      * 
      * */
     if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
-        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" class="card-link" title"' + contentDict.sectionLinkText2.content + '" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a>';
+        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" class="card-link" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a>';
     }
     
 
