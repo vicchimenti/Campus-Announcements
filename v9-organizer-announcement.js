@@ -159,8 +159,8 @@
      *  Parse for external link
      * 
      * */
-    if (externalLink != "" && externalLinkText != "") {
-        externalLinkString = '<span class="externalLink"><a href="' + externalLink + '" title="' + externalLinkText + '" target="_blank"><em>' + externalLinkText + '</em></a></span>';
+    if (contentDict.externalLink.content && contentDict.externalLinkText.content) {
+        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
 
 
