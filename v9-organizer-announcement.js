@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.12
+   *     @version 5.13
    */
 
 
@@ -25,7 +25,7 @@
     importClass(com.terminalfour.media.MediaManager);
 
 
-    
+
 
     // Returns a media stream object
     function readMedia(mediaID) {
@@ -130,10 +130,10 @@
             var imageWidth = info.getWidth();
             var imageName = mediaInfo.getName();
             var imageDescription = mediaInfo.getDescription();
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + imageName + '" alt="' + imageDescription + '" width="' + imageWidth + '" height="' + imageHeight + '" loading="auto" />';
 
         } else {
-            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="lazy" />';
+            imageString = '<img src="' + articleImage + '" class="articleImage card-img" title="' + contentName + '" alt="' + contentName + '" loading="auto" />';
         }
 
         openImageWrapper = '<div class="col-md-4">';
