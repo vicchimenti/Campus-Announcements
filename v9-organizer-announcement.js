@@ -108,6 +108,7 @@
         priority: getContentValues('<t4 type="content" name="Priority" output="normal" display_field="value" />'),
         layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
         sectionLink1: getContentValues('<t4 type="content" name="Section Link 1" output="normal" modifiers="nav_sections" />'),
+        sectionLink2: getContentValues('<t4 type="content" name="Section Link 2" output="normal" modifiers="nav_sections" />'),
         fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
