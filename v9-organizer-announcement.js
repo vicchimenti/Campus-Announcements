@@ -147,7 +147,7 @@
      * 
      * */
     document.write(beginningHTML);
-    document.write(com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, titleLink));
+    document.write(titleLink);
     document.write(openRow);
     document.write(openImageWrapper);
     document.write(imageString);
