@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.26
+   *     @version 5.27
    */
 
 
@@ -179,7 +179,7 @@
      * 
      * */
     if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
-        buttonString1 = '<a href="' + contentDict.sectionLink1.content + '" ><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button></a>';
+        buttonString1 = '<a href="' + contentDict.sectionLink1.content + '" class="card-link" title"' + contentDict.sectionLinkText1.content + '" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button></a>';
     }
 
 
@@ -190,7 +190,7 @@
      * 
      * */
     if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
-        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" ><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a>';
+        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" class="card-link" title"' + contentDict.sectionLinkText2.content + '" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a>';
     }
     
 
