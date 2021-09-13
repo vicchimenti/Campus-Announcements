@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.25
+   *     @version 5.26
    */
 
 
@@ -190,7 +190,7 @@
      * 
      * */
     if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
-        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" ><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLink2.content + '</button></a>';
+        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" ><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a>';
     }
     
 
