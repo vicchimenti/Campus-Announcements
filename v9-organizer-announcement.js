@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.22
+   *     @version 5.23
    */
 
 
@@ -141,8 +141,8 @@
     var closeSortFields = '</div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
-    var buttonString1 = '<button type="button" class="btn btn-primary hidden visually-hidden" data-bs-toggle="button" autocomplete="off">No link created</button>';
-    var buttonString2 = '<button type="button" class="btn btn-primary hidden visually-hidden" data-bs-toggle="button" autocomplete="off">No link created</button>';
+    var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
+    var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
 
 
 
@@ -170,6 +170,29 @@
     if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
         externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
+
+
+
+
+    /***
+     *  Parse for Section Link 1
+     * 
+     * */
+    if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
+        buttonString1 = '<button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button>';
+    }
+
+
+
+
+    /***
+     *  Parse for Section Link 1
+     * 
+     * */
+    if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
+        buttonString1 = '<button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button>';
+    }
+    
 
 
 
