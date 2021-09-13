@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.3
+   *     @version 6.4
    */
 
 
@@ -232,7 +232,7 @@
         } else {
 
             imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
-            
+
         }
 
         openImageWrapper = '<div class="col-md-4">';
