@@ -80,9 +80,6 @@
         var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
         var media = mediaManager.get(mediaID, language);
 
-        // var oMM = MediaManager.getManager();
-        // var oMedia = oMM.get(dbStatement, mediaID, language);
-
         return media;
     }
 
