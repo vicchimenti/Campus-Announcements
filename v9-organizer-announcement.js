@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.23
+   *     @version 5.24
    */
 
 
@@ -189,8 +189,8 @@
      *  Parse for Section Link 1
      * 
      * */
-    if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
-        buttonString1 = '<button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button>';
+    if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
+        buttonString2 = '<button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button>';
     }
     
 
