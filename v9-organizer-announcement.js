@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 5.14
+   *     @version 5.15
    */
 
 
@@ -149,7 +149,7 @@
      *  check for fulltext content
      * 
      * */
-    if (contentDict.articleFullBody.content) {
+    if (contentDict.articleFullBody.content != "") {
         titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
         readMoreString = '<p class="readmore"><a href="' + contentDict.fullTextLink.content + '" title="Read the full post ' + contentDict.articleTitle.content + '">Read More <span class="sr-only sr-only-focusable">about ' + contentDict.articleTitle.content + '</span></a></p>';
     }
@@ -159,7 +159,7 @@
      *  Parse for external link
      * 
      * */
-    if (contentDict.externalLink.content && contentDict.externalLinkText.content) {
+    if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
         externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" title="' + contentDict.externalLinkText.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
     }
 
@@ -168,7 +168,7 @@
      *  Parse for image
      * 
      * */
-    if (contentDict.articleImage.content) {
+    if (contentDict.articleImage.content !="") {
 
         var imageID = content.get('Image').getID();
         var media = readMedia(imageID);
