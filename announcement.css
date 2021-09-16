@@ -11,3 +11,15 @@
     width: -webkit-fill-available;
     width: fill-available;
 }
+
+
+.panelInner .panelLinks {
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin: auto auto;
+    list-style-type: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

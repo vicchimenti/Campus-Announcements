@@ -140,6 +140,8 @@
     var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
     var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
+    var openPanelLinks = '<ul class="panelLinks">';
+    var closePanelLinks = '</ul>';
 
 
 
@@ -261,8 +263,10 @@
             externalLinkString,
             summaryString,
             dateString,
+            openPanelLinks,
             buttonString1,
             buttonString2,
+            closePanelLinks,
             closeSummaryWrapper,
             openSortFields,
             prioityString,
