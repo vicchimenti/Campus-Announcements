@@ -32,6 +32,10 @@
     padding: 0.5rem 2rem 0 0;
 }
 
+.announcement .standardContent .audience ul.categories li {
+    color: #55B31B;
+}
+
 .announcement .standardContent ul.categories li:before {
     content: unset;
 }
