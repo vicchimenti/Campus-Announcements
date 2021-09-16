@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.12
+   *     @version 6.13
    */
 
 
@@ -257,7 +257,7 @@
         }
 
         // Print any tags that were selected
-        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div>';
+        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
     }
 
 
