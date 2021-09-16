@@ -18,6 +18,10 @@
     font-weight: 500;
 }
 
+.announcement .newsItem .articleSummary p {
+    line-height: 1.6;
+    font-weight: 500;
+}
 
 .announcement div.newsroomArticle.tags {
     display: inline-flex;
