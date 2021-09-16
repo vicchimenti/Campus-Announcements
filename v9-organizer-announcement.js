@@ -138,11 +138,11 @@
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
-    var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
+    var audienceString = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var openPanelLinks = '<ul class="panelLinks">';
-    var closePanelLinks = '</ul>';
+    var closePanelLinks = '</ul>';  
 
 
 
@@ -258,7 +258,7 @@
 
         // Print any tags that were selected
         listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div>';
-}
+    }
 
 
 
