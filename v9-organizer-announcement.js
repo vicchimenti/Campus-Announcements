@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.8
+   *     @version 6.9
    */
 
 
@@ -136,6 +136,7 @@
     var externalLinkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
+    var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceString = '<span class="audience hidden visually-hidden">No Audience Entered</span>';
     var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
@@ -244,6 +245,25 @@
 
 
     /***
+     *  parse the list of topics tags, add <li> tags
+     * 
+     * */
+    if (contentDict.topics.content != "") {
+
+        let listItems = '';
+        let arrayOfTags = contentDict.topics.content.split(',');
+        for (let i = 0; i < arrayOfTags.length; i++) {
+            listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
+        }
+
+        // Print any tags that were selected
+        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div>';
+}
+
+
+
+
+    /***
      *  write document once
      * 
      * */
@@ -259,6 +279,7 @@
             openSummaryWrapper,
             externalLinkString,
             summaryString,
+            listOfTags,
             dateString,
             openPanelLinks,
             buttonString1,
