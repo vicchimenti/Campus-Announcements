@@ -18,9 +18,12 @@
     font-weight: 500;
 }
 
-.announcement .newsItem .articleSummary p {
-    line-height: 1.6;
+.announcement .newsItem .articleSummary p. {
     font-weight: 500;
+}
+
+.announcement .newsItem .articleSummary p.summary {
+    line-height: 1.6;
 }
 
 .announcement div.newsroomArticle.tags {
