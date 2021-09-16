@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.15
+   *     @version 6.16
    */
 
 
@@ -97,8 +97,6 @@
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
         publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
         articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
-        // externalLink: getContentValues('<t4 type="content" name="External Link" output="normal" modifiers="striptags,htmlentities" />'),
-        // externalLinkText: getContentValues('<t4 type="content" name="External Link Text" output="normal" modifiers="striptags,htmlentities" />'),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
@@ -106,8 +104,6 @@
         layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
         sectionLink: getContentValues('<t4 type="content" name="Section Link 1" output="linkurl" modifiers="nav_sections" />'),
         sectionLinkText: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
-        // sectionLink2: getContentValues('<t4 type="content" name="Section Link 2" output="linkurl" modifiers="nav_sections" />'),
-        // sectionLinkText2: getContentValues('<t4 type="content" name="Section Link 2" output="linktext" modifiers="nav_sections" />'),
         fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
@@ -139,8 +135,6 @@
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    // var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
-    // var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var openPanelLinks = '<ul class="panelLinks">';
     var closePanelLinks = '</ul>';  
 
@@ -166,28 +160,6 @@
         linkString = '<span class="externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></span>';
     }
 
-
-
-
-    /***
-     *  Parse for Section Link 1
-     * 
-     * */
-    // if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
-    //     buttonString1 = '<li><a href="' + contentDict.sectionLink1.content + '" class="btn card-link" target="_blank" type="button" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</a></li>';
-    // }
-
-
-
-
-    /***
-     *  Parse for Section Link 2
-     * 
-     * */
-    // if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
-    //     buttonString2 = '<li><a href="' + contentDict.sectionLink2.content + '" class="btn card-link" target="_blank" type="button" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</a></li>';
-    // }
-    
 
 
 
