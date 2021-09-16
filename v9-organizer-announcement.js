@@ -186,7 +186,10 @@
     }
     
 
-
+//     <ul class="panelLinks">
+//     <t4 type="content" name="Button text" output="selective-output" modifiers="" process-format="true" format="<li><a href=&quot;<t4 type='content' name='Button link' output='linkurl' modifiers='nav_sections' format='$value' />&quot;>$value</a></li>"/>
+//     <t4 type="content" name="Button 2 text" output="selective-output" modifiers="" process-format="true" format="<li><a href=&quot;<t4 type='content' name='Button 2 link' output='linkurl' modifiers='nav_sections' format='$value' />&quot;>$value</a></li>"/>
+//   </ul>
 
 
     /***
