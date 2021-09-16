@@ -120,7 +120,7 @@
      * 
      * */
     var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
-    var endingHTML = '</div></div>';
+    var endingHTML = '</div><hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row no-gutters">';
     var closeRow = '</div>';
     var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
