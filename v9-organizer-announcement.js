@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.11
+   *     @version 6.12
    */
 
 
@@ -299,6 +299,7 @@
             dateString,
             summaryString,
             listOfTags,
+            audienceList,
             openPanelLinks,
             buttonString1,
             buttonString2,
@@ -306,7 +307,6 @@
             closeSummaryWrapper,
             openSortFields,
             prioityString,
-            audienceList,
             closeSortFields,
             closeBodyWrapper,
             closeRow,
