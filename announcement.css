@@ -23,3 +23,18 @@
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
+
+.announcement .articleSummary .panelLinks li {
+    border: 1px solid #088099;
+    display: flex;
+    flex: 0 1 calc(50% - 7px);
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.announcement .articleSummary ul.panelLinks li:before {
+    content: '';
+    padding-right: 0px;
+}
