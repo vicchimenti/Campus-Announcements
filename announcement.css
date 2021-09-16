@@ -24,6 +24,19 @@
     flex-wrap: wrap;
 }
 
+.announcement .articleSummary .panelLinks a {
+    color: #aa0000;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
 
 .announcement .articleSummary .panelLinks li {
     border: 1px solid #088099;
@@ -40,7 +53,7 @@
 }
 
 
-.announcement .articleSummary .panelLinks li:hover a, .panelInner .panelLinks li:focus a {
+.announcement .articleSummary .panelLinks li:hover, .panelInner .panelLinks li:focus {
     background: #088099;
     /* border: 1px solid #088099; */
     color: #ffffff;
