@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.9
+   *     @version 6.10
    */
 
 
@@ -278,9 +278,9 @@
             openBodyWrapper,
             openSummaryWrapper,
             externalLinkString,
+            dateString,
             summaryString,
             listOfTags,
-            dateString,
             openPanelLinks,
             buttonString1,
             buttonString2,
