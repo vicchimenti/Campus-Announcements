@@ -13,6 +13,29 @@
 }
 
 
+.announcement div.newsroomArticle.tags {
+    display: inline-flex;
+    width: max-content;
+}
+
+.announcement .standardContent ul.categories {
+    margin-bottom: 0;
+}
+
+.announcement .standardContent ul.categories li {
+    background: none;
+    border: none;
+    color: #aa0000;
+    display: inline-block !important;
+    font-size: 1.6rem;
+    padding: 1px 10px;
+}
+
+.announcement .standardContent ul.categories li:before {
+    content: unset;
+}
+
+
 .announcement .articleSummary .panelLinks {
     padding-top: 30px;
     text-align: center;
@@ -64,6 +87,10 @@
 
 /* Mobile layouts below 992 */
 @media screen and (max-width: 991.99px) {
+
+    .announcement div.newsroomArticle.tags {
+        width: unset;
+    }
 
     .announcement hr.articleBorderBottom {
         border-top: 3px solid #e5e5e5;
