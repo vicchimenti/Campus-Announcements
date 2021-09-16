@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.14
+   *     @version 6.15
    */
 
 
@@ -131,7 +131,7 @@
     var openImageWrapper = '<div class="newsImage col-md-3 hidden visually-hidden">';
     var closeImageWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
-    var summaryString = '<p class="card-text">' + contentDict.articleSummary.content + '</p>';
+    var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
