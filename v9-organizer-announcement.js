@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.6
+   *     @version 6.7
    */
 
 
