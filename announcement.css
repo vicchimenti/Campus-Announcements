@@ -18,11 +18,12 @@
     font-weight: 500;
 }
 
-.announcement .newsItem .articleSummary p. {
+.announcement .newsItem .articleSummary p {
     font-weight: 500;
 }
 
 .announcement .newsItem .articleSummary p.summary {
+    font-size: 1.8rem;
     line-height: 1.6;
 }
 
