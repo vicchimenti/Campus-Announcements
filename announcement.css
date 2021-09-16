@@ -53,16 +53,7 @@
 }
 
 
-.announcement .articleSummary .panelLinks li:hover, .panelInner .panelLinks li:focus {
+.announcement .articleSummary .panelLinks li:hover, .panelInner .panelLinks li:focus, .announcement .articleSummary .panelLinks li a:hover, .panelInner .panelLinks li a:focus {
     background: #088099;
-    /* border: 1px solid #088099; */
     color: #ffffff;
-    /* text-decoration: underline; */
-}
-
-.announcement .articleSummary .panelLinks li a:hover, .panelInner .panelLinks li a:focus {
-    background: #088099;
-    /* border: 1px solid #088099; */
-    color: #ffffff;
-    /* text-decoration: underline; */
 }
