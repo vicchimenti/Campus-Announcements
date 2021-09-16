@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.4
+   *     @version 6.5
    */
 
 
@@ -173,7 +173,7 @@
      * 
      * */
     if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
-        buttonString1 = '<a href="' + contentDict.sectionLink1.content + '" class="card-link" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button></a>';
+        buttonString1 = '<li><a href="' + contentDict.sectionLink1.content + '" class="card-link" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</button></a></li>';
     }
 
 
@@ -184,7 +184,7 @@
      * 
      * */
     if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
-        buttonString2 = '<a href="' + contentDict.sectionLink2.content + '" class="card-link" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a>';
+        buttonString2 = '<li><a href="' + contentDict.sectionLink2.content + '" class="card-link" target="_blank"><button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</button></a></li>';
     }
     
 
