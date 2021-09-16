@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.10
+   *     @version 6.11
    */
 
 
@@ -138,7 +138,7 @@
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
-    var listOfAudience = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var openPanelLinks = '<ul class="panelLinks">';
@@ -269,16 +269,15 @@
      * */
     if (contentDict.audience.content != "") {
 
-        let listItems = '';
-        let arrayOfTags = contentDict.audience.content.split(',');
-        for (let i = 0; i < arrayOfTags.length; i++) {
-            listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
+        let audienceItems = '';
+        let audienceArray= contentDict.audience.content.split(',');
+        for (let i = 0; i < audienceArray.length; i++) {
+            audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
         }
 
         // Print any tags that were selected
-        listOfAudience = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div>';
+        audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
     }
-
 
 
 
@@ -307,7 +306,7 @@
             closeSummaryWrapper,
             openSortFields,
             prioityString,
-            listOfAudience,
+            audienceList,
             closeSortFields,
             closeBodyWrapper,
             closeRow,
