@@ -51,12 +51,12 @@
     /***
      *      Returns a media object
      */
-        function getMediaInfo(mediaID) {
+    function getMediaInfo(mediaID) {
 
-            var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-            var media = mediaManager.get(mediaID, language);
+        var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+        var media = mediaManager.get(mediaID, language);
 
-        return media;
+    return media;
     }
 
 
