@@ -8,7 +8,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.13
+   *     @version 6.14
    */
 
 
@@ -97,17 +97,17 @@
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
         publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
         articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
-        externalLink: getContentValues('<t4 type="content" name="External Link" output="normal" modifiers="striptags,htmlentities" />'),
-        externalLinkText: getContentValues('<t4 type="content" name="External Link Text" output="normal" modifiers="striptags,htmlentities" />'),
+        // externalLink: getContentValues('<t4 type="content" name="External Link" output="normal" modifiers="striptags,htmlentities" />'),
+        // externalLinkText: getContentValues('<t4 type="content" name="External Link Text" output="normal" modifiers="striptags,htmlentities" />'),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
         priority: getContentValues('<t4 type="content" name="Priority" output="normal" display_field="value" />'),
         layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
-        sectionLink1: getContentValues('<t4 type="content" name="Section Link 1" output="linkurl" modifiers="nav_sections" />'),
-        sectionLinkText1: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
-        sectionLink2: getContentValues('<t4 type="content" name="Section Link 2" output="linkurl" modifiers="nav_sections" />'),
-        sectionLinkText2: getContentValues('<t4 type="content" name="Section Link 2" output="linktext" modifiers="nav_sections" />'),
+        sectionLink: getContentValues('<t4 type="content" name="Section Link 1" output="linkurl" modifiers="nav_sections" />'),
+        sectionLinkText: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
+        // sectionLink2: getContentValues('<t4 type="content" name="Section Link 2" output="linkurl" modifiers="nav_sections" />'),
+        // sectionLinkText2: getContentValues('<t4 type="content" name="Section Link 2" output="linktext" modifiers="nav_sections" />'),
         fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
@@ -133,14 +133,14 @@
     var imageString = '<img class="hidden visually-hidden" />';
     var summaryString = '<p class="card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
-    var externalLinkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
+    var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
-    var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
+    // var buttonString1 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
+    // var buttonString2 = '<span class="sectionButton hidden visually-hidden">No link created</span>';
     var openPanelLinks = '<ul class="panelLinks">';
     var closePanelLinks = '</ul>';  
 
@@ -162,8 +162,8 @@
      *  Parse for external link
      * 
      * */
-    if (contentDict.externalLink.content != "" && contentDict.externalLinkText.content != "") {
-        externalLinkString = '<span class="externalLink"><a href="' + contentDict.externalLink.content + '" class="card-link" title="For more information visit: ' + contentDict.articleTitle.content + '" target="_blank"><em>' + contentDict.externalLinkText.content + '</em></a></span>';
+    if (contentDict.sectionLink.content != "") {
+        linkString = '<span class="externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></span>';
     }
 
 
@@ -173,9 +173,9 @@
      *  Parse for Section Link 1
      * 
      * */
-    if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
-        buttonString1 = '<li><a href="' + contentDict.sectionLink1.content + '" class="btn card-link" target="_blank" type="button" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</a></li>';
-    }
+    // if (contentDict.sectionLink1.content != "" && contentDict.sectionLinkText1.content != "") {
+    //     buttonString1 = '<li><a href="' + contentDict.sectionLink1.content + '" class="btn card-link" target="_blank" type="button" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText1.content + '</a></li>';
+    // }
 
 
 
@@ -184,9 +184,9 @@
      *  Parse for Section Link 2
      * 
      * */
-    if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
-        buttonString2 = '<li><a href="' + contentDict.sectionLink2.content + '" class="btn card-link" target="_blank" type="button" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</a></li>';
-    }
+    // if (contentDict.sectionLink2.content != "" && contentDict.sectionLinkText2.content != "") {
+    //     buttonString2 = '<li><a href="' + contentDict.sectionLink2.content + '" class="btn card-link" target="_blank" type="button" data-bs-toggle="button" autocomplete="off">' + contentDict.sectionLinkText2.content + '</a></li>';
+    // }
     
 
 
@@ -295,15 +295,11 @@
             closeImageWrapper,
             openBodyWrapper,
             openSummaryWrapper,
-            externalLinkString,
+            linkString,
             dateString,
             summaryString,
             listOfTags,
             audienceList,
-            openPanelLinks,
-            buttonString1,
-            buttonString2,
-            closePanelLinks,
             closeSummaryWrapper,
             openSortFields,
             prioityString,
