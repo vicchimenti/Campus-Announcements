@@ -25,6 +25,7 @@
 }
 
 .announcement h3.card-title {
+    color: #AA0000;
     font-family: "Montserrat", sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
@@ -52,7 +53,7 @@
 .announcement ul.categories li {
     background: none;
     border: none;
-    color: #aa0000;
+    color: #AA0000;
     display: inline-block !important;
     font-size: 1.6rem;
     font-weight: 500;
@@ -116,8 +117,7 @@
     border-top: 3px solid #e5e5e5;
     display: block;
     height: 3px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0 20px 20px 20px;
 }
 
 
@@ -126,12 +126,5 @@
 @media screen and (max-width: 991.99px) {
     .announcement div.newsroomArticle.tags {
         width: unset;
-    }
-    .announcement hr.articleBorderBottom {
-        border-top: 3px solid #e5e5e5;
-        display: block;
-        height: 3px;
-        margin-left: 20px;
-        margin-right: 20px;
     }
 }
