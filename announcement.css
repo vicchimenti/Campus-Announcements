@@ -21,7 +21,7 @@
 
 .announcement .row.summaryWrapper {
     margin: 0;
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 1rem 2rem;
 }
 
 .announcement h3.card-title {
@@ -29,6 +29,14 @@
     font-family: "Montserrat", sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
+}
+
+.announcement h3.card-title a {
+    color: #AA0000;
+}
+
+.announcement h3.card-title a:hover, .announcement h3.card-title a:focus {
+    color: #AA0000;
 }
 
 .announcement .articleSummary p {
