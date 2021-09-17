@@ -102,7 +102,7 @@ try {
         articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
         publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy HH:mm:ss" />'),
-        articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
+        // articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
@@ -130,9 +130,9 @@ try {
     var closeBodyWrapper = '</div>';
     var openSummaryWrapper = '<div class="articleSummary card-body">';
     var closeSummaryWrapper = '</div>';
-    var openImageWrapper = '<div class="newsImage col-md-3 hidden visually-hidden">';
-    var closeImageWrapper = '</div>';
-    var imageString = '<img class="hidden visually-hidden" />';
+    // var openImageWrapper = '<div class="newsImage col-md-3 hidden visually-hidden">';
+    // var closeImageWrapper = '</div>';
+    // var imageString = '<img class="hidden visually-hidden" />';
     var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
@@ -197,27 +197,27 @@ try {
      *  Parse for image
      * 
      * */
-    if (contentDict.articleImage.content != "") {
+    // if (contentDict.articleImage.content != "") {
 
-        var imageID = content.get('Image').getID();
-        var mediaInfo = getMediaInfo(imageID);
-        var media = readMedia(imageID);
-        var info = new ImageInfo;
-        info.setInput(media);
+    //     var imageID = content.get('Image').getID();
+    //     var mediaInfo = getMediaInfo(imageID);
+    //     var media = readMedia(imageID);
+    //     var info = new ImageInfo;
+    //     info.setInput(media);
 
-        if (info.check()) {
+    //     if (info.check()) {
 
-            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
+    //         imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
 
-        } else {
+    //     } else {
 
-            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+    //         imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
 
-        }
+    //     }
 
-        openImageWrapper = '<div class="col-md-5">';
-        openBodyWrapper = '<div class="col-md-7">';
-    }
+    //     openImageWrapper = '<div class="col-md-5">';
+    //     openBodyWrapper = '<div class="col-md-7">';
+    // }
 
 
 
@@ -268,9 +268,9 @@ try {
             beginningHTML,
             titleLink,
             openRow,
-            openImageWrapper,
-            imageString,
-            closeImageWrapper,
+            // openImageWrapper,
+            // imageString,
+            // closeImageWrapper,
             openBodyWrapper,
             openSummaryWrapper,
             linkString,
