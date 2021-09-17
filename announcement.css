@@ -19,9 +19,20 @@
     margin: 0;
 }
 
+.announcementZoneb.newsItemWrapper {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
 .announcement .row.summaryWrapper {
     margin: 0;
     padding: 0 2rem 1rem 2rem;
+}
+
+.announcementZoneb .row.summaryWrapper {
+    margin: 0;
+    padding: 0;
 }
 
 .announcement h3.card-title {
@@ -42,8 +53,20 @@
 .announcementZoneb h3.card-title {
     color: #AA0000;
     font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 500;
+}
+
+.announcementZoneb h3.card-title a {
+    color: #AA0000;
+}
+
+.announcementZoneb.newsItemWrapper .externalLink a  {
+    font-size: 1.35rem;
+}
+
+.announcementZoneb h3.card-title a:hover, .announcementZoneb h3.card-title a:focus {
+    color: #AA0000;
 }
 
 .announcement .articleSummary p {
@@ -53,6 +76,10 @@
 .announcement .articleSummary p.summary {
     font-size: 1.8rem;
     line-height: 1.6;
+}
+
+.announcementZoneb .articleSummary p {
+    font-weight: 500;
 }
 
 .announcement div.newsroomArticle.tags {
