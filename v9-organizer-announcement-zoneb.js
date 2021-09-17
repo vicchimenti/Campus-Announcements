@@ -1,7 +1,7 @@
   /***
    *     @author Victor Chimenti, MSCS-SE '20
-   *     @file v9-organizer-announcement-zoneb.js
-   *     v9/organizer/announcement/zoneb
+   *     @file v9-organizer-announcementZoneb.js
+   *     v9/organizer/announcementZoneb
    *     id:5580
    *
    *     This content type will work in conjunction with the Organizer and each item
