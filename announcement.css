@@ -39,6 +39,13 @@
     color: #AA0000;
 }
 
+.announcementZoneb h3.card-title {
+    color: #AA0000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
 .announcement .articleSummary p {
     font-weight: 500;
 }
