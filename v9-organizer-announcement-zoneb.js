@@ -152,7 +152,7 @@ try {
      * 
      * */
     if (contentDict.articleFullBody.content != "") {
-        titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+        titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
     }
 
 
@@ -186,9 +186,9 @@ try {
      *  Currently a hidden sort field
      * 
      * */
-    if (contentDict.audience.content != "") {
-        audienceString = '<span class="audience">' + contentDict.audience.content + '</span>';
-    }
+    // if (contentDict.audience.content != "") {
+    //     audienceString = '<span class="audience">' + contentDict.audience.content + '</span>';
+    // }
 
 
 
