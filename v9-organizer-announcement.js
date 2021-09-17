@@ -124,10 +124,10 @@ function writeDocument(array) {
       var openRow = '<div class="row no-gutters g-0">';
       var closeRow = '</div>';
       var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-      var openBodyWrapper = '<div class="col-md-9">';
+      var openBodyWrapper = '<div class="articleSummary card-body">';
       var closeBodyWrapper = '</div>';
-      var openSummaryWrapper = '<div class="articleSummary card-body">';
-      var closeSummaryWrapper = '</div>';
+    //   var openSummaryWrapper = '<div class="articleSummary card-body">';
+    //   var closeSummaryWrapper = '</div>';
       var openImageWrapper = '<span class="newsImage hidden visually-hidden">';
       var closeImageWrapper = '</span>';
       var imageString = '<img class="hidden visually-hidden" />';
@@ -150,7 +150,7 @@ function writeDocument(array) {
        * 
        * */
       if (contentDict.articleFullBody.content != "") {
-          titleLink = '<h3><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+          titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
       }
 
 
@@ -271,13 +271,11 @@ function writeDocument(array) {
               titleLink,
 
               openBodyWrapper,
-              openSummaryWrapper,
               linkString,
               dateString,
               summaryString,
               listOfTags,
               audienceList,
-              closeSummaryWrapper,
               openSortFields,
               prioityString,
               closeSortFields,
