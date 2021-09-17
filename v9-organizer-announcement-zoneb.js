@@ -109,18 +109,14 @@
           contentID: getContentValues('<t4 type="meta" meta="content_id" />')
       };
 
-      <
-      t4 type = "content"
-      name = "Publish Date"
-      output = "normal"
-      date_format = "MM/dd/yyyy 'at' HH:mm:ss z" / >
 
 
-          /***
-           *  default html initializations
-           * 
-           * */
-          var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
+
+      /***
+       *  default html initializations
+       * 
+       * */
+      var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
       var endingHTML = '</div><hr class="articleBorderBottom"></div>';
       var openRow = '<div class="row no-gutters">';
       var closeRow = '</div>';
