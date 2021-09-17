@@ -121,7 +121,7 @@ function writeDocument(array) {
        * */
       var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
       var endingHTML = '<hr class="articleBorderBottom"></div>';
-      var openRow = '<div class="row">';
+      var openRow = '<div class="row summaryWrapper">';
       var closeRow = '</div>';
       var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
       var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
