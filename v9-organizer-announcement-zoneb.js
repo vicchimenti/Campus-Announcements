@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.16
+   *     @version 7.0
    */
 
 
@@ -96,7 +96,7 @@
           contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
           articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
           articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
-          publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
+          publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy HH:mm:ss" />'),
           articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
           articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
           audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
@@ -109,14 +109,18 @@
           contentID: getContentValues('<t4 type="meta" meta="content_id" />')
       };
 
+      <
+      t4 type = "content"
+      name = "Publish Date"
+      output = "normal"
+      date_format = "MM/dd/yyyy 'at' HH:mm:ss z" / >
 
 
-
-      /***
-       *  default html initializations
-       * 
-       * */
-      var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
+          /***
+           *  default html initializations
+           * 
+           * */
+          var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
       var endingHTML = '</div><hr class="articleBorderBottom"></div>';
       var openRow = '<div class="row no-gutters">';
       var closeRow = '</div>';
