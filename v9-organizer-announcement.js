@@ -124,7 +124,7 @@ function writeDocument(array) {
       var openRow = '<div class="row no-gutters g-0">';
       var closeRow = '</div>';
       var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-      var openBodyWrapper = '<div class="articleSummary card-body">';
+      var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
       var closeBodyWrapper = '</div>';
     //   var openSummaryWrapper = '<div class="articleSummary card-body">';
     //   var closeSummaryWrapper = '</div>';
@@ -214,7 +214,6 @@ function writeDocument(array) {
           }
 
           openImageWrapper = '<span class="newsImage">';
-          openBodyWrapper = '<div class="col-md-7">';
       }
 
 
@@ -268,9 +267,8 @@ function writeDocument(array) {
               imageString,
               closeImageWrapper,
               openRow,
-              titleLink,
-
               openBodyWrapper,
+              titleLink,
               linkString,
               dateString,
               summaryString,
