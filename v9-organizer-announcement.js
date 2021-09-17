@@ -184,9 +184,9 @@ function writeDocument(array) {
        *  Currently a hidden sort field
        * 
        * */
-      if (contentDict.audience.content != "") {
-          audienceString = '<span class="audience">' + contentDict.audience.content + '</span>';
-      }
+    //   if (contentDict.audience.content != "") {
+    //       audienceString = '<span class="audience">' + contentDict.audience.content + '</span>';
+    //   }
 
 
 
