@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.0
+   *     @version 7.1
    */
 
 
@@ -120,15 +120,15 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '"><div class="newsItem standardContent">';
-    var endingHTML = '</div><hr class="articleBorderBottom"></div>';
-    var openRow = '<div class="row no-gutters">';
+    var beginningHTML = '<div class="newsItemWrapper announcementZoneb contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '">';
+    var endingHTML = '<hr class="articleBorderBottom"></div>';
+    var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-    var openBodyWrapper = '<div class="col-md-9">';
+    var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
     var closeBodyWrapper = '</div>';
-    var openSummaryWrapper = '<div class="articleSummary card-body">';
-    var closeSummaryWrapper = '</div>';
+    // var openSummaryWrapper = '<div class="articleSummary card-body">';
+    // var closeSummaryWrapper = '</div>';
     var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
@@ -224,11 +224,9 @@ try {
             titleLink,
             openRow,
             openBodyWrapper,
-            openSummaryWrapper,
             linkString,
             dateString,
             summaryString,
-            closeSummaryWrapper,
             openSortFields,
             listOfTags,
             audienceList,
