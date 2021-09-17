@@ -128,8 +128,8 @@ function writeDocument(array) {
       var closeBodyWrapper = '</div>';
     //   var openSummaryWrapper = '<div class="articleSummary card-body">';
     //   var closeSummaryWrapper = '</div>';
-      var openImageWrapper = '<span class="newsImage hidden visually-hidden">';
-      var closeImageWrapper = '</span>';
+    //   var openImageWrapper = '<span class="newsImage hidden visually-hidden">';
+    //   var closeImageWrapper = '</span>';
       var imageString = '<img class="hidden visually-hidden" />';
       var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
       var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
@@ -263,9 +263,7 @@ function writeDocument(array) {
       writeDocument(
           [
               beginningHTML,
-              openImageWrapper,
               imageString,
-              closeImageWrapper,
               openRow,
               openBodyWrapper,
               titleLink,
