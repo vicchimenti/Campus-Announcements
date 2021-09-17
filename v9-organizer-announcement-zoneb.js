@@ -5,7 +5,7 @@
    *     id:5580
    *
    *     This content type will work in conjunction with the Organizer and each item
-   *     will contain one announcement.
+   *     will contain one announcement summary in zoneB.
    *
    *     Document will write once when the page loads
    *
