@@ -128,8 +128,8 @@ function writeDocument(array) {
       var closeBodyWrapper = '</div>';
       var openSummaryWrapper = '<div class="articleSummary card-body">';
       var closeSummaryWrapper = '</div>';
-      var openImageWrapper = '<div class="newsImage col-md-3 hidden visually-hidden">';
-      var closeImageWrapper = '</div>';
+      var openImageWrapper = '<span class="newsImage hidden visually-hidden">';
+      var closeImageWrapper = '</span>';
       var imageString = '<img class="hidden visually-hidden" />';
       var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
       var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
@@ -205,11 +205,11 @@ function writeDocument(array) {
 
           if (info.check()) {
 
-              imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
+              imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
 
           } else {
 
-              imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+              imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
 
           }
 
