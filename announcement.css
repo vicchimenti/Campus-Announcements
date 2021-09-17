@@ -6,7 +6,7 @@
 
 /* expand small images to fill available space on all browsers */
 
-.newsItemWrapper.announcement .standardContent img.card-img {
+.newsItemWrapper.announcement img.card-img-top {
     width: 100%;
     width: -moz-available;
     width: -webkit-fill-available;
@@ -14,20 +14,21 @@
 }
 
 .announcement .row.summaryWrapper {
+    margin: 0;
     padding: 0 20px 20px 20px;
 }
 
-.announcement .standardContent h3 {
+.announcement h3.card-title {
     font-family: "Montserrat", sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
 }
 
-.announcement .newsItem .articleSummary p {
+.announcement .articleSummary p {
     font-weight: 500;
 }
 
-.announcement .newsItem .articleSummary p.summary {
+.announcement .articleSummary p.summary {
     font-size: 1.8rem;
     line-height: 1.6;
 }
@@ -37,12 +38,12 @@
     width: auto;
 }
 
-.announcement .standardContent ul.categories {
+.announcement ul.categories {
     margin-bottom: 0;
     margin-left: 0;
 }
 
-.announcement .standardContent ul.categories li {
+.announcement ul.categories li {
     background: none;
     border: none;
     color: #aa0000;
@@ -52,11 +53,11 @@
     padding: 0.5rem 2rem 0 0;
 }
 
-.announcement .standardContent .audience ul.categories li {
+.announcement .audience ul.categories li {
     color: #55B31B;
 }
 
-.announcement .standardContent ul.categories li:before {
+.announcement ul.categories li:before {
     content: unset;
 }
 
@@ -105,9 +106,9 @@
     color: #ffffff;
 }
 
-.announcement hr.articleBorderBottom {
+/* .announcement hr.articleBorderBottom {
     display: none;
-}
+} */
 
 
 /* Mobile layouts below 992 */
