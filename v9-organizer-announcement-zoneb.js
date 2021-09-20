@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.2
+   *     @version 7.3
    */
 
 
@@ -101,7 +101,7 @@ try {
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
-        publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy HH:mm:ss" />'),
+        publishDate: getContentValues('    <t4 type="content" name="Date Last Modified" output="selective-output" process-format="true" format="<t4 type=&quot;meta&quot; meta=&quot;last_modified&quot; format=&quot;MM/dd/yyyy &#39;at&#39; HH:mm:ss z&quot; />" date_format="MM/dd/yyyy 'at' HH:mm:ss z" />'),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
@@ -114,10 +114,11 @@ try {
     };
 
 
-    <t4 type="content" name="Date Last Modified" output="selective-output" process-format="true" format="<t4 type=&quot;meta&quot; meta=&quot;last_modified&quot; format=&quot;MM/dd/yyyy &#39;at&#39; HH:mm:ss z&quot; />" date_format="MM/dd/yyyy 'at' HH:mm:ss z" />
 
-<t4 type="meta" meta="last_modified" format="MM/dd/yyyy 'at' HH:mm:ss z" />
+{/* <t4 type="meta" meta="last_modified" format="MM/dd/yyyy 'at' HH:mm:ss z" /> */}
 
+
+{/* <t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy HH:mm:ss" /> */}
     /***
      *  default html initializations
      * 
