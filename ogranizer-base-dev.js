@@ -1,6 +1,6 @@
 /***
 *     @author Victor Chimenti, MSCS-SE 2020
-*     @file newOrganizerBase.js
+*     @file newOrganizerBaseDev.js
 *
 *     This new content type is being created to solve a sorting problem.
 *     The new Course Item content type requires sorting by multiple input fields
@@ -12,7 +12,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.15
+*     @version 2.17
 */
 
 
