@@ -127,10 +127,6 @@ function writeDocument(array) {
       var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
       var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
       var closeBodyWrapper = '</div>';
-    //   var openSummaryWrapper = '<div class="articleSummary card-body">';
-    //   var closeSummaryWrapper = '</div>';
-    //   var openImageWrapper = '<span class="newsImage hidden visually-hidden">';
-    //   var closeImageWrapper = '</span>';
       var imageString = '<img class="hidden visually-hidden" />';
       var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
       var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
@@ -176,18 +172,6 @@ function writeDocument(array) {
       if (contentDict.priority.content != "") {
           prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
       }
-
-
-
-
-      /***
-       *  Parse for Audience
-       *  Currently a hidden sort field
-       * 
-       * */
-    //   if (contentDict.audience.content != "") {
-    //       audienceString = '<span class="audience">' + contentDict.audience.content + '</span>';
-    //   }
 
 
 
