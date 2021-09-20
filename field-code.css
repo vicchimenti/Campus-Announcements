@@ -1,0 +1,29 @@
+/* *** align dropdown menus with organizer content *** */
+#filterField .container-fluid {
+    padding-right: unset;
+    padding-left: unset;
+    margin-right: unset;
+    margin-left: unset;
+}
+
+/* *** square corners on keyword input *** */
+#filterField .form-control {
+    border-radius: 0;
+}
+
+/* *** square corners on dropdowns *** */
+#filterField .form-select {
+    border-radius: 0;
+}
+
+/* *** hide items that are not in the users filter *** */
+.hideByText, .hideByAgency, .hideByType, .hideBySubject, .hideByJurisdiction, .hideByRegion, .hideResultsMessage {
+    display: none;
+}
+
+/* *** style the no results message box *** */
+.noResultsToShow {
+    background: #e3e3da;
+    padding: 30px;
+    margin: 15px;
+}
