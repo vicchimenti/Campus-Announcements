@@ -37,7 +37,7 @@ $(function () {
             $(function () {
                 let parseItemsToDisplay = function() {
                     // assign array of currently visible content items
-                    visibleItems = $('.externshipWrapper').not('.hideByText, .hideByType, .hideByRegion');
+                    visibleItems = $('.externshipWrapper').not('.hideByText, .hideByType, .hideByTopic');
                     // check to see if array is empty
                     if (visibleItems.length == 0) {
                         // when array is empty show the results message
@@ -74,21 +74,21 @@ $(function () {
 
 
 
-            //   ***   Region Filter   ***  //
+            //   ***   Topic Filter   ***  //
             $(function () {
-                $('#SelectBox-ByRegion').change(function () {
+                $('#SelectBox-ByTopic').change(function () {
                     let typeKey = $(this).val();
                     if (typeKey) {
                         $('.region').filter(function (i, e) {
                             var typeValue = $(this).text();
                             if (typeValue.match(typeKey)) {
-                                $(this).parents('.externshipWrapper').removeClass('hideByRegion');
+                                $(this).parents('.externshipWrapper').removeClass('hideByTopic');
                             } else {
-                                $(this).parents('.externshipWrapper').addClass('hideByRegion');
+                                $(this).parents('.externshipWrapper').addClass('hideByTopic');
                             }
                         });
                     } else {
-                        $('.externshipWrapper').removeClass('hideByRegion');
+                        $('.externshipWrapper').removeClass('hideByTopic');
                     }
                     parseItems.process();
                 });
