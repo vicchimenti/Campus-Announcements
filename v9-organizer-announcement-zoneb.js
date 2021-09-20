@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.4
+   *     @version 7.6
    */
 
 
@@ -109,12 +109,12 @@ try {
         layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
         sectionLink: getContentValues('<t4 type="content" name="Section Link" output="linkurl" modifiers="nav_sections" />'),
         sectionLinkText: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
-        lastModified: getContentValues('<t4 type="navigation" name="Content Last Modified" id="868" />'),
+        lastModified: getContentValues('<t4 type="meta" meta="last_modified" format="" />'),
         fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
-
+{/* <t4 type="navigation" name="Content Last Modified" id="868" /> */}
 {/* <t4 type="content" name="Last Modified" output="normal" modifiers="nav_sections" /> */}
 {/* <t4 type="meta" meta="last_modified" format="MM/dd/yyyy ', ' HH:mm:ss z" />  */}
 
@@ -138,6 +138,7 @@ try {
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
+    var lastModifiedString = '<p class="card-text lastModified"><em class="text-muted">' + contentDict.lastModified.content + '</em></p>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openPanelLinks = '<ul class="panelLinks">';
     var closePanelLinks = '</ul>';
@@ -227,13 +228,13 @@ try {
             openRow,
             openBodyWrapper,
             linkString,
-            dateString,
+            lastModifiedString,
             summaryString,
             openSortFields,
             listOfTags,
             audienceList,
             prioityString,
-            contentDict.lastModified.content,
+            dateString,
             closeSortFields,
             closeBodyWrapper,
             closeRow,
