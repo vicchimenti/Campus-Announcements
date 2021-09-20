@@ -1,7 +1,11 @@
 /* Organizer adjustments */
-#zoneB .organizerWrapper h3 {
-    margin-top: 30px;
+#zoneB .organizerWrapper {
     padding-top: 2rem;
+}
+
+#zoneB .organizerWrapper h3 {
+    margin: 0;
+    padding: 0;
 }
 
 /* Mobile layouts below 992 */
