@@ -10,7 +10,7 @@
 *
 *   This custom system replaces the depreciated jQuery Quicksearch
 *
-*   @version 5.0
+*   @version 5.1
 */
 
 
@@ -80,7 +80,7 @@ $(function () {
                 $('#SelectBox-ByTopic').change(function () {
                     let typeKey = $(this).val();
                     if (typeKey) {
-                        $('.region').filter(function (i, e) {
+                        $('.topics').filter(function (i, e) {
                             var typeValue = $(this).text();
                             if (typeValue.match(typeKey)) {
                                 $(this).parents('.announcement').removeClass('hideByTopic');
@@ -103,7 +103,7 @@ $(function () {
                 $('#SelectBox-ByAudience').change(function () {
                     let typeKey = $(this).val();
                     if (typeKey) {
-                        $('.externshipType').filter(function (i, e) {
+                        $('.audience').filter(function (i, e) {
                             var typeValue = $(this).text();
                             if (typeValue.match(typeKey)) {
                                 $(this).parents('.announcement').removeClass('hideByAudience');
