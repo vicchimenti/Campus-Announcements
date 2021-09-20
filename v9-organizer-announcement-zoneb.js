@@ -114,7 +114,7 @@ try {
     };
 
 
-
+<t4 type="meta" meta="last_modified" format="MM/dd/yyyy 'at' HH:mm:ss z" />
 
     /***
      *  default html initializations
