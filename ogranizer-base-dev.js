@@ -88,7 +88,11 @@ function byDate(cid, elem) {
     }
     return function (a, b) {
         var dateA = a.Content.get(elem).getValue();
+        log("dateA: " + dateA);
+
         var dateB = b.Content.get(elem).getValue();
+        log("dateB: " + dateB);
+
         // No date gets least recent treatment
         if (dateA && !dateB)
             return -1;
