@@ -34,7 +34,7 @@
 }
 
 /* *** hide items that are not in the users filter *** */
-.hideByText, .hideByAgency, .hideByType, .hideBySubject, .hideByJurisdiction, .hideByRegion, .hideResultsMessage {
+.hideByText, .hideByAudience, .hideByTopic, .hideResultsMessage {
     display: none;
 }
 
