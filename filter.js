@@ -1,6 +1,6 @@
 <script>
 /***
-*   @author Victor Chimenti, MSCS-SE '20
+*   @author Victor Chimenti, MSCS
 *   @file filter.js
 *   @see Campus Announcements : https://www.seattleu.edu/announcements
 *
