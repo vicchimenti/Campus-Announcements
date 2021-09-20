@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.17
+*     @version 2.21
 */
 
 
@@ -80,7 +80,9 @@ function byDate(cid, elem) {
             default:
                 return function (a, b) {
                     var dateA = a.CachedContent.getLastModified(language, CachedContent.APPROVED);
+                    log("dateA2: " + dateA);
                     var dateB = b.CachedContent.getLastModified(language, CachedContent.APPROVED);
+                    log("dateB2: " + dateB);
                     return dateB.compareTo(dateA);
                 }
                 break;
@@ -245,20 +247,24 @@ function getMode(isPreview) {
  * @param elements array like object of custom sort elements parsed from the user input in the Custom element
  */
 function dynamicSort(elem) {
+
     return function (a, b) {
 
         // we have to use publish() rather than getValue()
         // to accommodate multiple input types such as radio buttons, checkboxes in addition to plain text and numbers
         // publish() returns a string
         let strA = a.Content.get(elem).publish();
+        log("strA: " + strA);
         let strB = b.Content.get(elem).publish();
+        log("strB: " + strB);
+
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
 }
 
 // calls dynamic sort and sends one element at a time from the array of custom elements
-function byCustomElements(elements) {
+function byCustomElements(cid, elements) {
     // assign the array of custom elements to a local scope
     let customElements = elements;
     return function (a, b) {
@@ -271,6 +277,19 @@ function byCustomElements(elements) {
 
             // iterate through each element
             let currentElement = customElements[i].trim();
+            log("currentElement: " + currentElement);
+
+            switch (currentElement) {
+                case 'Published':
+                    result = byDate(cid, 'Published')(a,b);
+                    break;
+                case 'Publish Date':
+                    result = byDate(cid, 'Publish Date')(a,b);
+                    break;
+                default:
+                    result = dynamicSort(currentElement)(a,b);
+                    break;
+            }
 
             // sort the content items by the current custom element       
             result = dynamicSort(currentElement)(a,b);
@@ -308,8 +327,10 @@ function main(header, midder, footer) {
     var SSID = String(content.get('Section')).match(/sslink_id="(\d+)"/)[1];
     // the required sort method from the list of options
     var sortMethod = content.get('Sorting method').publish();
+    log("sortMethod: " + sortMethod);
     // the optional custom elements that a user can sort by - this can be any length of items
     var sElement = String(content.get('Custom element'));
+    log("sElement: " + sElement);
     // the reverse order option
     var bReverse = !content.get('Reverse order').isNull();
     // the paginate option to display items on multiple pages
@@ -320,7 +341,7 @@ function main(header, midder, footer) {
     var LIMIT = content.get('Total number of items to display');
     // user has the option of beginning their display at any item rather than the first
     var nStart = (content.get('Start Number') && content.get('Start Number') > 0 ? content.get('Start Number') : 1);
-    
+    log("nStart: " + nStart);
     
     // the logic to determine layouts and links that were available to the user
     var bViewAll = (content.hasElement('Show link to original section') ? !content.get('Show link to original section').isNull() : false);
@@ -390,7 +411,7 @@ function main(header, midder, footer) {
         // when the user selects any custom sort element
         var arrayOfElements = [];
         arrayOfElements = sElement.split(',');
-        validContent.sort(byCustomElements(arrayOfElements));
+        validContent.sort(eval(byCustomElements(CID, arrayOfElements)));
     } else {
         // when the user only sorts by the default options
         validContent.sort(eval(sortMethod + '(' + CID + ', sElement);'));
