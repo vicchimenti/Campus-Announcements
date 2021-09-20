@@ -107,7 +107,7 @@ function writeDocument(array) {
           priority: getContentValues('<t4 type="content" name="Priority" output="normal" display_field="value" />'),
           layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
           sectionLink: getContentValues('<t4 type="content" name="Section Link 1" output="linkurl" modifiers="nav_sections" />'),
-          sectionLinkText: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
+          sectionLinkText: getContentValues('<t4 type="content" name="Section Link" output="linktext" modifiers="nav_sections" />'),
           fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
           contentID: getContentValues('<t4 type="meta" meta="content_id" />')
       };

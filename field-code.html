@@ -1,39 +1,42 @@
-<form action="#">
-    <fieldset>
-        <div class="container-fluid">
-            <div class="row">
-
-                <!-- Keyword Search -->
-                <div class="col-md-4">
-                    <input type="text" class="form-control" aria-label="Search This Page" value="" id="id_search" placeholder="Search by Keyword" aria-label="Search Externships" />
-                </div>
-
-                <!-- Search By Topic -->
-                <div class="col-md-4">
-                    <select class="form-select" aria-label="Select By Topic" id="SelectBox-ByTopic">
-                        <option value="" selected>Select a Topic...</option>
-                        <option value="Athletics">Athletics</option>
-                        <option value="COVID-19">COVID-19</option>
-                        <option value="Events">Events</option>
-                        <option value="Housing">Housing</option>
-                        <option value="Registration">Registration</option>
-                        <option value="Re-Opening">Re-Opening</option>
-                    </select>
-                </div>
+<div class="filterWrapper">
+    <h2 class="sr-only">Search Announcements</h2>
+    <form action="#">
+        <fieldset>
+            <div class="container-fluid">
+                <div class="row">
     
-                <!-- Search By Audience -->
-                <div class="col-md-4">
-                    <select class="form-select" aria-label="Select By Audience" id="SelectBox-ByAudience">
-                        <option value="" selected>Select an Audience...</option>
-                        <option value="Administration">Administration</option>
-                        <option value="Alumni">Alumni</option>
-                        <option value="Faculty">Faculty</option>
-                        <option value="Guests">Guests</option>
-                        <option value="Staff">Staff</option>
-                        <option value="Students">Students</option>
-                    </select>
+                    <!-- Keyword Search -->
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" aria-label="Search This Page" value="" id="id_search" placeholder="Search by Keyword" aria-label="Search Externships" />
+                    </div>
+    
+                    <!-- Search By Topic -->
+                    <div class="col-md-4">
+                        <select class="form-select" aria-label="Select By Topic" id="SelectBox-ByTopic">
+                            <option value="" selected>Select a Topic...</option>
+                            <option value="Athletics">Athletics</option>
+                            <option value="COVID-19">COVID-19</option>
+                            <option value="Events">Events</option>
+                            <option value="Housing">Housing</option>
+                            <option value="Registration">Registration</option>
+                            <option value="Re-Opening">Re-Opening</option>
+                        </select>
+                    </div>
+        
+                    <!-- Search By Audience -->
+                    <div class="col-md-4">
+                        <select class="form-select" aria-label="Select By Audience" id="SelectBox-ByAudience">
+                            <option value="" selected>Select an Audience...</option>
+                            <option value="Administration">Administration</option>
+                            <option value="Alumni">Alumni</option>
+                            <option value="Faculty">Faculty</option>
+                            <option value="Guests">Guests</option>
+                            <option value="Staff">Staff</option>
+                            <option value="Students">Students</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-        </div>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+</div>
