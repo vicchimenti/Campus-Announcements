@@ -1,4 +1,9 @@
 /* *** align dropdown menus with organizer content *** */
+
+#filterFieldWrapper {
+    padding: 0 2rem;
+}
+
 #filterField .container-fluid {
     padding-right: unset;
     padding-left: unset;
