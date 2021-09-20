@@ -39,6 +39,6 @@
 
 
 /* *** Organizer adjustments *** */
-.organizerWrapper.contentItem {
+#zoneA .organizerWrapper.contentItem {
     margin: 0;
 }
