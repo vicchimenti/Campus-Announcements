@@ -1,7 +1,11 @@
 /* *** align dropdown menus with organizer content *** */
-
-#filterFieldWrapper {
+#zoneA #filterFieldWrapper.contentItem {
+    margin: 0;
     padding: 0 2rem;
+}
+
+#zoneA #filterFieldWrapper.contentItem:first-of-type {
+    margin: 0;
 }
 
 #filterField .container-fluid {
@@ -31,4 +35,10 @@
     background: #e3e3da;
     padding: 30px;
     margin: 15px;
+}
+
+
+/* *** Organizer adjustments *** */
+.organizerWrapper.contentItem {
+    margin: 0;
 }
