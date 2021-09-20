@@ -157,14 +157,14 @@
     padding: 0;
 }
 
-.announcementZoneb h3.card-title {
+.announcementZoneb h4.card-title {
     color: #AA0000;
     font-family: "Montserrat", sans-serif;
     font-size: 1.75rem;
     font-weight: 500;
 }
 
-.announcementZoneb h3.card-title a {
+.announcementZoneb h4.card-title a {
     color: #AA0000;
 }
 
@@ -172,7 +172,7 @@
     font-size: 1.35rem;
 }
 
-.announcementZoneb h3.card-title a:hover, .announcementZoneb h3.card-title a:focus {
+.announcementZoneb h4.card-title a:hover, .announcementZoneb h4.card-title a:focus {
     color: #AA0000;
 }
 

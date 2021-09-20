@@ -124,7 +124,7 @@ try {
     var endingHTML = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
-    var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
+    var titleLink = '<h4 class="card-title">' + contentDict.articleTitle.content + '</h4>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
     var closeBodyWrapper = '</div>';
     // var openSummaryWrapper = '<div class="articleSummary card-body">';
@@ -148,7 +148,7 @@ try {
      * 
      * */
     if (contentDict.articleFullBody.content != "") {
-        titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+        titleLink = '<h4 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h4>';
     }
 
 
