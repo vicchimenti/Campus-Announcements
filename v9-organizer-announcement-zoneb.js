@@ -114,6 +114,8 @@ try {
     };
 
 
+    <t4 type="content" name="Date Last Modified" output="selective-output" process-format="true" format="<t4 type=&quot;meta&quot; meta=&quot;last_modified&quot; format=&quot;MM/dd/yyyy &#39;at&#39; HH:mm:ss z&quot; />" date_format="MM/dd/yyyy 'at' HH:mm:ss z" />
+
 <t4 type="meta" meta="last_modified" format="MM/dd/yyyy 'at' HH:mm:ss z" />
 
     /***
