@@ -1,15 +1,16 @@
 <script>
 /***
 *   @author Victor Chimenti, MSCS-SE '20
-*   @file externship-filter.js
+*   @file filter.js
+*   @see Campus Announcements : https://www.seattleu.edu/announcements
 *
 *   jQuery
-*   This script searches the Externship Database content items for matches to the
+*   This script searches the Campus ANnouncement content items for matches to the
 *   user selected search parameters in the filter field dropdown menus
 *
 *   This custom system replaces the depreciated jQuery Quicksearch
 *
-*   @version 4.8
+*   @version 5.0
 */
 
 
@@ -37,7 +38,7 @@ $(function () {
             $(function () {
                 let parseItemsToDisplay = function() {
                     // assign array of currently visible content items
-                    visibleItems = $('.externshipWrapper').not('.hideByText, .hideByAudience, .hideByTopic');
+                    visibleItems = $('.announcement').not('.hideByText, .hideByAudience, .hideByTopic');
                     // check to see if array is empty
                     if (visibleItems.length == 0) {
                         // when array is empty show the results message
@@ -61,7 +62,7 @@ $(function () {
                     let keyword = $(this).val().toLowerCase();
                     // filter the items for the input key
                     $(function () {
-                        $('.externshipWrapper').filter(function () {
+                        $('.announcement').filter(function () {
                             // when the search key is not present in the item then hide the item
                             $(this).toggleClass('hideByText', !($(this).text().toLowerCase().indexOf(keyword) > -1));
                         });
@@ -82,13 +83,13 @@ $(function () {
                         $('.region').filter(function (i, e) {
                             var typeValue = $(this).text();
                             if (typeValue.match(typeKey)) {
-                                $(this).parents('.externshipWrapper').removeClass('hideByTopic');
+                                $(this).parents('.announcement').removeClass('hideByTopic');
                             } else {
-                                $(this).parents('.externshipWrapper').addClass('hideByTopic');
+                                $(this).parents('.announcement').addClass('hideByTopic');
                             }
                         });
                     } else {
-                        $('.externshipWrapper').removeClass('hideByTopic');
+                        $('.announcement').removeClass('hideByTopic');
                     }
                     parseItems.process();
                 });
@@ -105,13 +106,13 @@ $(function () {
                         $('.externshipType').filter(function (i, e) {
                             var typeValue = $(this).text();
                             if (typeValue.match(typeKey)) {
-                                $(this).parents('.externshipWrapper').removeClass('hideByAudience');
+                                $(this).parents('.announcement').removeClass('hideByAudience');
                             } else {
-                                $(this).parents('.externshipWrapper').addClass('hideByAudience');
+                                $(this).parents('.announcement').addClass('hideByAudience');
                             }
                         });
                     } else {
-                        $('.externshipWrapper').removeClass('hideByAudience');
+                        $('.announcement').removeClass('hideByAudience');
                     }
                     parseItems.process();
                 });
