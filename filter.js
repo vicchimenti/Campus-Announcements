@@ -37,7 +37,7 @@ $(function () {
             $(function () {
                 let parseItemsToDisplay = function() {
                     // assign array of currently visible content items
-                    visibleItems = $('.externshipWrapper').not('.hideByText, .hideByType, .hideByTopic');
+                    visibleItems = $('.externshipWrapper').not('.hideByText, .hideByAudience, .hideByTopic');
                     // check to see if array is empty
                     if (visibleItems.length == 0) {
                         // when array is empty show the results message
@@ -99,19 +99,19 @@ $(function () {
 
             //   ***   Type Filter   ***  //
             $(function () {
-                $('#SelectBox-ByType').change(function () {
+                $('#SelectBox-ByAudience').change(function () {
                     let typeKey = $(this).val();
                     if (typeKey) {
                         $('.externshipType').filter(function (i, e) {
                             var typeValue = $(this).text();
                             if (typeValue.match(typeKey)) {
-                                $(this).parents('.externshipWrapper').removeClass('hideByType');
+                                $(this).parents('.externshipWrapper').removeClass('hideByAudience');
                             } else {
-                                $(this).parents('.externshipWrapper').addClass('hideByType');
+                                $(this).parents('.externshipWrapper').addClass('hideByAudience');
                             }
                         });
                     } else {
-                        $('.externshipWrapper').removeClass('hideByType');
+                        $('.externshipWrapper').removeClass('hideByAudience');
                     }
                     parseItems.process();
                 });
