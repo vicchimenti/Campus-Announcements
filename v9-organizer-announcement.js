@@ -2,13 +2,14 @@
    *     @author Victor Chimenti, MSCS-SE '20
    *     @file v9-organizer-announcement.js
    *     v9/organizer/announcement
+   *     id:5580
    *
    *     This content type will work in conjunction with the Organizer and each item
    *     will contain one announcement.
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.20
+   *     @version 6.21
    */
 
 
