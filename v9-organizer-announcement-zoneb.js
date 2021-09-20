@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.3
+   *     @version 7.4
    */
 
 
@@ -101,7 +101,7 @@ try {
         contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
         articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
-        publishDate: getContentValues('    <t4 type="content" name="Date Last Modified" output="selective-output" process-format="true" format="<t4 type=&quot;meta&quot; meta=&quot;last_modified&quot; format=&quot;MM/dd/yyyy &#39;at&#39; HH:mm:ss z&quot; />" date_format="MM/dd/yyyy 'at' HH:mm:ss z" />'),
+        publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
@@ -109,13 +109,14 @@ try {
         layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
         sectionLink: getContentValues('<t4 type="content" name="Section Link" output="linkurl" modifiers="nav_sections" />'),
         sectionLinkText: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
+        lastModified: getContentValues('<t4 type="navigation" name="Content Last Modified" id="868" />'),
         fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
 
-
-{/* <t4 type="meta" meta="last_modified" format="MM/dd/yyyy 'at' HH:mm:ss z" /> */}
+{/* <t4 type="content" name="Last Modified" output="normal" modifiers="nav_sections" /> */}
+{/* <t4 type="meta" meta="last_modified" format="MM/dd/yyyy ', ' HH:mm:ss z" />  */}
 
 
 {/* <t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy HH:mm:ss" /> */}
@@ -232,6 +233,7 @@ try {
             listOfTags,
             audienceList,
             prioityString,
+            contentDict.lastModified.content,
             closeSortFields,
             closeBodyWrapper,
             closeRow,
