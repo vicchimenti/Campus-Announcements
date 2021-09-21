@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.38
+*     @version 2.39
 */
 
 
@@ -218,12 +218,14 @@ function isLimitPassed(i, limit) {
  */
 function getMode(isPreview) {
 
-    if (isPreview)
-        return CachedContent.CURRENT;
-    else
-        return CachedContent.APPROVED;
+    // if (isPreview)
+    //     return CachedContent.CURRENT;
+    // else
+    //     return CachedContent.APPROVED;
 
-    // let result = (isPreview) => {
+
+    return (isPreview ? CachedContent.CURRENT : CachedContent.APPROVED);
+    //  => {
 
     //     if (isPreview) {
     //         return CachedContent.CURRENT;
