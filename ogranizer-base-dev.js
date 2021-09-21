@@ -206,12 +206,12 @@ function byOrder(cid, elem) {
 //         return function (status) { return status == 0; }
 // })();
 
-var isValidStatus = () => {
-    if (isPreview)
-        return function (status) { return status != 2; }
-    else
-        return function (status) { return status == 0; }
-};
+// var isValidStatus = () => {
+//     if (isPreview)
+//         return function (status) { return status != 2; }
+//     else
+//         return function (status) { return status == 0; }
+// };
 
 
 
@@ -242,37 +242,34 @@ function getMode(isPreview) {
  * Called only when there is any custom field entered
  * 
  * @param elem is a value assigned from an array like object of custom Elements to sort by
- * @param elements array like object of custom sort elements parsed from the user input in the Custom element
+ * @returns string
+ * 
  */
 function dynamicSort(elem) {
 
-    // return function (a, b) {
-
-    //     // we have to use publish() rather than getValue()
-    //     // to accommodate multiple input types such as radio buttons, checkboxes in addition to plain text and numbers
-    //     // publish() returns a string
-    //     let strA = a.Content.get(elem).publish();
-    //     let strB = b.Content.get(elem).publish();
-
-
-    //     return strA > strB ? 1 : strA < strB ? -1 : 0;
-    // }
-
-
     result = (a, b) => {
 
-        // we have to use publish() rather than getValue()
-        // to accommodate multiple input types such as radio buttons, checkboxes in addition to plain text and numbers
-        // publish() returns a string
         let strA = a.Content.get(elem).publish();
         let strB = b.Content.get(elem).publish();
 
-
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
+
     return result;
 }
 
+
+
+
+/**
+ * Parse Custom Sort Field for multiple fields
+ * Called only when there is any custom field entered
+ * 
+ * @param cid is the content type id
+ * @param elements is a value assigned from an array like object of custom Elements to sort by
+ * @returns string
+ * 
+ */
 // calls dynamic sort and sends one element at a time from the array of custom elements
 function byCustomElements(cid, elements) {
     // assign the array of custom elements to a local scope
