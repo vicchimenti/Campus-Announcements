@@ -18,7 +18,6 @@
 
 
 
-importClass(com.terminalfour.content.Content);
 importClass(com.terminalfour.sitemanager.cache.CachedContent);
 importClass(com.terminalfour.navigation.ServerSideLinkManager);
 importClass(com.terminalfour.spring.ApplicationContextProvider);
