@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.29
+*     @version 2.31
 */
 
 
@@ -65,7 +65,40 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * If these is no date, content is treated as least recent.
  * Defaults to using the last modified date.
  */
-function byDate(cid, elem) {
+// function byDate(cid, elem) {
+//     if (!elem) {
+//         switch (cid) {
+//             case 208:
+//                 elem = 'Published';
+//                 break;
+//             case 82:
+//                 elem = 'Publish Date';
+//                 break;
+//             default:
+//                 return function (a, b) {
+//                     var dateA = a.CachedContent.getLastModified(language, CachedContent.APPROVED);
+//                     var dateB = b.CachedContent.getLastModified(language, CachedContent.APPROVED);
+//                     return dateB.compareTo(dateA);
+//                 }
+//                 break;
+//         }
+//     }
+//     return function (a, b) {
+//         var dateA = a.Content.get(elem).getValue();
+//         var dateB = b.Content.get(elem).getValue();
+
+//         // No date gets least recent treatment
+//         if (dateA && !dateB)
+//             return -1;
+//         if (!dateA && dateB)
+//             return 1;
+//         if (!dateA && !dateB)
+//             return 0;
+//         return dateB.compareTo(dateA);
+//     }
+// }
+
+byDate = (cid, elem) => {
     if (!elem) {
         switch (cid) {
             case 208:
