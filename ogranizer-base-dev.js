@@ -202,12 +202,19 @@ function byOrder(cid, elem) {
  * - Preview: Content must be approved or pending
  * - Publish: Content must be approved
  */
-var isValidStatus = (function () {
+// var isValidStatus = (function () {
+//     if (isPreview)
+//         return function (status) { return status != 2; }
+//     else
+//         return function (status) { return status == 0; }
+// })();
+
+var isValidStatus = () => {
     if (isPreview)
         return function (status) { return status != 2; }
     else
         return function (status) { return status == 0; }
-})();
+};
 
 
 
