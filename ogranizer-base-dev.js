@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.23
+*     @version 2.24
 */
 
 
@@ -80,9 +80,7 @@ function byDate(cid, elem) {
             default:
                 return function (a, b) {
                     var dateA = a.CachedContent.getLastModified(language, CachedContent.APPROVED);
-                    log("dateA2: " + dateA);
                     var dateB = b.CachedContent.getLastModified(language, CachedContent.APPROVED);
-                    log("dateB2: " + dateB);
                     return dateB.compareTo(dateA);
                 }
                 break;
@@ -90,10 +88,7 @@ function byDate(cid, elem) {
     }
     return function (a, b) {
         var dateA = a.Content.get(elem).getValue();
-        log("dateA: " + dateA);
-
         var dateB = b.Content.get(elem).getValue();
-        log("dateB: " + dateB);
 
         // No date gets least recent treatment
         if (dateA && !dateB)
@@ -254,9 +249,7 @@ function dynamicSort(elem) {
         // to accommodate multiple input types such as radio buttons, checkboxes in addition to plain text and numbers
         // publish() returns a string
         let strA = a.Content.get(elem).publish();
-        log("strA: " + strA);
         let strB = b.Content.get(elem).publish();
-        log("strB: " + strB);
 
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
@@ -277,31 +270,24 @@ function byCustomElements(cid, elements) {
 
             // iterate through each element
             let currentElement = customElements[i].trim();
-            log("currentElement: " + currentElement);
 
-            // switch (currentElement) {
-            //     case 'Published':
-            //         result = byDate(cid, 'Published')(a,b);
-            //         log("Published result: " + result);
-            //         break;
-            //     case 'Publish Date':
-            //         result = byDate(cid, 'Publish Date')(a,b);
-            //         log("Publish Date result: " + result);
-            //         break;
-            //     default:
-            //         result = dynamicSort(currentElement)(a,b);
-            //         log("dynamicSort result: " + result);
-            //         break;
-            // }
-
-            if (currentElement === 'Publish Date') {
-                result = byDate(cid, 'Publish Date')(a,b);
-                log("Publish Date result: " + result);
-
-            } else {
-                // sort the content items by the current custom element       
-                result = dynamicSort(currentElement)(a,b);
+            // determine sorting system for this element
+            switch (currentElement) {
+                case 'Published':
+                    result = byDate(cid, 'Published')(a,b);
+                    break;
+                case 'Publish Date':
+                    result = byDate(cid, 'Publish Date')(a,b);
+                    break;
+                case 'Article Title':
+                    result = byName(cid, 'Article Title')(a,b);
+                    break;
+                default:
+                    result = dynamicSort(currentElement)(a,b);
+                    break;
             }
+
+            // iterate loop
             i++;
         }
         return result;
@@ -336,10 +322,8 @@ function main(header, midder, footer) {
     var SSID = String(content.get('Section')).match(/sslink_id="(\d+)"/)[1];
     // the required sort method from the list of options
     var sortMethod = content.get('Sorting method').publish();
-    log("sortMethod: " + sortMethod);
     // the optional custom elements that a user can sort by - this can be any length of items
     var sElement = String(content.get('Custom element'));
-    log("sElement: " + sElement);
     // the reverse order option
     var bReverse = !content.get('Reverse order').isNull();
     // the paginate option to display items on multiple pages
@@ -350,7 +334,6 @@ function main(header, midder, footer) {
     var LIMIT = content.get('Total number of items to display');
     // user has the option of beginning their display at any item rather than the first
     var nStart = (content.get('Start Number') && content.get('Start Number') > 0 ? content.get('Start Number') : 1);
-    log("nStart: " + nStart);
     
     // the logic to determine layouts and links that were available to the user
     var bViewAll = (content.hasElement('Show link to original section') ? !content.get('Show link to original section').isNull() : false);
