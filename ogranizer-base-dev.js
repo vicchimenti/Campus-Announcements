@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.32
+*     @version 2.34
 */
 
 
@@ -65,7 +65,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * If these is no date, content is treated as least recent.
  * Defaults to using the last modified date.
  */
-function byDate(cid, elem) {
+ function byDate(cid, elem) {
     if (!elem) {
         switch (cid) {
             case 208:
