@@ -140,11 +140,6 @@ function byName(cid, elem) {
 
         return strA.localeCompare(strB);
     }
-    // return function (a, b) {
-    //     var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-    //     var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-    //     return strA.localeCompare(strB);
-    // }
 
     return result;
 }
