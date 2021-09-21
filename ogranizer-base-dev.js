@@ -195,33 +195,6 @@ function byOrder(cid, elem) {
 
 
 
-/* Helper methods */
-
-// IsValidStatus is unused
-/**
- * Checks a content item's status to see if it should be displayed.
- * The result depends on whether the CMS is in preview or publish, as each mode
- * displays content under different conditions:
- * - Preview: Content must be approved or pending
- * - Publish: Content must be approved
- */
-// var isValidStatus = (function () {
-//     if (isPreview)
-//         return function (status) { return status != 2; }
-//     else
-//         return function (status) { return status == 0; }
-// })();
-
-// var isValidStatus = () => {
-//     if (isPreview)
-//         return function (status) { return status != 2; }
-//     else
-//         return function (status) { return status == 0; }
-// };
-
-
-
-
 /**
  * Determines whether a number has passed a certain limit.
  * Used for checking if the total number of content items to display has been reached.
@@ -337,7 +310,7 @@ function main(header, midder, footer) {
 
     try {
 
-        
+
         /**
          * Set variables
          */
