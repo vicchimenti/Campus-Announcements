@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.43
+*     @version 2.44
 */
 
 
@@ -251,11 +251,11 @@ function byCustomElements(cid, elements) {
     let result =  (a, b) => {
         
         // if the result is zero then the value of a and b are equal
-        let i = 0;
+        let index = 0;
         while (result === 0 && i < elements.length) {
 
             // iterate through each element
-            let currentElement = customElements[i].trim();
+            let currentElement = elements[i].trim();
 
             // determine sorting system for this element
             switch (currentElement) {
@@ -293,10 +293,10 @@ function byCustomElements(cid, elements) {
             }
 
             // iterate loop
-            i++;
+            index++;
         }
-        return result;
     }
+    return result;
 }
 
 
