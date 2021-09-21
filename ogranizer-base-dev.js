@@ -181,12 +181,18 @@ function byBoolean(cid, elem) {
     //     }
     // }
 
-    var boolA = !a.Content.get(elem).isNull();
-    var boolB = !b.Content.get(elem).isNull();
+    // if (cid === 359) elem
 
-    let result = (a, b) =>  boolA && !boolB ? 1
-                        :   !boolA && boolB ? -1
-                        :   byOrder(cid, elem)(a, b);
+
+    (a, b) =>  {
+
+        var boolA = !a.Content.get(elem).isNull();
+        var boolB = !b.Content.get(elem).isNull();
+
+        return  boolA && !boolB ? 1
+            :   !boolA && boolB ? -1
+            :   byOrder(cid, elem)(a, b);
+    }
 
     // return function (a, b) {
     //     var boolA = !a.Content.get(elem).isNull();
@@ -198,21 +204,21 @@ function byBoolean(cid, elem) {
     //     return byOrder(cid, elem)(a, b);
     // }
 
-    return result;
+    // return result;
 }
 
-function test( a ) {
-    const condition = a > 100;
+// function test( a ) {
+//     const condition = a > 100;
   
-    if ( condition ) {
-      return true;
-    }
+//     if ( condition ) {
+//       return true;
+//     }
     
-    switch ( a ) {
-      case 20: return 21;
-      default: return 100;
-    }
-  }
+//     switch ( a ) {
+//       case 20: return 21;
+//       default: return 100;
+//     }
+//   }
 
 
 /**
@@ -300,6 +306,9 @@ function byCustomElements(cid, elements) {
                     break;
                 case 'Article Title':
                     result = byName(cid, 'Article Title')(a,b);
+                    break;
+                case 'Service is Available':
+                    result = byBoolean(cid, 'Service is Available')(a,b);
                     break;
                 default:
                     result = dynamicSort(currentElement)(a,b);
