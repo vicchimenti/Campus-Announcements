@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.27
+*     @version 2.29
 */
 
 
@@ -41,9 +41,11 @@ importClass(com.terminalfour.navigation.items.utils.NavigationPaginator);
  * @param message The string that will print to the browser console
  * 
  */
-function log(message) {
-    document.write('<script>eval("console.log(\'' + message + '\')");</script>');
-}
+// function log(message) {
+//     document.write('<script>eval("console.log(\'' + message + '\')");</script>');
+// }
+
+log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
 
 
