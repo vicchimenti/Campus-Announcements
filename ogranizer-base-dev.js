@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.39
+*     @version 2.40
 */
 
 
@@ -202,10 +202,6 @@ function byOrder(cid, elem) {
 function isLimitPassed(i, limit) {
 
     return (limit > 0 ? i >= limit : false);
-    // if (limit > 0)
-    //     return i >= limit;
-    // else
-    //     return false;
 }
 
 
