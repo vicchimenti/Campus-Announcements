@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.44
+*     @version 2.45
 */
 
 
@@ -225,7 +225,7 @@ function byCustomElements(cid, elements) {
     let result =  (a, b) => {
         
         // if the result is zero then the value of a and b are equal
-        let index = 0;
+        let i = 0;
         while (result === 0 && i < elements.length) {
 
             // iterate through each element
@@ -244,23 +244,8 @@ function byCustomElements(cid, elements) {
                 case 'Service is Available':
                     result = byBoolean(cid, 'Service is Available')(a, b);
                     break;
-                case 'Post Title':
-                    result = byName(cid, 'Post Title')(a, b);
-                    break;
                 case 'Name':
                     result = byName(cid, 'Name')(a, b);
-                    break;
-                case 'Name of Faculty or Staff Member':
-                    result = dynamicSort('Name of Faculty or Staff Member')(a, b);
-                    break;
-                case 'Article Title':
-                    result = dynamicSort('Article Title')(a, b);
-                    break;
-                case 'Last Name':
-                    result = dynamicSort('Last Name')(a, b);
-                    break;
-                case 'Degree Name':
-                    result = dynamicSort('Degree Name')(a, b);
                     break;
                 default:
                     result = dynamicSort(currentElement)(a, b);
@@ -268,7 +253,7 @@ function byCustomElements(cid, elements) {
             }
 
             // iterate loop
-            index++;
+            i++;
         }
     }
     return result;
