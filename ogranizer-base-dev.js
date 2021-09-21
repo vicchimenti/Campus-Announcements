@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.31
+*     @version 2.32
 */
 
 
@@ -65,7 +65,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * If these is no date, content is treated as least recent.
  * Defaults to using the last modified date.
  */
-byDate = (cid, elem) => {
+function byDate(cid, elem) {
     if (!elem) {
         switch (cid) {
             case 208:
@@ -106,41 +106,7 @@ byDate = (cid, elem) => {
  * (anything that isn't a word or space).
  * Defaults to using the Name element.
  */
-// function byName(cid, elem) {
-//     if (!elem) {
-//         switch (cid) {
-//             case 208:
-//                 elem = 'Post Title';
-//                 break;
-//             case 203:
-//                 elem = 'Name of Faculty or Staff Member';
-//                 break;
-//             case 243:
-//                 elem = 'Name';
-//                 break;
-//             case 82:
-//                 elem = 'Article Title';
-//                 break;
-//             case 364:
-//                 elem = 'Last Name';
-//                 break;
-//             case 548:
-//                 elem = 'Degree Name';
-//                 break;
-//             default:
-//                 elem = 'Name';
-//                 break;
-//         }
-//     }
-//     return function (a, b) {
-//         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-//         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-//         return strA.localeCompare(strB);
-//     }
-// }
-
-
-byName = (cid, elem) => {
+function byName(cid, elem) {
     if (!elem) {
         switch (cid) {
             case 208:
@@ -172,6 +138,40 @@ byName = (cid, elem) => {
         return strA.localeCompare(strB);
     }
 }
+
+
+// var byName = (cid, elem) => {
+//     if (!elem) {
+//         switch (cid) {
+//             case 208:
+//                 elem = 'Post Title';
+//                 break;
+//             case 203:
+//                 elem = 'Name of Faculty or Staff Member';
+//                 break;
+//             case 243:
+//                 elem = 'Name';
+//                 break;
+//             case 82:
+//                 elem = 'Article Title';
+//                 break;
+//             case 364:
+//                 elem = 'Last Name';
+//                 break;
+//             case 548:
+//                 elem = 'Degree Name';
+//                 break;
+//             default:
+//                 elem = 'Name';
+//                 break;
+//         }
+//     }
+//     return function (a, b) {
+//         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+//         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+//         return strA.localeCompare(strB);
+//     }
+// }
 
 
 
