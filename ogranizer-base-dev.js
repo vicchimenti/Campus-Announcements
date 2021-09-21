@@ -424,7 +424,7 @@ function main(header, midder, footer) {
             validContent.sort(byCustomElements(CID, arrayOfElements));
         } else {
             // when the user only sorts by the default options
-            validContent.sort(sortMethod + '(' + CID + ', sElement);');
+            validContent.sort(eval(sortMethod + '(' + CID + ', sElement);'));
         }
         if (bReverse)
             validContent.reverse();
