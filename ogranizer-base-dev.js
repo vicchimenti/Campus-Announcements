@@ -218,23 +218,7 @@ function isLimitPassed(i, limit) {
  */
 function getMode(isPreview) {
 
-    // if (isPreview)
-    //     return CachedContent.CURRENT;
-    // else
-    //     return CachedContent.APPROVED;
-
-
     return (isPreview ? CachedContent.CURRENT : CachedContent.APPROVED);
-    //  => {
-
-    //     if (isPreview) {
-    //         return CachedContent.CURRENT;
-    //     } else {
-    //         return CachedContent.APPROVED;
-    //     }
-    // }
-
-    // return result;
 }
 
 
