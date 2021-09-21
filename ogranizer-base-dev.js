@@ -1,5 +1,5 @@
 /***
-*     @author Victor Chimenti, MSCS-SE 2020
+*     @author Victor Chimenti, MSCS
 *     @file newOrganizerBaseDev.js
 *     ID: 1607015
 *
@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.22
+*     @version 2.23
 */
 
 
