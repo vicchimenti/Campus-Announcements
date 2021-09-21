@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.42
+*     @version 2.43
 */
 
 
@@ -247,35 +247,48 @@ function dynamicSort(elem) {
  */
 // calls dynamic sort and sends one element at a time from the array of custom elements
 function byCustomElements(cid, elements) {
-    // assign the array of custom elements to a local scope
-    let customElements = elements;
-    return function (a, b) {
 
-        // number of elements is the number of custom sort elements entered by the user
-        let i = 0, result = 0, numberOfElements = customElements.length;
+    let result =  (a, b) => {
         
         // if the result is zero then the value of a and b are equal
-        while (result === 0 && i < numberOfElements) {
+        let i = 0;
+        while (result === 0 && i < elements.length) {
 
             // iterate through each element
             let currentElement = customElements[i].trim();
 
             // determine sorting system for this element
             switch (currentElement) {
+
                 case 'Published':
-                    result = byDate(cid, 'Published')(a,b);
+                    result = byDate(cid, 'Published')(a, b);
                     break;
                 case 'Publish Date':
-                    result = byDate(cid, 'Publish Date')(a,b);
-                    break;
-                case 'Article Title':
-                    result = byName(cid, 'Article Title')(a,b);
+                    result = byDate(cid, 'Publish Date')(a, b);
                     break;
                 case 'Service is Available':
-                    result = byBoolean(cid, 'Service is Available')(a,b);
+                    result = byBoolean(cid, 'Service is Available')(a, b);
+                    break;
+                case 'Article Title':
+                    result = byName(cid, 'Article Title')(a, b);
+                    break;
+                case 'Post Title':
+                    result = byName(cid, 'Post Title')(a, b);
+                    break;
+                case 'Name of Faculty or Staff Member':
+                    result = byName(cid, 'Name of Faculty or Staff Member')(a, b);
+                    break;
+                case 'Name':
+                    result = byName(cid, 'Name')(a, b);
+                    break;
+                case 'Last Name':
+                    result = byName(cid, 'Last Name')(a, b);
+                    break;
+                case 'Degree Name':
+                    result = dynamicSort('Degree Name')(a, b);
                     break;
                 default:
-                    result = dynamicSort(currentElement)(a,b);
+                    result = dynamicSort(currentElement)(a, b);
                     break;
             }
 
