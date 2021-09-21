@@ -108,32 +108,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  */
 function byName(cid, elem) {
 
-    if (!elem) {
-        switch (cid) {
-            case 208:
-                elem = 'Post Title';
-                break;
-            case 203:
-                elem = 'Name of Faculty or Staff Member';
-                break;
-            case 243:
-                elem = 'Name';
-                break;
-            case 82:
-                elem = 'Article Title';
-                break;
-            case 364:
-                elem = 'Last Name';
-                break;
-            case 548:
-                elem = 'Degree Name';
-                break;
-            default:
-                elem = 'Name';
-                break;
-        }
-    }
-
     let result = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
@@ -256,6 +230,7 @@ function byCustomElements(cid, elements) {
 
             // iterate through each element
             let currentElement = elements[i].trim();
+            log("currentElement: " + currentElement);
 
             // determine sorting system for this element
             switch (currentElement) {
@@ -269,20 +244,20 @@ function byCustomElements(cid, elements) {
                 case 'Service is Available':
                     result = byBoolean(cid, 'Service is Available')(a, b);
                     break;
-                case 'Article Title':
-                    result = byName(cid, 'Article Title')(a, b);
-                    break;
                 case 'Post Title':
                     result = byName(cid, 'Post Title')(a, b);
-                    break;
-                case 'Name of Faculty or Staff Member':
-                    result = byName(cid, 'Name of Faculty or Staff Member')(a, b);
                     break;
                 case 'Name':
                     result = byName(cid, 'Name')(a, b);
                     break;
+                case 'Name of Faculty or Staff Member':
+                    result = dynamicSort('Name of Faculty or Staff Member')(a, b);
+                    break;
+                case 'Article Title':
+                    result = dynamicSort('Article Title')(a, b);
+                    break;
                 case 'Last Name':
-                    result = byName(cid, 'Last Name')(a, b);
+                    result = dynamicSort('Last Name')(a, b);
                     break;
                 case 'Degree Name':
                     result = dynamicSort('Degree Name')(a, b);
