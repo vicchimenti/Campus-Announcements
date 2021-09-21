@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.26
+*     @version 2.27
 */
 
 
@@ -157,7 +157,7 @@ function byBoolean(cid, elem) {
                 elem = 'Service is Available';
                 break;
             default:
-                return byOrder(cid, elem);
+                return byOrder(cid, elem)(a, b);
                 break;
         }
     }
