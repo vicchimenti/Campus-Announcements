@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.34
+*     @version 2.35
 */
 
 
@@ -246,7 +246,20 @@ function getMode(isPreview) {
  */
 function dynamicSort(elem) {
 
-    return function (a, b) {
+    // return function (a, b) {
+
+    //     // we have to use publish() rather than getValue()
+    //     // to accommodate multiple input types such as radio buttons, checkboxes in addition to plain text and numbers
+    //     // publish() returns a string
+    //     let strA = a.Content.get(elem).publish();
+    //     let strB = b.Content.get(elem).publish();
+
+
+    //     return strA > strB ? 1 : strA < strB ? -1 : 0;
+    // }
+
+
+    result = (a, b) => {
 
         // we have to use publish() rather than getValue()
         // to accommodate multiple input types such as radio buttons, checkboxes in addition to plain text and numbers
@@ -257,6 +270,7 @@ function dynamicSort(elem) {
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
+    return result;
 }
 
 // calls dynamic sort and sends one element at a time from the array of custom elements
