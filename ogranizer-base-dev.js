@@ -218,21 +218,21 @@ function isLimitPassed(i, limit) {
  */
 function getMode(isPreview) {
 
-    // if (isPreview)
-    //     return CachedContent.CURRENT;
-    // else
-    //     return CachedContent.APPROVED;
+    if (isPreview)
+        return CachedContent.CURRENT;
+    else
+        return CachedContent.APPROVED;
 
-    let result = (isPreview) => {
+    // let result = (isPreview) => {
 
-        if (isPreview) {
-            return CachedContent.CURRENT;
-        } else {
-            return CachedContent.APPROVED;
-        }
-    }
+    //     if (isPreview) {
+    //         return CachedContent.CURRENT;
+    //     } else {
+    //         return CachedContent.APPROVED;
+    //     }
+    // }
 
-    return result;
+    // return result;
 }
 
 
