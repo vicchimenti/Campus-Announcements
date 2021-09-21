@@ -170,19 +170,6 @@ function byName(cid, elem) {
  * If two content items have the same value, also sorts by section order.
  */
 function byBoolean(cid, elem) {
-    // if (!elem) {
-    //     switch (cid) {
-    //         case 359:
-    //             elem = 'Service is Available';
-    //             break;
-    //         default:
-    //             return byOrder(cid, elem)(a, b);
-    //             break;
-    //     }
-    // }
-
-    // if (cid === 359) elem
-
 
     (a, b) =>  {
 
@@ -193,32 +180,9 @@ function byBoolean(cid, elem) {
             :   !boolA && boolB ? -1
             :   byOrder(cid, elem)(a, b);
     }
-
-    // return function (a, b) {
-    //     var boolA = !a.Content.get(elem).isNull();
-    //     var boolB = !b.Content.get(elem).isNull();
-    //     if (boolA && !boolB)
-    //         return 1;
-    //     if (!boolA && boolB)
-    //         return -1;
-    //     return byOrder(cid, elem)(a, b);
-    // }
-
-    // return result;
 }
 
-// function test( a ) {
-//     const condition = a > 100;
-  
-//     if ( condition ) {
-//       return true;
-//     }
-    
-//     switch ( a ) {
-//       case 20: return 21;
-//       default: return 100;
-//     }
-//   }
+
 
 
 /**
