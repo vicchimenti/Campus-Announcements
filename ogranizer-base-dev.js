@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.21
+*     @version 2.22
 */
 
 
@@ -279,20 +279,29 @@ function byCustomElements(cid, elements) {
             let currentElement = customElements[i].trim();
             log("currentElement: " + currentElement);
 
-            switch (currentElement) {
-                case 'Published':
-                    result = byDate(cid, 'Published')(a,b);
-                    break;
-                case 'Publish Date':
-                    result = byDate(cid, 'Publish Date')(a,b);
-                    break;
-                default:
-                    result = dynamicSort(currentElement)(a,b);
-                    break;
-            }
+            // switch (currentElement) {
+            //     case 'Published':
+            //         result = byDate(cid, 'Published')(a,b);
+            //         log("Published result: " + result);
+            //         break;
+            //     case 'Publish Date':
+            //         result = byDate(cid, 'Publish Date')(a,b);
+            //         log("Publish Date result: " + result);
+            //         break;
+            //     default:
+            //         result = dynamicSort(currentElement)(a,b);
+            //         log("dynamicSort result: " + result);
+            //         break;
+            // }
 
-            // sort the content items by the current custom element       
-            result = dynamicSort(currentElement)(a,b);
+            if (currentElement === 'Publish Date') {
+                result = byDate(cid, 'Publish Date')(a,b);
+                log("Publish Date result: " + result);
+
+            } else {
+                // sort the content items by the current custom element       
+                result = dynamicSort(currentElement)(a,b);
+            }
             i++;
         }
         return result;
