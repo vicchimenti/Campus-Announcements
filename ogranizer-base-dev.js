@@ -132,11 +132,21 @@ function byName(cid, elem) {
                 break;
         }
     }
-    return function (a, b) {
+
+    let result = (a, b) => {
+
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+
         return strA.localeCompare(strB);
     }
+    // return function (a, b) {
+    //     var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+    //     var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+    //     return strA.localeCompare(strB);
+    // }
+
+    return result;
 }
 
 
@@ -227,6 +237,16 @@ function isLimitPassed(i, limit) {
         return false;
 }
 
+
+
+
+/**
+ * Checks a content item's status to see if it should be displayed.
+ * The result depends on whether the CMS is in preview or publish, as each mode
+ * displays content under different conditions:
+ * - Preview: Content must be approved or pending
+ * - Publish: Content must be approved
+ */
 function getMode(isPreview) {
     if (isPreview)
         return CachedContent.CURRENT;
@@ -247,7 +267,7 @@ function getMode(isPreview) {
  */
 function dynamicSort(elem) {
 
-    result = (a, b) => {
+    let result = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
         let strB = b.Content.get(elem).publish();
