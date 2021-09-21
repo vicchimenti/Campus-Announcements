@@ -200,10 +200,12 @@ function byOrder(cid, elem) {
  * Used for checking if the total number of content items to display has been reached.
  */
 function isLimitPassed(i, limit) {
-    if (limit > 0)
-        return i >= limit;
-    else
-        return false;
+
+    return (limit > 0 ? i >= limit : false);
+    // if (limit > 0)
+    //     return i >= limit;
+    // else
+    //     return false;
 }
 
 
