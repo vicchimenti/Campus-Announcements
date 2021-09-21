@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.37
+*     @version 2.38
 */
 
 
@@ -217,10 +217,21 @@ function isLimitPassed(i, limit) {
  * - Publish: Content must be approved
  */
 function getMode(isPreview) {
+
+    // if (isPreview)
+    //     return CachedContent.CURRENT;
+    // else
+    //     return CachedContent.APPROVED;
+
+    let result = (isPreview) => {
+
     if (isPreview)
         return CachedContent.CURRENT;
     else
         return CachedContent.APPROVED;
+    }
+
+    return result;
 }
 
 
