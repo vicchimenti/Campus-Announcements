@@ -41,10 +41,6 @@ importClass(com.terminalfour.navigation.items.utils.NavigationPaginator);
  * @param message The string that will print to the browser console
  * 
  */
-// function log(message) {
-//     document.write('<script>eval("console.log(\'' + message + '\')");</script>');
-// }
-
 log = message => document.write('<script>eval("console.log(\'' + message + '\')");</script>');
 
 
