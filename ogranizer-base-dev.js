@@ -225,10 +225,11 @@ function getMode(isPreview) {
 
     let result = (isPreview) => {
 
-    if (isPreview)
-        return CachedContent.CURRENT;
-    else
-        return CachedContent.APPROVED;
+        if (isPreview) {
+            return CachedContent.CURRENT;
+        } else {
+            return CachedContent.APPROVED;
+        }
     }
 
     return result;
