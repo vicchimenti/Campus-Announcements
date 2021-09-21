@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.35
+*     @version 2.36
 */
 
 
@@ -191,7 +191,7 @@ function byOrder(cid, elem) {
 
 /* Helper methods */
 
-
+// IsValidStatus is unused
 /**
  * Checks a content item's status to see if it should be displayed.
  * The result depends on whether the CMS is in preview or publish, as each mode
