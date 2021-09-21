@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.45
+*     @version 2.46
 */
 
 
@@ -199,7 +199,11 @@ function dynamicSort(elem) {
     let result = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
+        log("strA: " + strA);
+
         let strB = b.Content.get(elem).publish();
+        log("strB: " + strB);
+
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
@@ -222,11 +226,16 @@ function dynamicSort(elem) {
 // calls dynamic sort and sends one element at a time from the array of custom elements
 function byCustomElements(cid, elements) {
 
-    let result =  (a, b) => {
+    let tracker = 0;
+    log("cid: " + cid);
+
+    let result = (a, b) => {
         
+        log("result: " + result);
         // if the result is zero then the value of a and b are equal
+        // let i = 0, result = 0, numberOfElements = customElements.length;
         let i = 0;
-        while (result === 0 && i < elements.length) {
+        while (tracker === 0 && i < elements.length) {
 
             // iterate through each element
             let currentElement = elements[i].trim();
@@ -236,16 +245,16 @@ function byCustomElements(cid, elements) {
             switch (currentElement) {
 
                 case 'Published':
-                    result = byDate(cid, 'Published')(a, b);
+                    result = byDate(cid, currentElement)(a, b);
                     break;
                 case 'Publish Date':
-                    result = byDate(cid, 'Publish Date')(a, b);
+                    result = byDate(cid, currentElement)(a, b);
                     break;
                 case 'Service is Available':
-                    result = byBoolean(cid, 'Service is Available')(a, b);
+                    result = byBoolean(cid, currentElement)(a, b);
                     break;
                 case 'Name':
-                    result = byName(cid, 'Name')(a, b);
+                    result = byName(cid, currentElement)(a, b);
                     break;
                 default:
                     result = dynamicSort(currentElement)(a, b);
@@ -253,6 +262,8 @@ function byCustomElements(cid, elements) {
             }
 
             // iterate loop
+            tracker = result;
+            log("tracker: " + tracker);
             i++;
         }
     }
