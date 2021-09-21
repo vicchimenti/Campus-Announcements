@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.40
+*     @version 2.41
 */
 
 
@@ -147,6 +147,22 @@ function byName(cid, elem) {
 
 
 
+
+/**
+ * Sorts content by section order.
+ * Content type ID and element name have no effect on the returned sorting method.
+ */
+ function byOrder(cid, elem) {
+
+    let result = (a, b) =>  a.index > b.index ? 1
+                        :   a.index < b.index ? -1
+                        :   0;
+
+    return result;
+}
+
+
+
 /**
  * Sorts content by a boolean value (i.e. whether or not an element has a value).
  * Particularly useful for single checkboxes (e.g. System Status content type).
@@ -172,23 +188,6 @@ function byBoolean(cid, elem) {
         if (!boolA && boolB)
             return -1;
         return byOrder(cid, elem)(a, b);
-    }
-}
-
-
-
-
-/**
- * Sorts content by section order.
- * Content type ID and element name have no effect on the returned sorting method.
- */
-function byOrder(cid, elem) {
-    return function (a, b) {
-        if (a.index > b.index)
-            return 1;
-        if (a.index < b.index)
-            return -1;
-        return 0;
     }
 }
 
