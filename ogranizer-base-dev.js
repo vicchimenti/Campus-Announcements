@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.36
+*     @version 2.37
 */
 
 
@@ -107,6 +107,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * Defaults to using the Name element.
  */
 function byName(cid, elem) {
+
     if (!elem) {
         switch (cid) {
             case 208:
@@ -335,11 +336,11 @@ function byCustomElements(cid, elements) {
 function main(header, midder, footer) {
 
     try {
+
+        
         /**
          * Set variables
          */
-        
-
         // gets the title
         var title = (content.hasElement('Title') ? content.get('Title') : "");
         // users choice for the content type to sort
