@@ -403,7 +403,7 @@ function main(header, midder, footer) {
             // when the user selects any custom sort element
             var arrayOfElements = [];
             arrayOfElements = sElement.split(',');
-            validContent.sort(eval(byCustomElements(CID, arrayOfElements)));
+            validContent.sort(byCustomElements(CID, arrayOfElements));
         } else {
             // when the user only sorts by the default options
             validContent.sort(eval(sortMethod + '(' + CID + ', sElement);'));
