@@ -295,15 +295,19 @@ function byCustomElements(cid, elements) {
             switch (currentElement) {
                 case 'Published':
                     result = byDate(cid, 'Published')(a,b);
+                    log("byCustomElements Published result: " + result);
                     break;
                 case 'Publish Date':
                     result = byDate(cid, 'Publish Date')(a,b);
+                    log("byCustomElements Publish Date result: " + result);
                     break;
                 case 'Article Title':
                     result = byName(cid, 'Article Title')(a,b);
+                    log("byCustomElements Article Title result: " + result);
                     break;
                 default:
                     result = dynamicSort(currentElement)(a,b);
+                    log("byCustomElements default result: " + result);
                     break;
             }
 
