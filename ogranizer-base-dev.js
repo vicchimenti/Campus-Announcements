@@ -85,7 +85,10 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
     }
     return function (a, b) {
         var dateA = a.Content.get(elem).getValue();
+        log("dateA: " + dateA);
+
         var dateB = b.Content.get(elem).getValue();
+        log("dateB: " + dateB);
 
         // No date gets least recent treatment
         if (dateA && !dateB)
@@ -108,7 +111,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  */
 function byName(cid, elem) {
 
-    let result = (a, b) => {
+    let byNameResult = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
@@ -116,7 +119,7 @@ function byName(cid, elem) {
         return strA.localeCompare(strB);
     }
 
-    return result;
+    return byNameResult;
 }
 
 
@@ -128,11 +131,11 @@ function byName(cid, elem) {
  */
  function byOrder(cid, elem) {
 
-    let result = (a, b) =>  a.index > b.index ? 1
+    let byOrderResult = (a, b) =>  a.index > b.index ? 1
                         :   a.index < b.index ? -1
                         :   0;
 
-    return result;
+    return byOrderResult;
 }
 
 
@@ -196,7 +199,7 @@ function getMode(isPreview) {
  */
 function dynamicSort(elem) {
 
-    let result = (a, b) => {
+    let dynamicSortResult = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
         log("strA: " + strA);
@@ -208,7 +211,7 @@ function dynamicSort(elem) {
         return strA < strB ? 1 : strA > strB ? -1 : 0;
     }
 
-    return result;
+    return dynamicSortResult;
 }
 
 
@@ -226,19 +229,19 @@ function dynamicSort(elem) {
 // calls dynamic sort and sends one element at a time from the array of custom elements
 function byCustomElements(cid, elements) {
 
+    let customElements = elements;
     log("cid: " + cid);
 
     let result = (a, b) => {
         let tracker = 0;
 
-        log("result: " + result);
         // if the result is zero then the value of a and b are equal
         // let i = 0, result = 0, numberOfElements = customElements.length;
-        let i = 0;
-        while (tracker === 0 && i < elements.length) {
+        let i = 0, numberOfElements = customElements.length;
+        while (tracker === 0 && i < numberOfElements) {
 
             // iterate through each element
-            let currentElement = elements[i].trim();
+            let currentElement = customElements[i].trim();
             log("currentElement: " + currentElement);
 
             // determine sorting system for this element
@@ -263,6 +266,7 @@ function byCustomElements(cid, elements) {
 
             // iterate loop
             tracker = result;
+            log("result: " + result);
             log("tracker: " + tracker);
             i++;
         }
