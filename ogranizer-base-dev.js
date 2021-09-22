@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.13
+*     @version 3.14
 */
 
 
@@ -321,31 +321,20 @@ function main(header, midder, footer) {
     try {
 
         /**
-         * Set variables
+         * Declarations
+         * 
          */
-        // gets the title
         var title = content.hasElement('Title') ? content.get('Title') : null;
-        // users choice for the content type to sort
         var choice = content.get('Content type and layout').publish();
-        // parses out the content id that references the content type in the media library
         var CID = new java.lang.Integer(choice.split(";")[0]);
-        // parses layout options from the content type choice
         var LAYOUT = choice.split(";")[1];
-        // section id
         var SSID = String(content.get('Section')).match(/sslink_id="(\d+)"/)[1];
-        // the required sort method from the list of options
         var sortMethod = content.get('Sorting method').publish();
-        // the optional custom elements that a user can sort by - this can be any length of items
         var sElement = String(content.get('Custom element'));
-        // the reverse order option
         var bReverse = !content.get('Reverse order').isNull();
-        // the paginate option to display items on multiple pages
         var bPaginate = content.hasElement('Paginate?') ? !content.get('Paginate?').isNull() : null;
-        // the number of items to display on each page when pagination is true
         var nPerPage = content.hasElement('Total number of items to display per page') ? content.get('Total number of items to display per page') : 0;
-        // the number of items to display
         var LIMIT = content.get('Total number of items to display');
-        // user has the option of beginning their display at any item rather than the first
         var nStart = content.get('Start Number') > 0 ? content.get('Start Number') : 1;
 
         
