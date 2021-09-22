@@ -284,10 +284,15 @@ function dynamicSort(elem) {
 function byCustomElements(cid, elements) {
 
     let customElements = elements;
+
     let result = (a, b) => {
 
-        let i = 0, result = 0, numberOfElements = customElements.length;        
-        while (result === 0 && i < numberOfElements) {
+
+        let i = 0, numberOfElements = customElements.length;        
+
+        do {
+
+        // for ( let el in customElements && tracker === 0) {
 
             let currentElement = customElements[i].trim();
 
@@ -312,7 +317,9 @@ function byCustomElements(cid, elements) {
                     break;
             }
             i++;
-        }
+
+            // tracker = result;
+        } while (result === 0 && i < numberOfElements);
     }
     return result;
 }
