@@ -198,14 +198,23 @@ function byBoolean(cid, elem) {
  */
 function byOrder(cid, elem) {
 
-    return function (a, b) {
+    // return function (a, b) {
 
-        if (a.index > b.index)
-            return 1;
-        if (a.index < b.index)
-            return -1;
-        return 0;
+    //     if (a.index > b.index)
+    //         return 1;
+    //     if (a.index < b.index)
+    //         return -1;
+    //     return 0;
+    // }
+
+    let result = (a, b) => {
+
+        return  (a.index > b.index) ? 1
+            :   (a.index < b.index) ? -1
+            :   0;
     }
+
+    return result;
 }
 
 
