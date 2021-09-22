@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.12
+*     @version 3.13
 */
 
 
@@ -285,10 +285,8 @@ function byCustomElements(cid, elements) {
 
     return function(a, b) {
 
-        let element = 0, result = 0;
-
+        let element = result = 0;
         while (result === 0 && element < elements.length) {
-
             let currentElement = elements[element].trim();
 
             switch (currentElement) {
