@@ -338,11 +338,17 @@ function main(header, midder, footer) {
         var nStart = content.get('Start Number') > 0 ? content.get('Start Number') : 1;
 
         
+
+
         // the logic to determine layouts and links that were available to the user
-        var bViewAll = (content.hasElement('Show link to original section') ? !content.get('Show link to original section').isNull() : false);
-        var sViewAllText = (content.hasElement('Link to original section text') ? content.get('Link to original section text') : "");
+        var bViewAll = content.hasElement('Show link to original section') ? !content.get('Show link to original section').isNull() : false;
+        var sViewAllText = content.hasElement('Link to original section text') ? content.get('Link to original section text') : "";
         if (sViewAllText == "")
             sViewAllText = "View All";
+
+
+
+
         var bSummFirst = (LAYOUT == "v9/organizer/newsArticleSummary/Link");
         if (bSummFirst) {
             LAYOUT = "v9/organizer/newsArticleSummary";
@@ -379,7 +385,6 @@ function main(header, midder, footer) {
 
         
         
-
         /**
          * Filter content that matches content type
          */
