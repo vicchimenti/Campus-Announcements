@@ -310,16 +310,16 @@ function byCustomElements(cid, elements) {
             switch (currentElement) {
                 case 'Published':
                     result = byDate(cid, 'Published')(a,b);
-                    log("byCustomElements Published result: " + result);
+                    // log("byCustomElements Published result: " + result);
                     break;
                 case 'Publish Date':
-                    log("byCustomElements Publish Date currentElement: " + currentElement);
+                    // log("byCustomElements Publish Date currentElement: " + currentElement);
                     result = byDate(cid, 'Publish Date')(a,b);
-                    log("byCustomElements Publish Date result: " + result);
+                    // log("byCustomElements Publish Date result: " + result);
                     break;
                 case 'Article Title':
                     result = byName(cid, 'Article Title')(a,b);
-                    log("byCustomElements Article Title result: " + result);
+                    // log("byCustomElements Article Title result: " + result);
                     break;
                 default:
                     // log("byCustomElements default currentElement: " + currentElement);
