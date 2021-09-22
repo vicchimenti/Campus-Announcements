@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.4
+*     @version 3.5
 */
 
 
@@ -80,13 +80,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
             default:
                 return function (a, b) {
                     var dateA = a.CachedContent.getLastModified(language, CachedContent.APPROVED);
-                    var dateAStr = JSON.stringify(dateA);
-                    log("default dateAStr: " + dateAStr);
-
                     var dateB = b.CachedContent.getLastModified(language, CachedContent.APPROVED);
-                    var dateBStr = JSON.stringify(dateB);
-                    log("default dateBStr: " + dateBStr);
-
                     return dateB.compareTo(dateA);
                 }
                 break;
@@ -98,11 +92,13 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
     return function (a, b) {
 
         var dateA = a.Content.get(elem).getValue();
-        var dateAStr = JSON.stringify(dateA);
+        var dateAStr = a.Content.get(elem).publish();
+
         log("dateAStr: " + dateAStr);
         
         var dateB = b.Content.get(elem).getValue();
-        var dateBStr = JSON.stringify(dateB);
+        var dateAStr = a.Content.get(elem).publish();
+
         log("dateBStr: " + dateBStr);
 
 
