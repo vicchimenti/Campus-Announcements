@@ -480,23 +480,15 @@ function main(header, midder, footer) {
             // when they try to select both summary and paginator
             // Victor 7/2020
         } else {
+
             document.write(header);
             var oSW = new java.io.StringWriter();
             var oT4SW = new T4StreamWriter(oSW);
             var oCP = new ContentPublisher();
-            // prepare for first content item
-            first = true;
-            for (var i = nStart - 1; i < validContent.length && !isLimitPassed(i, LIMIT); i++) {
-                // if first print content item completely
-                if (first) {
-                    oLayout = LAYOUT;
-                    first = false;
-                // if not first print link version if requested but normally otherwise
-                } else {
-                    oLayout = bSummFirst ? LAYOUT + "/Link" : LAYOUT;
-                }
-                oCP.write(oT4SW, dbStatement, publishCache, oSection, validContent[i].Content, oLayout, isPreview);
-            }
+
+            for (var i = nStart - 1; i < validContent.length && !isLimitPassed(i, LIMIT); i++)
+                oCP.write(oT4SW, dbStatement, publishCache, oSection, validContent[i].Content, LAYOUT, isPreview);
+            
 
             document.write(oSW.toString());
             document.write(midder);
