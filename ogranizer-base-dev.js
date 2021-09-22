@@ -86,7 +86,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
                 }
 
                 return result;
-                break;
         }
     }
 
