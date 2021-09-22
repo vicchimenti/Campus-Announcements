@@ -333,9 +333,13 @@ function main(header, midder, footer) {
         var sElement = String(content.get('Custom element'));
         var bReverse = !content.get('Reverse order').isNull();
         var bPaginate = content.hasElement('Paginate?') ? !content.get('Paginate?').isNull() : null;
+
         var nPerPage = content.hasElement('Total number of items to display per page') ? content.get('Total number of items to display per page') : 0;
+        log("nPerPage: " + nPerPage);
         var LIMIT = content.get('Total number of items to display');
+        log("LIMIT: " + LIMIT);
         var nStart = content.get('Start Number') > 0 ? content.get('Start Number') : 1;
+        log("nStart: " + nStart);
 
         
 
