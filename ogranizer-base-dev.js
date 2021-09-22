@@ -114,10 +114,15 @@ function byName(cid, elem) {
     let byNameResult = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+        log("strA: " + strA);
+
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+        log("strB: " + strB);
+
 
         return strA.localeCompare(strB);
     }
+    log("byNameResult: " + byNameResult);
 
     return byNameResult;
 }
@@ -131,10 +136,11 @@ function byName(cid, elem) {
  */
  function byOrder(cid, elem) {
 
-    let byOrderResult = (a, b) =>  a.index > b.index ? 1
-                        :   a.index < b.index ? -1
-                        :   0;
+    let byOrderResult = (a, b) =>   a.index > b.index ? 1
+                                :   a.index < b.index ? -1
+                                :   0;
 
+    log("byOrderResult: " + byOrderResult);
     return byOrderResult;
 }
 
@@ -387,7 +393,7 @@ function main(header, midder, footer) {
             // when the user selects any custom sort element
             var arrayOfElements = [];
             arrayOfElements = sElement.split(',');
-            validContent.sort(byCustomElements(CID, arrayOfElements));
+            validContent.sort(eval(byCustomElements(CID, arrayOfElements)));
         } else {
             // when the user only sorts by the default options
             validContent.sort(eval(sortMethod + '(' + CID + ', sElement);'));
