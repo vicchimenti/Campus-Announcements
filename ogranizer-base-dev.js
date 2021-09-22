@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.1
+*     @version 3.2
 */
 
 
@@ -85,7 +85,10 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
     }
     return function (a, b) {
         var dateA = a.Content.get(elem).getValue();
+        log("dateA: " + dateA);
         var dateB = b.Content.get(elem).getValue();
+        log("dateB: " + dateB);
+
 
         // No date gets least recent treatment
         if (dateA && !dateB)
@@ -137,7 +140,10 @@ function byName(cid, elem) {
     let result = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+        log("by name strA: " + strA);
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
+        log("by name strB: " + strB);
+
 
         return strA.localeCompare(strB);
     }
@@ -166,7 +172,12 @@ function byBoolean(cid, elem) {
     }
     return function (a, b) {
         var boolA = !a.Content.get(elem).isNull();
+        log("by bool boolA");
+
         var boolB = !b.Content.get(elem).isNull();
+        log("by bool boolB");
+
+
         if (boolA && !boolB)
             return 1;
         if (!boolA && boolB)
@@ -183,6 +194,8 @@ function byBoolean(cid, elem) {
  * Content type ID and element name have no effect on the returned sorting method.
  */
 function byOrder(cid, elem) {
+    log("byOrder");
+
     return function (a, b) {
         if (a.index > b.index)
             return 1;
@@ -200,6 +213,8 @@ function byOrder(cid, elem) {
  * Used for checking if the total number of content items to display has been reached.
  */
 function isLimitPassed(i, limit) {
+    log("isLimitPassed");
+
     if (limit > 0)
         return i >= limit;
     else
@@ -237,7 +252,11 @@ function dynamicSort(elem) {
     let result = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
+        log("dynamicSort strA: " + strA);
+
         let strB = b.Content.get(elem).publish();
+        log("dynamicSort strB: " + strB);
+
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
