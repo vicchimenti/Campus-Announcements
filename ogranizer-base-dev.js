@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.7
+*     @version 3.8
 */
 
 
@@ -76,39 +76,32 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
                 elem = 'Publish Date';
                 break;
             default:
-                return function (a, b) {
+
+                let result = (a, b) => {
+
                     var dateA = a.CachedContent.getLastModified(language, CachedContent.APPROVED);
                     var dateB = b.CachedContent.getLastModified(language, CachedContent.APPROVED);
+            
                     return dateB.compareTo(dateA);
                 }
+
+                return result;
                 break;
         }
     }
 
-    return function (a, b) {
+    let result = (a, b) => {
 
         var dateA = a.Content.get(elem).getValue();
-        // var dateAStr = a.Content.get(elem).publish();
-
-        // log("dateAStr: " + dateAStr);
-        
         var dateB = b.Content.get(elem).getValue();
-        // var dateBStr = b.Content.get(elem).publish();
 
-        // log("dateBStr: " + dateBStr);
-
-
-        // No date gets least recent treatment
-        if (dateA && !dateB)
-            return -1;
-        if (!dateA && dateB)
-            return 1;
-        if (!dateA && !dateB)
-            return 0;
-
-
-        return dateB.compareTo(dateA);
+        return  (dateA && !dateB) ? -1
+                : (!dateA && dateB) ? 1
+                : (!dateA && !dateB) ? 0
+                : dateB.compareTo(dateA);
     }
+
+    return result;
 }
 
 
