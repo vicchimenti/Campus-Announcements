@@ -324,7 +324,7 @@ function main(header, midder, footer) {
          * Set variables
          */
         // gets the title
-        var title = content.get('Title') ?? null;
+        var title = content.hasElement('Title') ? content.get('Title') : null;
         // users choice for the content type to sort
         var choice = content.get('Content type and layout').publish();
         // parses out the content id that references the content type in the media library
@@ -340,9 +340,9 @@ function main(header, midder, footer) {
         // the reverse order option
         var bReverse = !content.get('Reverse order').isNull();
         // the paginate option to display items on multiple pages
-        var bPaginate = (content.hasElement('Paginate?') ? !content.get('Paginate?').isNull() : null);
+        var bPaginate = content.hasElement('Paginate?') ? !content.get('Paginate?').isNull() : null;
         // the number of items to display on each page when pagination is true
-        var nPerPage = (content.hasElement('Total number of items to display per page') ? content.get('Total number of items to display per page') : 0);
+        var nPerPage = content.hasElement('Total number of items to display per page') ? content.get('Total number of items to display per page') : 0;
         // the number of items to display
         var LIMIT = content.get('Total number of items to display');
         // user has the option of beginning their display at any item rather than the first
