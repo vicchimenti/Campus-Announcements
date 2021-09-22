@@ -283,21 +283,21 @@ function dynamicSort(elem) {
  */
 function byCustomElements(cid, elements) {
 
-    let customElements = elements;
+    // let customElements = elements;
 
     return function(a, b) {
 
 
-        let i = 0, result = 0, numberOfElements = customElements.length;
+        let element = 0, result = 0;
 
         // while (tracker === 0 && i < numberOfElements); {
 
         // for ( let el in customElements && tracker === 0) {
         // while (i < numberOfElements) {
-            while (result === 0 && i < numberOfElements) {
+            while (result === 0 && i < elements.length) {
 
 
-            let currentElement = customElements[i].trim();
+            let currentElement = customElements[element].trim();
 
             switch (currentElement) {
                 case 'Published':
@@ -315,7 +315,7 @@ function byCustomElements(cid, elements) {
                     result = dynamicSort(currentElement)(a,b);
                     // log("byCustomElements default result: " + result);
             }
-            i++;
+            element++;
         }
         return result;
     }
