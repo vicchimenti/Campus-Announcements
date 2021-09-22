@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.6
+*     @version 3.7
 */
 
 
@@ -88,14 +88,14 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
     return function (a, b) {
 
         var dateA = a.Content.get(elem).getValue();
-        var dateAStr = a.Content.get(elem).publish();
+        // var dateAStr = a.Content.get(elem).publish();
 
-        log("dateAStr: " + dateAStr);
+        // log("dateAStr: " + dateAStr);
         
         var dateB = b.Content.get(elem).getValue();
-        var dateBStr = b.Content.get(elem).publish();
+        // var dateBStr = b.Content.get(elem).publish();
 
-        log("dateBStr: " + dateBStr);
+        // log("dateBStr: " + dateBStr);
 
 
         // No date gets least recent treatment
@@ -150,9 +150,9 @@ function byName(cid, elem) {
     let result = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-        log("by name strA: " + strA);
+        // log("by name strA: " + strA);
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-        log("by name strB: " + strB);
+        // log("by name strB: " + strB);
 
 
         return strA.localeCompare(strB);
@@ -170,7 +170,7 @@ function byName(cid, elem) {
  * If two content items have the same value, also sorts by section order.
  */
 function byBoolean(cid, elem) {
-    log("by bool");
+    // log("by bool");
 
     if (!elem) {
         switch (cid) {
@@ -178,17 +178,17 @@ function byBoolean(cid, elem) {
                 elem = 'Service is Available';
                 break;
             default:
-                log("by bool default");
+                // log("by bool default");
                 return byOrder(cid, elem);
                 break;
         }
     }
     return function (a, b) {
         var boolA = !a.Content.get(elem).isNull();
-        log("by bool boolA");
+        // log("by bool boolA");
 
         var boolB = !b.Content.get(elem).isNull();
-        log("by bool boolB");
+        // log("by bool boolB");
 
 
         if (boolA && !boolB)
@@ -207,10 +207,10 @@ function byBoolean(cid, elem) {
  * Content type ID and element name have no effect on the returned sorting method.
  */
 function byOrder(cid, elem) {
-    log("byOrder");
+    // log("byOrder");
 
     return function (a, b) {
-        log("byOrder return");
+        // log("byOrder return");
 
         if (a.index > b.index)
             return 1;
