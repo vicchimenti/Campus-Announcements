@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.5
+*     @version 3.6
 */
 
 
@@ -170,13 +170,16 @@ function byName(cid, elem) {
  * If two content items have the same value, also sorts by section order.
  */
 function byBoolean(cid, elem) {
+    log("by bool");
+
     if (!elem) {
         switch (cid) {
             case 359:
                 elem = 'Service is Available';
                 break;
             default:
-                return byOrder(cid, elem)(a, b);
+                log("by bool default");
+                return byOrder(cid, elem);
                 break;
         }
     }
@@ -207,6 +210,8 @@ function byOrder(cid, elem) {
     log("byOrder");
 
     return function (a, b) {
+        log("byOrder return");
+
         if (a.index > b.index)
             return 1;
         if (a.index < b.index)
