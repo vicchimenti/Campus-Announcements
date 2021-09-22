@@ -346,7 +346,8 @@ function main(header, midder, footer) {
         // the number of items to display
         var LIMIT = content.get('Total number of items to display');
         // user has the option of beginning their display at any item rather than the first
-        var nStart = (content.get('Start Number') && content.get('Start Number') > 0 ? content.get('Start Number') : 1);
+        var nStart = content.get('Start Number') > 0 ? content.get('Start Number') : 1;
+
         
         // the logic to determine layouts and links that were available to the user
         var bViewAll = (content.hasElement('Show link to original section') ? !content.get('Show link to original section').isNull() : false);
