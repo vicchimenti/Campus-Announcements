@@ -325,9 +325,9 @@ function byCustomElements(cid, elements) {
                     log("byCustomElements Article Title result: " + result);
                     break;
                 default:
-                    log("byCustomElements default currentElement: " + currentElement);
+                    // log("byCustomElements default currentElement: " + currentElement);
                     result = dynamicSort(currentElement)(a,b);
-                    log("byCustomElements default result: " + result);
+                    // log("byCustomElements default result: " + result);
                     break;
             }
 
