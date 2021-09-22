@@ -226,6 +226,9 @@ function byOrder(cid, elem) {
  */
 function isLimitPassed(i, limit) {
 
+    log("limit: " + limit);
+    log("i: " + i);
+
     return limit > 0 ? i >= limit : false;
 }
 
@@ -338,8 +341,10 @@ function main(header, midder, footer) {
         log("nPerPage: " + nPerPage);
         var LIMIT = content.get('Total number of items to display');
         log("LIMIT: " + LIMIT);
+        var totalToDisplay = LIMIT;
         var nStart = content.get('Start Number') > 0 ? content.get('Start Number') : 1;
         log("nStart: " + nStart);
+        var firstItem = nStart;
 
         
 
@@ -486,16 +491,31 @@ function main(header, midder, footer) {
             var oT4SW = new T4StreamWriter(oSW);
             var oCP = new ContentPublisher();
 
-            for (var i = nStart - 1; i < validContent.length && !isLimitPassed(i, LIMIT); i++)
-                oCP.write(oT4SW, dbStatement, publishCache, oSection, validContent[i].Content, LAYOUT, isPreview);
-            
+            log("LIMIT: " + LIMIT);
+            log("nStart: " + nStart);
 
+            log("totalToDisplay: " + totalToDisplay);
+            log("firstItem: " + firstItem);
+            var start = nStart - 1;
+            // var finish = LIMIT < validContent.length ? LIMIT : validContent.length;
+
+            var finish = validContent.length >= LIMIT ? validContent.length - LIMIT - 1 : validContent.length;
+
+            log("start: " + start);
+            log("finish: " + finish);
+            log("validContent.length: " + validContent.length);
+
+
+            do {
+                oCP.write(oT4SW, dbStatement, publishCache, oSection, validContent[start].Content, LAYOUT, isPreview);
+                start++;
+            } while (start < finish);
+            
             document.write(oSW.toString());
             document.write(midder);
             document.write(footer);
         }
         // End Main
-
 
 
     } catch (e) {
