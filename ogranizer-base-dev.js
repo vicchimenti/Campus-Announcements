@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.10
+*     @version 3.11
 */
 
 
@@ -41,7 +41,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
 
 
 
-/* Sorting methods */
 
 /**
  * All methods select what element to use for sorting if one is not provided,
@@ -50,6 +49,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  *
  * @param cid The content type ID
  * @param elem The element to use for sorting
+ * 
  */
 
 
@@ -59,6 +59,10 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * Sorts content by date, from most recent to least recent.
  * If these is no date, content is treated as least recent.
  * Defaults to using the last modified date.
+ * 
+ * @param cid The content type ID
+ * @param elem The element to use for sorting
+ * 
  */
  function byDate(cid, elem) {
 
@@ -107,6 +111,10 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * Sorts content alphabetically, from A to Z. Ignores special characters
  * (anything that isn't a word or space).
  * Defaults to using the Name element.
+ * 
+ * @param cid The content type ID
+ * @param elem The element to use for sorting
+ * 
  */
 function byName(cid, elem) {
 
@@ -156,6 +164,10 @@ function byName(cid, elem) {
  * Particularly useful for single checkboxes (e.g. System Status content type).
  * Defaults to sorting by section order.
  * If two content items have the same value, also sorts by section order.
+ * 
+ * @param cid The content type ID
+ * @param elem The element to use for sorting
+ * 
  */
 function byBoolean(cid, elem) {
 
@@ -211,12 +223,6 @@ function byOrder(cid, elem) {
  * Used for checking if the total number of content items to display has been reached.
  */
 function isLimitPassed(i, limit) {
-    // log("isLimitPassed");
-
-    // if (limit > 0)
-    //     return i >= limit;
-    // else
-    //     return false;
 
     return limit > 0 ? i >= limit : false;
 }
@@ -230,6 +236,9 @@ function isLimitPassed(i, limit) {
  * displays content under different conditions:
  * - Preview: Content must be approved or pending
  * - Publish: Content must be approved
+ * 
+ * @param isPreview boolean
+ * 
  */
 function getMode(isPreview) {
 
@@ -244,7 +253,6 @@ function getMode(isPreview) {
  * Called only when there is any custom field entered
  * 
  * @param elem is a value assigned from an array like object of custom Elements to sort by
- * @returns string
  * 
  */
 function dynamicSort(elem) {
@@ -252,11 +260,7 @@ function dynamicSort(elem) {
     let result = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
-        // log("dynamicSort strA: " + strA);
-
         let strB = b.Content.get(elem).publish();
-        // log("dynamicSort strB: " + strB);
-
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
@@ -273,7 +277,6 @@ function dynamicSort(elem) {
  * 
  * @param cid is the content type id
  * @param elements is a value assigned from an array like object of custom Elements to sort by
- * @returns string
  * 
  */
 // calls dynamic sort and sends one element at a time from the array of custom elements
