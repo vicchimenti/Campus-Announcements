@@ -324,7 +324,7 @@ function main(header, midder, footer) {
          * Set variables
          */
         // gets the title
-        var title = (content.hasElement('Title') ? content.get('Title') : "");
+        var title = content.hasElement('Title') ? content.get('Title') : "";
         // users choice for the content type to sort
         var choice = content.get('Content type and layout').publish();
         // parses out the content id that references the content type in the media library
