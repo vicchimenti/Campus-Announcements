@@ -90,6 +90,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
         }
     }
 
+
     let result = (a, b) => {
 
         var dateA = a.Content.get(elem).getValue();
@@ -141,6 +142,7 @@ function byName(cid, elem) {
         }
     }
 
+
     let result = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
@@ -173,6 +175,7 @@ function byBoolean(cid, elem) {
         }
     }
 
+
     let result = (a, b) => {
 
         var boolA = !a.Content.get(elem).isNull();
@@ -194,10 +197,8 @@ function byBoolean(cid, elem) {
  * Content type ID and element name have no effect on the returned sorting method.
  */
 function byOrder(cid, elem) {
-    // log("byOrder");
 
     return function (a, b) {
-        // log("byOrder return");
 
         if (a.index > b.index)
             return 1;
