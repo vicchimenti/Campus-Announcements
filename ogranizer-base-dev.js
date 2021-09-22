@@ -283,37 +283,23 @@ function dynamicSort(elem) {
  */
 function byCustomElements(cid, elements) {
 
-    // let customElements = elements;
-
     return function(a, b) {
-
 
         let element = 0, result = 0;
 
-        // while (tracker === 0 && i < numberOfElements); {
+        while (result === 0 && element < elements.length) {
 
-        // for ( let el in customElements && tracker === 0) {
-        // while (i < numberOfElements) {
-            while (result === 0 && i < elements.length) {
-
-
-            let currentElement = customElements[element].trim();
+            let currentElement = elements[element].trim();
 
             switch (currentElement) {
                 case 'Published':
-                    result = byDate(cid, 'Published')(a,b);
-                    // log("byCustomElements Published result: " + result);
+                    result = byDate(cid, currentElement)(a,b);
                 case 'Publish Date':
-                    // log("byCustomElements Publish Date currentElement: " + currentElement);
-                    result = byDate(cid, 'Publish Date')(a,b);
-                    // log("byCustomElements Publish Date result: " + result);
+                    result = byDate(cid, currentElement)(a,b);
                 case 'Article Title':
-                    result = byName(cid, 'Article Title')(a,b);
-                    // log("byCustomElements Article Title result: " + result);
+                    result = byName(cid, currentElement)(a,b);
                 default:
-                    // log("byCustomElements default currentElement: " + currentElement);
                     result = dynamicSort(currentElement)(a,b);
-                    // log("byCustomElements default result: " + result);
             }
             element++;
         }
