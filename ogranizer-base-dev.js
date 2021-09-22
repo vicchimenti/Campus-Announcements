@@ -213,10 +213,12 @@ function byOrder(cid, elem) {
 function isLimitPassed(i, limit) {
     // log("isLimitPassed");
 
-    if (limit > 0)
-        return i >= limit;
-    else
-        return false;
+    // if (limit > 0)
+    //     return i >= limit;
+    // else
+    //     return false;
+
+    return limit > 0 ? i >= limit : false;
 }
 
 
@@ -231,7 +233,7 @@ function isLimitPassed(i, limit) {
  */
 function getMode(isPreview) {
 
-    return (isPreview ? CachedContent.CURRENT : CachedContent.APPROVED);
+    return isPreview ? CachedContent.CURRENT : CachedContent.APPROVED;
 }
 
 
