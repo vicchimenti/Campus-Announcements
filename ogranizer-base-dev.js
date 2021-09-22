@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.47
+*     @version 2.48
 */
 
 
@@ -208,7 +208,7 @@ function dynamicSort(elem) {
         log("strB: " + strB);
 
 
-        return strA < strB ? 1 : strA > strB ? -1 : 0;
+        return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
 
     return dynamicSortResult;
@@ -259,6 +259,9 @@ function byCustomElements(cid, elements) {
                 case 'Name':
                     result = byName(cid, currentElement)(a, b);
                     break;
+                case 'Priority':
+                    result = byName(cid, currentElement)(a, b);
+                    break;
                 default:
                     result = dynamicSort(currentElement)(a, b);
                     break;
@@ -275,7 +278,7 @@ function byCustomElements(cid, elements) {
 }
 
 
-
+// Publish Date
 
 /* Main method */
 
@@ -384,7 +387,7 @@ function main(header, midder, footer) {
             // when the user selects any custom sort element
             var arrayOfElements = [];
             arrayOfElements = sElement.split(',');
-            validContent.sort(eval(byCustomElements(CID, arrayOfElements)));
+            validContent.sort(byCustomElements(CID, arrayOfElements));
         } else {
             // when the user only sorts by the default options
             validContent.sort(eval(sortMethod + '(' + CID + ', sElement);'));
