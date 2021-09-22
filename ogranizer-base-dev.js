@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.8
+*     @version 3.9
 */
 
 
@@ -68,6 +68,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  function byDate(cid, elem) {
 
     if (!elem) {
+
         switch (cid) {
             case 208:
                 elem = 'Published';
@@ -114,6 +115,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
 function byName(cid, elem) {
 
     if (!elem) {
+
         switch (cid) {
             case 208:
                 elem = 'Post Title';
@@ -159,9 +161,9 @@ function byName(cid, elem) {
  * If two content items have the same value, also sorts by section order.
  */
 function byBoolean(cid, elem) {
-    // log("by bool");
 
     if (!elem) {
+
         switch (cid) {
             case 359:
                 elem = 'Service is Available';
@@ -171,23 +173,6 @@ function byBoolean(cid, elem) {
         }
     }
 
-
-    // return function (a, b) {
-    //     var boolA = !a.Content.get(elem).isNull();
-    //     // log("by bool boolA");
-
-    //     var boolB = !b.Content.get(elem).isNull();
-    //     // log("by bool boolB");
-
-
-    //     if (boolA && !boolB)
-    //         return 1;
-    //     if (!boolA && boolB)
-    //         return -1;
-    //     return byOrder(cid, elem)(a, b);
-    // }
-
-
     let result = (a, b) => {
 
         var boolA = !a.Content.get(elem).isNull();
@@ -196,7 +181,6 @@ function byBoolean(cid, elem) {
         return  (boolA && !boolB) ? 1
             :   (!boolA && boolB) ? -1
             :   byOrder(cid, elem)(a, b);
-
     }
 
     return result;
