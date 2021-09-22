@@ -142,10 +142,7 @@ function byName(cid, elem) {
     let result = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-        // log("by name strA: " + strA);
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-        // log("by name strB: " + strB);
-
 
         return strA.localeCompare(strB);
     }
