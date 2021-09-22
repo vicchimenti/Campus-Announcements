@@ -66,8 +66,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * Defaults to using the last modified date.
  */
  function byDate(cid, elem) {
-    log("byDate elem: " + elem);
-
 
     if (!elem) {
         switch (cid) {
@@ -87,8 +85,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
         }
     }
 
-    log("byDate cid: " + cid);
-
     return function (a, b) {
 
         var dateA = a.Content.get(elem).getValue();
@@ -97,7 +93,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
         log("dateAStr: " + dateAStr);
         
         var dateB = b.Content.get(elem).getValue();
-        var dateAStr = a.Content.get(elem).publish();
+        var dateBStr = b.Content.get(elem).publish();
 
         log("dateBStr: " + dateBStr);
 
