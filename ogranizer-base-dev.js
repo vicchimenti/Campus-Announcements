@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 2.48
+*     @version 3.0
 */
 
 
@@ -85,10 +85,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
     }
     return function (a, b) {
         var dateA = a.Content.get(elem).getValue();
-        log("dateA: " + dateA);
-
         var dateB = b.Content.get(elem).getValue();
-        log("dateB: " + dateB);
 
         // No date gets least recent treatment
         if (dateA && !dateB)
@@ -111,37 +108,41 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  */
 function byName(cid, elem) {
 
-    let byNameResult = (a, b) => {
+    if (!elem) {
+        switch (cid) {
+            case 208:
+                elem = 'Post Title';
+                break;
+            case 203:
+                elem = 'Name of Faculty or Staff Member';
+                break;
+            case 243:
+                elem = 'Name';
+                break;
+            case 82:
+                elem = 'Article Title';
+                break;
+            case 364:
+                elem = 'Last Name';
+                break;
+            case 548:
+                elem = 'Degree Name';
+                break;
+            default:
+                elem = 'Name';
+                break;
+        }
+    }
+
+    let result = (a, b) => {
 
         var strA = String(a.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-        log("strA: " + strA);
-
         var strB = String(b.Content.get(elem)).replace(/[^\w\s]/gi, '').toLowerCase();
-        log("strB: " + strB);
-
 
         return strA.localeCompare(strB);
     }
-    log("byNameResult: " + byNameResult);
 
-    return byNameResult;
-}
-
-
-
-
-/**
- * Sorts content by section order.
- * Content type ID and element name have no effect on the returned sorting method.
- */
- function byOrder(cid, elem) {
-
-    let byOrderResult = (a, b) =>   a.index > b.index ? 1
-                                :   a.index < b.index ? -1
-                                :   0;
-
-    log("byOrderResult: " + byOrderResult);
-    return byOrderResult;
+    return result;
 }
 
 
@@ -153,15 +154,41 @@ function byName(cid, elem) {
  * If two content items have the same value, also sorts by section order.
  */
 function byBoolean(cid, elem) {
-
-    (a, b) =>  {
-
+    if (!elem) {
+        switch (cid) {
+            case 359:
+                elem = 'Service is Available';
+                break;
+            default:
+                return byOrder(cid, elem)(a, b);
+                break;
+        }
+    }
+    return function (a, b) {
         var boolA = !a.Content.get(elem).isNull();
         var boolB = !b.Content.get(elem).isNull();
+        if (boolA && !boolB)
+            return 1;
+        if (!boolA && boolB)
+            return -1;
+        return byOrder(cid, elem)(a, b);
+    }
+}
 
-        return  boolA && !boolB ? 1
-            :   !boolA && boolB ? -1
-            :   byOrder(cid, elem)(a, b);
+
+
+
+/**
+ * Sorts content by section order.
+ * Content type ID and element name have no effect on the returned sorting method.
+ */
+function byOrder(cid, elem) {
+    return function (a, b) {
+        if (a.index > b.index)
+            return 1;
+        if (a.index < b.index)
+            return -1;
+        return 0;
     }
 }
 
@@ -173,8 +200,10 @@ function byBoolean(cid, elem) {
  * Used for checking if the total number of content items to display has been reached.
  */
 function isLimitPassed(i, limit) {
-
-    return (limit > 0 ? i >= limit : false);
+    if (limit > 0)
+        return i >= limit;
+    else
+        return false;
 }
 
 
@@ -205,19 +234,15 @@ function getMode(isPreview) {
  */
 function dynamicSort(elem) {
 
-    let dynamicSortResult = (a, b) => {
+    let result = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
-        log("strA: " + strA);
-
         let strB = b.Content.get(elem).publish();
-        log("strB: " + strB);
-
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
     }
 
-    return dynamicSortResult;
+    return result;
 }
 
 
@@ -234,57 +259,42 @@ function dynamicSort(elem) {
  */
 // calls dynamic sort and sends one element at a time from the array of custom elements
 function byCustomElements(cid, elements) {
-
+    // assign the array of custom elements to a local scope
     let customElements = elements;
-    log("cid: " + cid);
+    return function (a, b) {
 
-    let result = (a, b) => {
-        let tracker = 0;
-
+        // number of elements is the number of custom sort elements entered by the user
+        let i = 0, result = 0, numberOfElements = customElements.length;
+        
         // if the result is zero then the value of a and b are equal
-        // let i = 0, result = 0, numberOfElements = customElements.length;
-        let i = 0, numberOfElements = customElements.length;
-        while (tracker === 0 && i < numberOfElements) {
+        while (result === 0 && i < numberOfElements) {
 
             // iterate through each element
             let currentElement = customElements[i].trim();
-            log("currentElement: " + currentElement);
 
             // determine sorting system for this element
             switch (currentElement) {
-
                 case 'Published':
-                    result = byDate(cid, currentElement)(a, b);
+                    result = byDate(cid, 'Published')(a,b);
                     break;
                 case 'Publish Date':
-                    result = byDate(cid, currentElement)(a, b);
+                    result = byDate(cid, 'Publish Date')(a,b);
                     break;
-                case 'Service is Available':
-                    result = byBoolean(cid, currentElement)(a, b);
-                    break;
-                case 'Name':
-                    result = byName(cid, currentElement)(a, b);
-                    break;
-                case 'Priority':
-                    result = byName(cid, currentElement)(a, b);
+                case 'Article Title':
+                    result = byName(cid, 'Article Title')(a,b);
                     break;
                 default:
-                    result = dynamicSort(currentElement)(a, b);
+                    result = dynamicSort(currentElement)(a,b);
                     break;
             }
 
             // iterate loop
-            tracker = result;
-            log("result: " + result);
-            log("tracker: " + tracker);
             i++;
         }
+        return result;
     }
-    return result;
 }
 
-
-// Publish Date
 
 /* Main method */
 
