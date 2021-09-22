@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.11
+*     @version 3.12
 */
 
 
@@ -285,14 +285,17 @@ function byCustomElements(cid, elements) {
 
     let customElements = elements;
 
-    let result = (a, b) => {
+    return function(a, b) {
 
 
-        let i = 0, numberOfElements = customElements.length;        
+        let i = 0, result = 0, numberOfElements = customElements.length;
 
-        do {
+        // while (tracker === 0 && i < numberOfElements); {
 
         // for ( let el in customElements && tracker === 0) {
+        // while (i < numberOfElements) {
+            while (result === 0 && i < numberOfElements) {
+
 
             let currentElement = customElements[i].trim();
 
@@ -300,28 +303,22 @@ function byCustomElements(cid, elements) {
                 case 'Published':
                     result = byDate(cid, 'Published')(a,b);
                     // log("byCustomElements Published result: " + result);
-                    break;
                 case 'Publish Date':
                     // log("byCustomElements Publish Date currentElement: " + currentElement);
                     result = byDate(cid, 'Publish Date')(a,b);
                     // log("byCustomElements Publish Date result: " + result);
-                    break;
                 case 'Article Title':
                     result = byName(cid, 'Article Title')(a,b);
                     // log("byCustomElements Article Title result: " + result);
-                    break;
                 default:
                     // log("byCustomElements default currentElement: " + currentElement);
                     result = dynamicSort(currentElement)(a,b);
                     // log("byCustomElements default result: " + result);
-                    break;
             }
             i++;
-
-            // tracker = result;
-        } while (result === 0 && i < numberOfElements);
+        }
+        return result;
     }
-    return result;
 }
 
 
