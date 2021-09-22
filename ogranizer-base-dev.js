@@ -3,11 +3,6 @@
 *     @file newOrganizerBaseDev.js
 *     ID: 1607015
 *
-*     This new content type is being created to solve a sorting problem.
-*     The new Course Item content type requires sorting by multiple input fields
-*     such as Course Number, Course Section, Course Name. These fields need to be
-*     combined into one field and then sorted by the organizer.
-*
 *     Since the Organizer already allows a Custom Sort Field, we will add logic to
 *     allow multiple Fields to be entered in this Custom Sort.
 *
