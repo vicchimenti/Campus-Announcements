@@ -55,6 +55,7 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
 
 
 
+
 /**
  * Sorts content by date, from most recent to least recent.
  * If these is no date, content is treated as least recent.
@@ -156,6 +157,7 @@ function byName(cid, elem) {
 
     return result;
 }
+
 
 
 
@@ -279,22 +281,16 @@ function dynamicSort(elem) {
  * @param elements is a value assigned from an array like object of custom Elements to sort by
  * 
  */
-// calls dynamic sort and sends one element at a time from the array of custom elements
 function byCustomElements(cid, elements) {
-    // assign the array of custom elements to a local scope
-    let customElements = elements;
-    return function (a, b) {
 
-        // number of elements is the number of custom sort elements entered by the user
-        let i = 0, result = 0, numberOfElements = customElements.length;
-        
-        // if the result is zero then the value of a and b are equal
+    let customElements = elements;
+    let result = (a, b) => {
+
+        let i = 0, result = 0, numberOfElements = customElements.length;        
         while (result === 0 && i < numberOfElements) {
 
-            // iterate through each element
             let currentElement = customElements[i].trim();
 
-            // determine sorting system for this element
             switch (currentElement) {
                 case 'Published':
                     result = byDate(cid, 'Published')(a,b);
@@ -315,25 +311,26 @@ function byCustomElements(cid, elements) {
                     // log("byCustomElements default result: " + result);
                     break;
             }
-
-            // iterate loop
             i++;
         }
-        return result;
     }
+    return result;
 }
 
 
-/* Main method */
+
+
+
+
 
 
 /**
+ * Main
  * Method called by Organizer content types to sort and display content.
  */
 function main(header, midder, footer) {
 
     try {
-
 
         /**
          * Set variables
