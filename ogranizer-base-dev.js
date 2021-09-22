@@ -95,9 +95,9 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
         var dateB = b.Content.get(elem).getValue();
 
         return  (dateA && !dateB) ? -1
-                : (!dateA && dateB) ? 1
-                : (!dateA && !dateB) ? 0
-                : dateB.compareTo(dateA);
+            :   (!dateA && dateB) ? 1
+            :   (!dateA && !dateB) ? 0
+            :   dateB.compareTo(dateA);
     }
 
     return result;
@@ -167,25 +167,39 @@ function byBoolean(cid, elem) {
                 elem = 'Service is Available';
                 break;
             default:
-                // log("by bool default");
                 return byOrder(cid, elem);
-                break;
         }
     }
-    return function (a, b) {
+
+
+    // return function (a, b) {
+    //     var boolA = !a.Content.get(elem).isNull();
+    //     // log("by bool boolA");
+
+    //     var boolB = !b.Content.get(elem).isNull();
+    //     // log("by bool boolB");
+
+
+    //     if (boolA && !boolB)
+    //         return 1;
+    //     if (!boolA && boolB)
+    //         return -1;
+    //     return byOrder(cid, elem)(a, b);
+    // }
+
+
+    let result = (a, b) => {
+
         var boolA = !a.Content.get(elem).isNull();
-        // log("by bool boolA");
-
         var boolB = !b.Content.get(elem).isNull();
-        // log("by bool boolB");
 
+        return  (boolA && !boolB) ? 1
+            :   (!boolA && boolB) ? -1
+            :   byOrder(cid, elem)(a, b);
 
-        if (boolA && !boolB)
-            return 1;
-        if (!boolA && boolB)
-            return -1;
-        return byOrder(cid, elem)(a, b);
     }
+
+    return result;
 }
 
 
