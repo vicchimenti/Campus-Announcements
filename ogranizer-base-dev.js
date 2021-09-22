@@ -13,7 +13,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.2
+*     @version 3.3
 */
 
 
@@ -66,6 +66,9 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
  * Defaults to using the last modified date.
  */
  function byDate(cid, elem) {
+    log("byDate elem: " + elem);
+
+
     if (!elem) {
         switch (cid) {
             case 208:
@@ -77,17 +80,30 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
             default:
                 return function (a, b) {
                     var dateA = a.CachedContent.getLastModified(language, CachedContent.APPROVED);
+                    var dateAStr = dateA.toString();
+                    log("default dateAStr: " + dateAStr);
+
                     var dateB = b.CachedContent.getLastModified(language, CachedContent.APPROVED);
+                    var dateBStr = dateB.toString();
+                    log("default dateBStr: " + dateBStr);
+
                     return dateB.compareTo(dateA);
                 }
                 break;
         }
     }
+
+    log("byDate cid: " + cid);
+
     return function (a, b) {
+
         var dateA = a.Content.get(elem).getValue();
-        log("dateA: " + dateA);
+        var dateAStr = dateA.toString();
+        log("dateAStr: " + dateAStr);
+        
         var dateB = b.Content.get(elem).getValue();
-        log("dateB: " + dateB);
+        var dateBStr = dateB.toString();
+        log("dateBStr: " + dateBStr);
 
 
         // No date gets least recent treatment
@@ -97,6 +113,8 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
             return 1;
         if (!dateA && !dateB)
             return 0;
+
+
         return dateB.compareTo(dateA);
     }
 }
@@ -213,7 +231,7 @@ function byOrder(cid, elem) {
  * Used for checking if the total number of content items to display has been reached.
  */
 function isLimitPassed(i, limit) {
-    log("isLimitPassed");
+    // log("isLimitPassed");
 
     if (limit > 0)
         return i >= limit;
@@ -252,10 +270,10 @@ function dynamicSort(elem) {
     let result = (a, b) => {
 
         let strA = a.Content.get(elem).publish();
-        log("dynamicSort strA: " + strA);
+        // log("dynamicSort strA: " + strA);
 
         let strB = b.Content.get(elem).publish();
-        log("dynamicSort strB: " + strB);
+        // log("dynamicSort strB: " + strB);
 
 
         return strA > strB ? 1 : strA < strB ? -1 : 0;
@@ -298,6 +316,7 @@ function byCustomElements(cid, elements) {
                     log("byCustomElements Published result: " + result);
                     break;
                 case 'Publish Date':
+                    log("byCustomElements Publish Date currentElement: " + currentElement);
                     result = byDate(cid, 'Publish Date')(a,b);
                     log("byCustomElements Publish Date result: " + result);
                     break;
@@ -306,6 +325,7 @@ function byCustomElements(cid, elements) {
                     log("byCustomElements Article Title result: " + result);
                     break;
                 default:
+                    log("byCustomElements default currentElement: " + currentElement);
                     result = dynamicSort(currentElement)(a,b);
                     log("byCustomElements default result: " + result);
                     break;
