@@ -1,11 +1,10 @@
 /***
 *     @author Victor Chimenti, MSCS
-*     @file testingOrganizerBase.js
+*     @file organizerBaseWorkingFile.js
 *     ID: 2984595
+*     organizer base working file
 *
 *     Development file for making improvements on organizer functionality
-*
-*     Adapted from the existing organizer organizer.js media library id 163514
 *
 *     @version 4.1
 */
