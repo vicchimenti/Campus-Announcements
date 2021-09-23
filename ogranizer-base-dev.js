@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.19
+*     @version 3.20
 */
 
 
@@ -476,44 +476,56 @@ function main(header, midder, footer) {
             // and we must communicate to our departments that we don't support that functionality
             // when they try to select both summary and paginator
             // Victor 7/2020
+
+
+
+
         } else {
 
+            /**
+             * Gather content and write header
+             * 
+             */
             document.write(header);
             var oSW = new java.io.StringWriter();
             var oT4SW = new T4StreamWriter(oSW);
             var oCP = new ContentPublisher();
 
-            // log("LIMIT: " + LIMIT);
-            // log("nStart: " + nStart);
 
+
+            /**
+             * initialize iterators to account for starting and ending points
+             * 
+             */
             let maxIterations = LIMIT <= validContent.length && LIMIT > 0 ? LIMIT : validContent.length;
             let start = nStart <= validContent.length ? nStart - 1 : 0;
             let iterations = 0;
 
 
 
-            // log("start: " + start);
-            // log("iterations: " + iterations);
-            // log("maxIterations: " + maxIterations);
-            // log("validContent.length: " + validContent.length);
-
-
+            /**
+             * loop through valid content and write only items requested
+             * 
+             */
             do {
                 oCP.write(oT4SW, dbStatement, publishCache, oSection, validContent[start].Content, LAYOUT, isPreview);
                 start++;
                 iterations++;
             } while (start < validContent.length && iterations < maxIterations);
 
-            // log("start: " + start);
-            // log("iterations: " + iterations);
-            // log("maxIterations: " + maxIterations);
-            // log("validContent.length: " + validContent.length);
-            
+
+
+
+            /**
+             * write the document
+             * 
+             */            
             document.write(oSW.toString());
             document.write(midder);
             document.write(footer);
         }
-        // End Main
+
+
 
 
     } catch (e) {
