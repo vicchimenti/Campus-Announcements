@@ -2,13 +2,9 @@
 *     @author Victor Chimenti, MSCS
 *     @file organizerBaseCourseItem.js
 *     ID: 1607015
+*     organizer base course item
 *
-*     Since the Organizer already allows a Custom Sort Field, we will add logic to
-*     allow multiple Fields to be entered in this Custom Sort.
-*
-*     Adapted from the existing organizer organizer.js media library id 163514
-*
-*     @version 3.22
+*     @version 3.23
 */
 
 
