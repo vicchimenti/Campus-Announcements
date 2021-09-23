@@ -226,9 +226,6 @@ function byOrder(cid, elem) {
  */
 function isLimitPassed(i, limit) {
 
-    log("limit: " + limit);
-    log("i: " + i);
-
     return limit > 0 ? i >= limit : false;
 }
 
