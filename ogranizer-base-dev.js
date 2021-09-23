@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.20
+*     @version 3.21
 */
 
 
@@ -292,10 +292,13 @@ function byCustomElements(cid, elements) {
             switch (currentElement) {
                 case 'Published':
                     result = byDate(cid, currentElement)(a,b);
+                    break;
                 case 'Publish Date':
                     result = byDate(cid, currentElement)(a,b);
+                    break;
                 case 'Article Title':
                     result = byName(cid, currentElement)(a,b);
+                    break;
                 default:
                     result = dynamicSort(currentElement)(a,b);
             }
