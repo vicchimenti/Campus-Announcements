@@ -3,8 +3,7 @@
 *     @file newOrganizerBaseDev.js
 *     ID: 2984595
 *
-*     Since the Organizer already allows a Custom Sort Field, we will add logic to
-*     allow multiple Fields to be entered in this Custom Sort.
+*     Development file for making improvements on organizer functionality
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
