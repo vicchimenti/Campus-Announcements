@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.16
+*     @version 3.17
 */
 
 
@@ -494,6 +494,10 @@ function main(header, midder, footer) {
             log("LIMIT: " + LIMIT);
             log("nStart: " + nStart);
 
+            var maxIterations = LIMIT <= validContent.length ? LIMIT : validContent.length;
+            var start = nStart <= validContent.length ? nStart - 1 : 0;
+            let iterations = 0;
+
             // log("totalToDisplay: " + totalToDisplay);
             // log("firstItem: " + firstItem);
             // var start = nStart <= validContent.length ? nStart - 1 : 0;
@@ -501,17 +505,24 @@ function main(header, midder, footer) {
 
             // var finish = validContent.length > LIMIT ? validContent.length - LIMIT : validContent.length;
             // var finish = reviewLength < start || validContent.length < start : 
-            start = start <= finish ? start : 0;
+            // start = start <= finish ? start : 0;
 
-            // log("start: " + start);
-            // log("finish: " + finish);
+            log("start: " + start);
+            log("iterations: " + iterations);
+            log("maxIterations: " + maxIterations);
             log("validContent.length: " + validContent.length);
 
 
             do {
                 oCP.write(oT4SW, dbStatement, publishCache, oSection, validContent[start].Content, LAYOUT, isPreview);
                 start++;
-            } while (start < finish);
+                iterations++;
+            } while (start < validContent.length && iterations < maxIterations);
+
+            log("start: " + start);
+            log("iterations: " + iterations);
+            log("maxIterations: " + maxIterations);
+            log("validContent.length: " + validContent.length);
             
             document.write(oSW.toString());
             document.write(midder);
