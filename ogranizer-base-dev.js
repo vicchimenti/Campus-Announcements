@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.21
+*     @version 4.0
 */
 
 
