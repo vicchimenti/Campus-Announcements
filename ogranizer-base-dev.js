@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.15
+*     @version 3.16
 */
 
 
@@ -496,10 +496,12 @@ function main(header, midder, footer) {
 
             log("totalToDisplay: " + totalToDisplay);
             log("firstItem: " + firstItem);
-            var start = nStart - 1;
+            var start = nStart <= validContent.length ? nStart - 1 : 0;
             // var finish = LIMIT < validContent.length ? LIMIT : validContent.length;
 
-            var finish = validContent.length >= LIMIT ? validContent.length - LIMIT - 1 : validContent.length;
+            var finish = validContent.length > LIMIT ? validContent.length - LIMIT - 1 : validContent.length;
+            // var finish = reviewLength < start || validContent.length < start : 
+            start = start <= finish ? start : 0;
 
             log("start: " + start);
             log("finish: " + finish);
