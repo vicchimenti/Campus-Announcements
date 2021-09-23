@@ -8,7 +8,7 @@
 *
 *     Adapted from the existing organizer organizer.js media library id 163514
 *
-*     @version 3.18
+*     @version 3.19
 */
 
 
@@ -486,19 +486,19 @@ function main(header, midder, footer) {
             var oT4SW = new T4StreamWriter(oSW);
             var oCP = new ContentPublisher();
 
-            log("LIMIT: " + LIMIT);
-            log("nStart: " + nStart);
+            // log("LIMIT: " + LIMIT);
+            // log("nStart: " + nStart);
 
-            var maxIterations = LIMIT <= validContent.length && LIMIT > 0 ? LIMIT : validContent.length;
-            var start = nStart <= validContent.length ? nStart - 1 : 0;
+            let maxIterations = LIMIT <= validContent.length && LIMIT > 0 ? LIMIT : validContent.length;
+            let start = nStart <= validContent.length ? nStart - 1 : 0;
             let iterations = 0;
 
 
 
-            log("start: " + start);
-            log("iterations: " + iterations);
-            log("maxIterations: " + maxIterations);
-            log("validContent.length: " + validContent.length);
+            // log("start: " + start);
+            // log("iterations: " + iterations);
+            // log("maxIterations: " + maxIterations);
+            // log("validContent.length: " + validContent.length);
 
 
             do {
@@ -507,10 +507,10 @@ function main(header, midder, footer) {
                 iterations++;
             } while (start < validContent.length && iterations < maxIterations);
 
-            log("start: " + start);
-            log("iterations: " + iterations);
-            log("maxIterations: " + maxIterations);
-            log("validContent.length: " + validContent.length);
+            // log("start: " + start);
+            // log("iterations: " + iterations);
+            // log("maxIterations: " + maxIterations);
+            // log("validContent.length: " + validContent.length);
             
             document.write(oSW.toString());
             document.write(midder);
