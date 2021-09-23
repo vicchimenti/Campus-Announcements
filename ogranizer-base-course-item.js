@@ -9,6 +9,7 @@
 
 
 
+
 importClass(com.terminalfour.sitemanager.cache.CachedContent);
 importClass(com.terminalfour.navigation.ServerSideLinkManager);
 importClass(com.terminalfour.spring.ApplicationContextProvider);
@@ -18,6 +19,7 @@ importClass(com.terminalfour.utils.T4StreamWriter);
 importClass(com.terminalfour.publish.ContentPublisher);
 importClass(com.terminalfour.publish.utils.BrokerUtils);
 importClass(com.terminalfour.navigation.items.utils.NavigationPaginator);
+
 
 
 
@@ -38,15 +40,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
 
 
 
-/**
- * All methods select what element to use for sorting if one is not provided,
- * depending on the content type ID. They then return a method to be used by
- * Array.prototype.sort().
- *
- * @param cid The content type ID
- * @param elem The element to use for sorting
- * 
- */
 
 
 
