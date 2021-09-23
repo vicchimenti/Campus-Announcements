@@ -1,6 +1,6 @@
 /***
 *     @author Victor Chimenti, MSCS
-*     @file newOrganizerBaseDev.js
+*     @file testingOrganizerBase.js
 *     ID: 2984595
 *
 *     Development file for making improvements on organizer functionality
@@ -41,15 +41,6 @@ log = message => document.write('<script>eval("console.log(\'' + message + '\')"
 
 
 
-/**
- * All methods select what element to use for sorting if one is not provided,
- * depending on the content type ID. They then return a method to be used by
- * Array.prototype.sort().
- *
- * @param cid The content type ID
- * @param elem The element to use for sorting
- * 
- */
 
 
 
