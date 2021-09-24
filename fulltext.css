@@ -7,7 +7,7 @@
     margin-bottom: 1.6rem;
 }
 
-.announcannouncementFullText .card-header h1#pageTitle {
+#pageContentWrapper .announcementFullText.newsArticleWrapper .card-header h1#pageTitle {
     color: #AA0000;
     font-family: "Montserrat", sans-serif;
     font-size: 3.8rem;
@@ -18,9 +18,13 @@
 }
 
 .announcementFullText img.card-img-top {
-    padding: 2rem 2rem 0 2rem;
+    padding: 2rem 0;
     width: 100%;
     width: -moz-available;
     width: -webkit-fill-available;
     width: fill-available;
+}
+
+.row.summaryWrapper {
+    margin: 0;
 }
