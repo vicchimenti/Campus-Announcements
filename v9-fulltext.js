@@ -134,7 +134,9 @@ try {
     //  var endingHTML = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
-    var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
+    var titleLink = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
+
+    //  var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
