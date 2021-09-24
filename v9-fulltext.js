@@ -194,13 +194,14 @@ try {
 
         }
 
-        if (contentDict.articlePhotoCredit.content != "") {
-            photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
-        }
-
         if (contentDict.articleCaption.content != "") {
 
             captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
+        }
+
+        if (contentDict.articlePhotoCredit.content != "") {
+
+            photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
         }
 
 
@@ -260,6 +261,7 @@ try {
             openImageWrapper,
             imageString,
             captionString,
+            photoCreditWrapper,
             closeImageWrapper,
             openRow,
             openBodyWrapper,
