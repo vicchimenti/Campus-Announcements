@@ -28,3 +28,22 @@
 .row.summaryWrapper {
     margin: 0;
 }
+
+.announcementFullText.newsArticleWrapper .externalLink a {
+    color: #088099;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.announcementFullText.newsArticleWrapper .externalLink a:hover {
+    text-decoration: underline;
+}
+
+.announcementFullText.newsArticleWrapper .externalLink a:focus {
+    text-decoration: underline;
+}
+
+.announcementFullText .articleSummary p {
+    font-weight: 500;
+}
