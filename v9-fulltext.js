@@ -118,7 +118,6 @@ try {
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
-    //  var anchorTag = com.terminalfour.publish.utils.BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, "<t4 type='meta' meta='html_anchor' />");
 
 
 
@@ -126,21 +125,15 @@ try {
      *  default html initializations
      * 
      * */
-    //  var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentID + '" aria-label="' + articleTitle + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
-
     var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
     var endingHTML = '</div></div>';
-
     var bodyBorder = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
-
-    //  var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
-    // var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
@@ -152,16 +145,6 @@ try {
     var closePanelLinks = '</ul>';
     var openImageWrapper = '<div class="imageWrapper hidden visually-hidden">';
     var closeImageWrapper = '</div>';
-
-
-
-    /***
-     *  check for fulltext content
-     * 
-     * */
-    //  if (contentDict.articleFullBody.content != "") {
-    //      titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-    //  }
 
 
 
