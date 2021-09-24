@@ -5,11 +5,10 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 6.2
+ *     @version 6.3
  */
 
-// var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentID + '" aria-label="' + articleTitle + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
-// var endingHTML = '</div></div>';
+
 
 
 
