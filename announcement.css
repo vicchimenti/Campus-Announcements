@@ -5,6 +5,7 @@
 
 
 /* expand small images to fill available space on all browsers */
+
 .announcement.newsItemWrapper img.card-img-top {
     padding: 2rem 2rem 0 2rem;
     width: 100%;
@@ -41,7 +42,8 @@
     color: #AA0000;
 }
 
-.announcement h3.card-title a:hover, .announcement h3.card-title a:focus {
+.announcement h3.card-title a:hover,
+.announcement h3.card-title a:focus {
     color: #AA0000;
 }
 
@@ -144,8 +146,8 @@
 }
 
 
-
 /* ZoneB Defaults */
+
 .announcementZoneb.newsItemWrapper {
     padding: 0;
     border: none;
@@ -168,11 +170,12 @@
     color: #AA0000;
 }
 
-.announcementZoneb.newsItemWrapper .externalLink a  {
+.announcementZoneb.newsItemWrapper .externalLink a {
     font-size: 1.35rem;
 }
 
-.announcementZoneb h4.card-title a:hover, .announcementZoneb h4.card-title a:focus {
+.announcementZoneb h4.card-title a:hover,
+.announcementZoneb h4.card-title a:focus {
     color: #AA0000;
 }
 
@@ -191,12 +194,11 @@
 
 
 /* Mobile layouts below 992 */
-@media screen and (max-width: 991.99px) {
 
+@media screen and (max-width: 991.99px) {
     #zoneA .announcementZoneb {
         padding: 0 2rem;
     }
-
     .announcement div.newsroomArticle.tags {
         width: unset;
     }
