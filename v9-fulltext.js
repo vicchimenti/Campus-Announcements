@@ -270,6 +270,7 @@ try {
             summaryString,
             listOfTags,
             audienceList,
+            contentDict.articleFullBody.content,
             openSortFields,
             prioityString,
             closeSortFields,
