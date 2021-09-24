@@ -83,8 +83,9 @@
     /* margin: 0 20px 20px 20px; */
 }
 
-figure.figure-caption {
+.announcementFullText .articleSummary figure.figure-caption {
     color: #333333;
     font-size: 1.6rem;
+    font-weight: 500;
     line-height: 1.5;
 }
