@@ -6,3 +6,21 @@
 .announcementFullText.newsArticleWrapper .standardContent .card-body p {
     margin-bottom: 1.6rem;
 }
+
+.announcannouncementFullText .card-header h1#pageTitle {
+    color: #AA0000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 3.8rem;
+    font-weight: 500;
+    hyphens: none;
+    padding: 0;
+    margin: 0;
+}
+
+.announcementFullText img.card-img-top {
+    padding: 2rem 2rem 0 2rem;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+}
