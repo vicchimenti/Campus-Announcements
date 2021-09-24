@@ -126,8 +126,12 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
-    var endingHTML = '<hr class="articleBorderBottom"></div>';
+    //  var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentID + '" aria-label="' + articleTitle + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
+
+    var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
+    var endingHTML = '</div></div>';
+
+    //  var endingHTML = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
