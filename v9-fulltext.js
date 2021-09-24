@@ -5,7 +5,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 5.93
+ *     @version 6.0
  */
 
 // var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentID + '" aria-label="' + articleTitle + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
@@ -158,9 +158,9 @@ try {
      *  check for fulltext content
      * 
      * */
-    if (contentDict.articleFullBody.content != "") {
-        titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-    }
+    //  if (contentDict.articleFullBody.content != "") {
+    //      titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+    //  }
 
 
 
