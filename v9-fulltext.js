@@ -102,6 +102,7 @@ try {
         articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
         publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
+        articleAuthor: getContentValues(''),
         articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
         articleCaption: getContentValues('<t4 type="content" name="Caption" output="normal" modifiers="striptags,htmlentities" />'),
         articlePhotoCredit: getContentValues('<t4 type="content" name="Photography By" output="normal" modifiers="striptags,htmlentities" />'),
