@@ -141,8 +141,9 @@ try {
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openPanelLinks = '<ul class="panelLinks">';
     var closePanelLinks = '</ul>';
-    var openImageWrapper = '<div class="imageWrapper hidden visually-hidden">';
-    var closeImageWrapper = '</div>';
+    var openImageWrapper = '<figure class="figure hidden visually-hidden">';
+    var closeImageWrapper = '</figure>';
+    var captionString = '<figcaption class="figure-caption hidden visually-hidden" >No Caption Provided< /figcaption>';
 
 
 
@@ -184,15 +185,20 @@ try {
 
         if (info.check()) {
 
-            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
 
         } else {
 
-            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
 
         }
 
-        openImageWrapper = '<div class="imageWrapper">';
+        openImageWrapper = '<figure class="figure">';
+
+        if (contentDict.articleCaption.content != "") {
+
+            captionString = '<figcaption class="figure-caption" >' + contentDict.articleCaption.content + '< /figcaption>';
+        }
     }
 
 
@@ -246,6 +252,7 @@ try {
             titleLink,
             openImageWrapper,
             imageString,
+            captionString,
             closeImageWrapper,
             openRow,
             openBodyWrapper,
