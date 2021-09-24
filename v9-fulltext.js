@@ -103,6 +103,7 @@ try {
         articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
         publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
         articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
+        articleCaption: getContentValues(''),
         articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
