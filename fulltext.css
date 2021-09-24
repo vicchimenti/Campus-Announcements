@@ -47,3 +47,31 @@
 .announcementFullText .articleSummary p {
     font-weight: 500;
 }
+
+.announcementFullText div.newsroomArticle.tags {
+    display: inline-flex;
+    width: auto;
+}
+
+.announcementFullText ul.categories {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.announcementFullText ul.categories li {
+    background: none;
+    border: none;
+    color: #AA0000;
+    display: inline-block !important;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 0.5rem 2rem 0 0;
+}
+
+.announcementFullText .audience ul.categories li {
+    color: #55B31B;
+}
+
+.announcementFullText ul.categories li:before {
+    content: unset;
+}
