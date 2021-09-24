@@ -251,6 +251,7 @@ try {
     writeDocument(
         [
             beginningHTML,
+            contentDict.anchorTag.content,
             imageString,
             openRow,
             openBodyWrapper,
