@@ -18,7 +18,7 @@
 }
 
 .announcementFullText img.card-img-top {
-    padding: 2rem 0;
+    padding: 2rem 0 1rem 0;
     width: 100%;
     width: -moz-available;
     width: -webkit-fill-available;
@@ -91,5 +91,5 @@
 }
 
 .announcementFullText .article figure {
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
