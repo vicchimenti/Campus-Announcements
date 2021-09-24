@@ -150,7 +150,8 @@ try {
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openPanelLinks = '<ul class="panelLinks">';
     var closePanelLinks = '</ul>';
-
+    var openImageWrapper = '<div class="imageWrapper hidden visually-hidden">';
+    var closeImageWrapper = '</div>';
 
 
 
@@ -261,10 +262,12 @@ try {
         [
             beginningHTML,
             contentDict.anchorTag.content,
+            titleLink,
+            openImageWrapper,
             imageString,
+            closeImageWrapper,
             openRow,
             openBodyWrapper,
-            titleLink,
             linkString,
             dateString,
             summaryString,
