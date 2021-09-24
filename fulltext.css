@@ -88,6 +88,15 @@
     display: inline-block;
     font-size: 2rem;
     font-weight: 500;
+    hyphens: none;
+    line-height: 1.5;
+}
+
+.announcementFullText .article .imageCredit {
+    color: #333333;
+    font-size: 1.25rem;
+    font-weight: 400;
+    hyphens: none;
     line-height: 1.5;
 }
 
