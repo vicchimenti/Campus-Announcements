@@ -144,6 +144,7 @@ try {
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
     var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
+    var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
 
 
 
@@ -193,10 +194,16 @@ try {
 
         }
 
+        if (contentDict.articlePhotoCredit.content != "") {
+            photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
+        }
+
         if (contentDict.articleCaption.content != "") {
 
             captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
         }
+
+
 
         openImageWrapper = '<figure class="figure">';
     }
