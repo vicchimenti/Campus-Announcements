@@ -131,7 +131,7 @@ try {
     var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
     var endingHTML = '</div></div>';
 
-    //  var endingHTML = '<hr class="articleBorderBottom"></div>';
+    var bodyBorder = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
@@ -272,7 +272,9 @@ try {
             dateString,
             listOfTags,
             audienceList,
+            bodyBorder,
             contentDict.articleFullBody.content,
+            bodyBorder,
             openSortFields,
             prioityString,
             closeSortFields,
