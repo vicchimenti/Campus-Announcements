@@ -75,3 +75,10 @@
 .announcementFullText ul.categories li:before {
     content: unset;
 }
+
+.announcementFullText hr.articleBorderBottom {
+    border-top: 3px solid #e5e5e5;
+    display: block;
+    height: 3px;
+    /* margin: 0 20px 20px 20px; */
+}
