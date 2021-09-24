@@ -5,12 +5,8 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 6.3
+ *     @version 6.6
  */
-
-
-
-
 
 
 
@@ -22,6 +18,10 @@ importClass(com.terminalfour.media.IMediaManager);
 importClass(com.terminalfour.spring.ApplicationContextProvider);
 importClass(com.terminalfour.publish.utils.BrokerUtils);
 importClass(com.terminalfour.media.utils.ImageInfo);
+
+
+
+
 
 
 
@@ -143,7 +143,7 @@ try {
     var closePanelLinks = '</ul>';
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
-    var captionString = '<figcaption class="figure-caption hidden visually-hidden" >No Caption Provided< /figcaption>';
+    var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
 
 
 
@@ -193,12 +193,12 @@ try {
 
         }
 
-        openImageWrapper = '<figure class="figure">';
-
         if (contentDict.articleCaption.content != "") {
 
-            captionString = '<figcaption class="figure-caption" >' + contentDict.articleCaption.content + '< /figcaption>';
+            captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
         }
+
+        openImageWrapper = '<figure class="figure">';
     }
 
 
