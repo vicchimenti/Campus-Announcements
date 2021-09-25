@@ -5,7 +5,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 6.9
+ *     @version 6.10
  */
 
 
@@ -36,8 +36,6 @@ function getContentValues(tag) {
         return {
             isError: false,
             content:    BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
-                ?       BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
-                :       null
         }
 
     } catch (error) {
@@ -48,33 +46,8 @@ function getContentValues(tag) {
     }
 }
 
-// function validateContent(itemKeys) {
 
-//     itemKeys.forEach(function(key) {
-//         console.log(key, dictionary[key]);
-//     });
-// }
 
-// var keys = Object.keys(dictionary);
-// keys.forEach(function(key){
-//     console.log(key, dictionary[key]);
-// });
-
-// for (let [key, value] of Object.entries(item)) {
-
-// }
-
-// for (const [key, value] of Object.entries(object)) {
-//     console.log(key, value);
-//   }
-
-// for (const [key, value] of myMap.entries()) {
-//     console.log(key, value);
-//   }
-
-// Object.keys(obj).forEach(function(key) {
-//     console.log(key + " " + obj[key]);
-//  });
 
 /***
  *      Returns a media object
@@ -146,7 +119,7 @@ try {
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
-    var keys = Object.keys(contentDict);
+    // var keys = Object.keys(contentDict);
 
 
 
@@ -207,7 +180,7 @@ try {
      *  Parse for image
      * 
      * */
-    if (contentDict.articleImage.content) {
+    if (contentDict.articleImage.content !== "") {
 
         var imageID = content.get('Image').getID();
         var mediaInfo = getMediaInfo(imageID);
