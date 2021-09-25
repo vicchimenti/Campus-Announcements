@@ -5,7 +5,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.17
+ *     @version 6.18
  */
 
 
