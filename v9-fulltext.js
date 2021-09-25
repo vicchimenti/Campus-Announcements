@@ -133,7 +133,7 @@ try {
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
-    var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
+    var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
     var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
