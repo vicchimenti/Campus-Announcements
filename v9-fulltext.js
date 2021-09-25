@@ -119,7 +119,6 @@ try {
         contentID: getContentValues('<t4 type="meta" meta="content_id" />')
     };
 
-    // var keys = Object.keys(contentDict);
 
 
 
@@ -157,7 +156,7 @@ try {
      *  Parse for external link
      * 
      * */
-    if (contentDict.sectionLink.content) {
+    if (contentDict.sectionLink.content != "") {
         linkString = '<span class="externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></span>';
     }
 
@@ -169,7 +168,7 @@ try {
      *  Currently a hidden sort field
      * 
      * */
-    if (contentDict.priority.content) {
+    if (contentDict.priority.content != "") {
         prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
     }
 
@@ -180,7 +179,7 @@ try {
      *  Parse for image
      * 
      * */
-    if (contentDict.articleImage.content !== "") {
+    if (contentDict.articleImage.content != "") {
 
         var imageID = content.get('Image').getID();
         var mediaInfo = getMediaInfo(imageID);
@@ -198,12 +197,12 @@ try {
 
         }
 
-        if (contentDict.articleCaption.content) {
+        if (contentDict.articleCaption.content != "") {
 
             captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
         }
 
-        if (contentDict.articlePhotoCredit) {
+        if (contentDict.articlePhotoCredit != "") {
 
             photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
         }
@@ -220,7 +219,7 @@ try {
      *  parse the list of topics tags, add <li> tags
      * 
      * */
-    if (contentDict.topics.content) {
+    if (contentDict.topics.content != "") {
 
         let listItems = '';
         let arrayOfTags = contentDict.topics.content.split(',');
@@ -239,7 +238,7 @@ try {
      *  parse the list of audience tags, add <li> tags
      * 
      * */
-    if (contentDict.audience.content) {
+    if (contentDict.audience.content != "") {
 
         let audienceItems = '';
         let audienceArray = contentDict.audience.content.split(',');
