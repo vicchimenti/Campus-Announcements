@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.7
+   *     @version 7.8
    */
 
 
@@ -121,12 +121,12 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<div class="newsItemWrapper announcementZoneb contentItem card" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<div class="newsItemWrapper announcementZoneb contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="Sidebar Content: ' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<h4 class="card-title">' + contentDict.articleTitle.content + '</h4>';
-    var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
+    var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
     var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
