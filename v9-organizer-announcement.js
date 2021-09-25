@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.21
+   *     @version 6.22
    */
 
 
@@ -138,6 +138,8 @@ function writeDocument(array) {
       var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
       var openPanelLinks = '<ul class="panelLinks">';
       var closePanelLinks = '</ul>';
+      var openPublishDetails = '<div class="publishDetails">';
+      var closePublishDetails = '</div>';
 
 
 
@@ -252,8 +254,10 @@ function writeDocument(array) {
               openRow,
               openBodyWrapper,
               titleLink,
+              openPublishDetails,
               linkString,
               dateString,
+              closePublishDetails,
               summaryString,
               listOfTags,
               audienceList,
