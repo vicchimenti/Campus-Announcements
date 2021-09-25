@@ -5,7 +5,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 6.14
+ *     @version 6.15
  */
 
 
@@ -135,7 +135,7 @@ try {
     var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
-    var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
+    var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
@@ -170,7 +170,7 @@ try {
      * 
      * */
     if (contentDict.articleAuthor.content !="") {
-        byLine = '<p class="card-text hidden visually-hidden"><strong class="author">' + contentDict.articleAuthor.content + '</strong></p>';
+        byLine = '<p class="card-text author"><strong>' + contentDict.articleAuthor.content + '</strong></p>';
     }
     
 
@@ -283,6 +283,7 @@ try {
             openBodyWrapper,
             linkString,
             dateString,
+            byLine,
             listOfTags,
             audienceList,
             bodyBorder,
