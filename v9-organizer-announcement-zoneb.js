@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.8
+   *     @version 7.9
    */
 
 
@@ -137,8 +137,6 @@ try {
     var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var lastModifiedString = '<p class="card-text lastModified"><em class="text-muted">Updated: ' + contentDict.lastModified.content + '</em></p>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    var openPanelLinks = '<ul class="panelLinks">';
-    var closePanelLinks = '</ul>';
 
 
 
