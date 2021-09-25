@@ -1,5 +1,5 @@
   /***
-   *     @author Victor Chimenti, MSCS-SE '20
+   *     @author Victor Chimenti, MSCS
    *     @file v9-organizer-announcement.js
    *     v9/organizer/announcement
    *     id:5580
