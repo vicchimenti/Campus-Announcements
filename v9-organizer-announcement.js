@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.22
+   *     @version 6.23
    */
 
 
