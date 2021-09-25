@@ -5,7 +5,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.16
+ *     @version 6.17
  */
 
 
@@ -128,7 +128,7 @@ try {
      * */
     var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
     var endingHTML = '</div></div>';
-    var bodyBorder = '<hr class="articleBorderBottom"></div>';
+    var bodyBorder = '<hr class="articleBorderBottom">';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var titleLink = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
@@ -283,9 +283,11 @@ try {
             closeImageWrapper,
             openRow,
             openBodyWrapper,
+            openPublishDetails,
             linkString,
             dateString,
             byLine,
+            closePublishDetails,
             listOfTags,
             audienceList,
             bodyBorder,
