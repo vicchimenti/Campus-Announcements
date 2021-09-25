@@ -47,8 +47,14 @@
     color: #AA0000;
 }
 
-.announcement .standardContent .card-body .publishDetails {
-    margin: 1rem 0;
+.announcement .publishDetails {
+    margin: 1.6rem 0;
+}
+
+.announcement .publishDetails p {
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 .announcement .articleSummary p {
