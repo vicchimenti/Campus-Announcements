@@ -292,7 +292,7 @@ try {
             listOfTags,
             audienceList,
             bodyBorder,
-            contentDict.articleFullBody.content,
+            bodyString,
             bodyBorder,
             openSortFields,
             prioityString,
