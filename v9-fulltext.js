@@ -5,7 +5,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 6.10
+ *     @version 6.11
  */
 
 
@@ -202,7 +202,7 @@ try {
             captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
         }
 
-        if (contentDict.articlePhotoCredit != "") {
+        if (contentDict.articlePhotoCredit.content != "") {
 
             photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
         }
