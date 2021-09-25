@@ -149,6 +149,8 @@ try {
     var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
     var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
     var byLine = '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
+    var openPublishDetails = '<div class="publishDetails">';
+    var closePublishDetails = '</div>';
 
 
 
