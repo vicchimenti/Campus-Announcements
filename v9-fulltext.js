@@ -5,7 +5,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.19
+ *     @version 6.21
  */
 
 
@@ -83,6 +83,7 @@ function readMedia(mediaID) {
 function writeDocument(array) {
 
     for (var i = 0; i < array.length; i++) {
+
         document.write(array[i]);
     }
 }
@@ -162,6 +163,7 @@ try {
      * 
      * */
     if (contentDict.sectionLink.content !="") {
+
         linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
     }
 
@@ -173,6 +175,7 @@ try {
      * 
      * */
     if (contentDict.articleAuthor.content !="") {
+
         byLine = '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>';
     }
     
@@ -185,6 +188,7 @@ try {
      * 
      * */
     if (contentDict.priority.content !="") {
+
         prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
     }
 
@@ -210,7 +214,6 @@ try {
         } else {
 
             imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
-
         }
 
         if (contentDict.articleCaption.content !="") {
@@ -222,8 +225,6 @@ try {
 
             photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
         }
-
-
 
         openImageWrapper = '<figure class="figure">';
     }
@@ -239,7 +240,9 @@ try {
 
         let listItems = '';
         let arrayOfTags = contentDict.topics.content.split(',');
+
         for (let i = 0; i < arrayOfTags.length; i++) {
+
             listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
         }
 
@@ -258,7 +261,9 @@ try {
 
         let audienceItems = '';
         let audienceArray = contentDict.audience.content.split(',');
+
         for (let i = 0; i < audienceArray.length; i++) {
+
             audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
         }
 
