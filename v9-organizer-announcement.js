@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.24
+   *     @version 6.25
    */
 
 
@@ -120,12 +120,12 @@ function writeDocument(array) {
        *  default html initializations
        * 
        * */
-      var beginningHTML = '<div class="newsItemWrapper announcement contentItem card" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
+      var beginningHTML = '<div class="newsItemWrapper announcement contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
       var endingHTML = '<hr class="articleBorderBottom"></div>';
       var openRow = '<div class="row summaryWrapper">';
       var closeRow = '</div>';
       var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-      var openBodyWrapper = '<div class="articleSummary col-12 card-body">';
+      var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
       var closeBodyWrapper = '</div>';
       var imageString = '<img class="hidden visually-hidden" />';
       var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
