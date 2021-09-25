@@ -47,6 +47,10 @@
     color: #AA0000;
 }
 
+.announcement .standardContent .card-body .publishDetails {
+    margin: 1rem 0;
+}
+
 .announcement .articleSummary p {
     font-weight: 500;
 }
