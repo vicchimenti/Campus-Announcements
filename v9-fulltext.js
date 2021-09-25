@@ -151,6 +151,7 @@ try {
     var byLine = '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
+    var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
 
 
 
