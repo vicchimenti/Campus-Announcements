@@ -3,9 +3,6 @@
 *       ID: 5580
 */
 
-/* .announcementFullText.newsArticleWrapper .standardContent .card-body p {
-    margin-bottom: 1.6rem;
-} */
 
 #pageContentWrapper .announcementFullText.newsArticleWrapper .card-header h1#pageTitle {
     color: #AA0000;
@@ -80,7 +77,6 @@
     border-top: 3px solid #e5e5e5;
     display: block;
     height: 3px;
-    /* margin: 0 20px 20px 20px; */
 }
 
 .announcementFullText .article figcaption.figure-caption {
@@ -100,11 +96,6 @@
     line-height: 1.5;
 }
 
-
-.announcementFullText .fullTextBody p {
+.announcementFullText .standardContent .card-body .fullTextBody p {
     margin-bottom: 1.6rem;
 }
-
-/* .announcementFullText .article figure {
-    padding-bottom: 1rem;
-} */
