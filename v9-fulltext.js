@@ -5,7 +5,7 @@
  *
  *     Document will write once when the page loads
  *
- *     @version 6.7
+ *     @version 6.8
  */
 
 
@@ -31,11 +31,13 @@ importClass(com.terminalfour.media.utils.ImageInfo);
  *      and confirm valid existing content item field
  */
 function getContentValues(tag) {
+
     try {
         return {
             isError: false,
             content: BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
         }
+
     } catch (error) {
         return {
             isError: true,
@@ -79,6 +81,7 @@ function readMedia(mediaID) {
  *      Write the document
  */
 function writeDocument(array) {
+
     for (var i = 0; i < array.length; i++) {
         document.write(array[i]);
     }
