@@ -5,7 +5,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.18
+ *     @version 6.19
  */
 
 
@@ -173,7 +173,7 @@ try {
      * 
      * */
     if (contentDict.articleAuthor.content !="") {
-        byLine = '<p class="card-text author"><strong>' + contentDict.articleAuthor.content + '</strong></p>';
+        byLine = '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>';
     }
     
 
