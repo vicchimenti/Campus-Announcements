@@ -148,6 +148,8 @@ try {
     var closeImageWrapper = '</figure>';
     var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
     var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
+    var byLine = '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
+
 
 
 
@@ -160,6 +162,17 @@ try {
         linkString = '<span class="externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></span>';
     }
 
+
+
+
+    /***
+     *  Parse for author
+     * 
+     * */
+    if (contentDict.articleAuthor.content !="") {
+        byLine = '<p class="card-text hidden visually-hidden"><strong class="author">' + contentDict.articleAuthor.content + '</strong></p>';
+    }
+    
 
 
 
