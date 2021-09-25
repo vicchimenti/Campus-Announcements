@@ -3,9 +3,9 @@
 *       ID: 5580
 */
 
-.announcementFullText.newsArticleWrapper .standardContent .card-body p {
+/* .announcementFullText.newsArticleWrapper .standardContent .card-body p {
     margin-bottom: 1.6rem;
-}
+} */
 
 #pageContentWrapper .announcementFullText.newsArticleWrapper .card-header h1#pageTitle {
     color: #AA0000;
@@ -100,6 +100,11 @@
     line-height: 1.5;
 }
 
-.announcementFullText .article figure {
-    padding-bottom: 1rem;
+
+.announcementFullText .fullTextBody p {
+    margin-bottom: 1.6rem;
 }
+
+/* .announcementFullText .article figure {
+    padding-bottom: 1rem;
+} */
