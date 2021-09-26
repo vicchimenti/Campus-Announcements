@@ -5,6 +5,7 @@
  *     organizer base
  * 
  *     Pulls specific content types regardless of category
+ *     Can sort by multiple comma seperated Custom Elements
  *
  *     @version 5.0
  * 
