@@ -1,12 +1,13 @@
 /***
  *     @author Victor Chimenti, MSCS
- *     @file organizerBaseWorkingFile.js
+ *     @file organizerBase.js
  *     ID: 2984595
- *     organizer base working file
+ *     organizer base
+ * 
+ *     Pulls specific content types regardless of category
  *
- *     Development file for making improvements on organizer functionality
- *
- *     @version 4.1
+ *     @version 5.0
+ * 
  */
 
 
