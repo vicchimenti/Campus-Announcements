@@ -463,17 +463,6 @@ function main(header, midder, footer) {
             paginator.setPreview(isPreview);
             paginator.write(document, dbStatement, publishCache, section, language, isPreview, vector);
 
-            // eventually we may want an else if here EX: else if (bPaginate && bSummFirst) {...}
-            // that would allow when the Summary and Paginate option are both chosen
-            // however at this time I haven't been able to produce a solution that merges
-            // the paginator with the oCP but it should be possible with enough time to work it out
-            // for now we go straight to the else
-            // and we must communicate to our departments that we don't support that functionality
-            // when they try to select both summary and paginator
-            // Victor 7/2020
-
-
-
 
         } else {
 
