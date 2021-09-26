@@ -7,7 +7,7 @@
  *     Pulls specific content types regardless of category
  *     Can sort by multiple comma seperated Custom Elements
  *
- *     @version 5.0
+ *     @version 5.1
  * 
  */
 
