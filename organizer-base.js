@@ -7,7 +7,7 @@
  *     Pulls specific content types regardless of category
  *     Can sort by multiple comma seperated Custom Elements
  *
- *     @version 5.1
+ *     @version 5.2
  * 
  */
 
@@ -486,11 +486,6 @@ function main(header, midder, footer) {
             let start = nStart <= validContent.length ? nStart - 1 : 0;
             let iterations = 0;
 
-            log("start: " + start);
-            log("iterations: " + iterations);
-            log("maxIterations: " + maxIterations);
-            log("validContent.length: " + validContent.length);
-
 
 
 
@@ -505,11 +500,6 @@ function main(header, midder, footer) {
             } while (start < validContent.length && iterations < maxIterations);
 
 
-
-            log("start: " + start);
-            log("iterations: " + iterations);
-            log("maxIterations: " + maxIterations);
-            log("validContent.length: " + validContent.length);
 
 
             /**
