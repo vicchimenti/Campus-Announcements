@@ -320,7 +320,7 @@ function main(header, midder, footer) {
          * Declarations
          * 
          */
-        var title = content.hasElement('Title') ? content.get('Title') : null;
+        var title = content.hasElement('Title') ? content.get('Title') : "";
         var choice = content.get('Content type and layout').publish();
         var CID = new java.lang.Integer(choice.split(";")[0]);
         var LAYOUT = choice.split(";")[1];
