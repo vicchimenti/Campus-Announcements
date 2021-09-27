@@ -6,7 +6,7 @@
 *
 *     Development file for making improvements on organizer functionality
 *
-*     @version 4.2
+*     @version 4.3
 */
 
 
@@ -427,7 +427,7 @@ function main(header, midder, footer) {
         if (!footer)
             footer = "";
         if (title != "")
-            header = header + '<h2 class="organizerTitle">' + title + '</h2>';
+            header = '<h2 class="organizerTitle">' + title + '</h2>' + header;
         if (bViewAll) {
             var href = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, '<t4 type="content" name="Section" output="linkurl" modifiers="nav_sections" />');
             midder = midder + '<div class="boxlinkItem viewAll"><a href="' + href + '">' + sViewAllText + '</a></div>';
