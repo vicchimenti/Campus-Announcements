@@ -4,7 +4,7 @@
  *      @see Media Library ID: 1889354
  *      organizer base grid
  *
- *      @version 6.0
+ *      @version 6.1
  * 
  */
 
