@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.26
+   *     @version 6.27
    */
 
 
@@ -24,7 +24,10 @@ importClass(com.terminalfour.publish.utils.BrokerUtils);
 importClass(com.terminalfour.media.utils.ImageInfo);
 
 
-
+// var tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+// return {
+//     isError: false,
+//     content: (tag == '' ? null : tag)
 
 /***
  *      Extract values from T4 element tags
@@ -32,9 +35,10 @@ importClass(com.terminalfour.media.utils.ImageInfo);
  */
     function getContentValues(tag) {
     try {
+        var _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
         return {
             isError: false,
-            content: BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+            content: _tag == '' ? null : _tag
         }
     } catch (error) {
         return {
@@ -115,7 +119,6 @@ function writeDocument(array) {
 
 
 
-
       /***
        *  default html initializations
        * 
@@ -146,7 +149,7 @@ function writeDocument(array) {
        *  check for fulltext content
        * 
        * */
-      if (contentDict.articleFullBody.content != "") {
+      if (contentDict.articleFullBody.content) {
           titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
       }
 
@@ -157,7 +160,7 @@ function writeDocument(array) {
        *  Parse for external link
        * 
        * */
-      if (contentDict.sectionLink.content != "") {
+      if (contentDict.sectionLink.content) {
           linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
       }
 
@@ -169,7 +172,7 @@ function writeDocument(array) {
        *  Currently a hidden sort field
        * 
        * */
-      if (contentDict.priority.content != "") {
+      if (contentDict.priority.content) {
           prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
       }
 
@@ -180,7 +183,7 @@ function writeDocument(array) {
        *  Parse for image
        * 
        * */
-      if (contentDict.articleImage.content != "") {
+      if (contentDict.articleImage.content) {
 
           var imageID = content.get('Image').getID();
           var mediaInfo = getMediaInfo(imageID);
@@ -208,7 +211,7 @@ function writeDocument(array) {
        *  parse the list of topics tags, add <li> tags
        * 
        * */
-      if (contentDict.topics.content != "") {
+      if (contentDict.topics.content) {
 
           let listItems = '';
           let arrayOfTags = contentDict.topics.content.split(',');
@@ -227,7 +230,7 @@ function writeDocument(array) {
        *  parse the list of audience tags, add <li> tags
        * 
        * */
-      if (contentDict.audience.content != "") {
+      if (contentDict.audience.content) {
 
           let audienceItems = '';
           let audienceArray = contentDict.audience.content.split(',');
