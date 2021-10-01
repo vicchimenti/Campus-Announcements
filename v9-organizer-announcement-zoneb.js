@@ -1,5 +1,5 @@
   /***
-   *     @author Victor Chimenti, MSCS-SE '20
+   *     @author Victor Chimenti, MSCS
    *     @file v9-organizer-announcementZoneb.js
    *     v9/organizer/announcementZoneb
    *     id:5580
