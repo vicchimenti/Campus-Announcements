@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.9
+   *     @version 7.10
    */
 
 
@@ -106,7 +106,6 @@ try {
         audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
         topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
         priority: getContentValues('<t4 type="content" name="Priority" output="normal" display_field="value" />'),
-        layoutFeed: getContentValues('<t4 type="content" name="Feed" output="normal" display_field="value" />'),
         sectionLink: getContentValues('<t4 type="content" name="Section Link" output="linkurl" modifiers="nav_sections" />'),
         sectionLinkText: getContentValues('<t4 type="content" name="Section Link 1" output="linktext" modifiers="nav_sections" />'),
         lastModified: getContentValues('<t4 type="meta" meta="last_modified" format="MM/dd/yyyy HH:mm:ss z" />'),
