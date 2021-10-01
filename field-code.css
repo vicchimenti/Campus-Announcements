@@ -1,4 +1,5 @@
 /* *** align dropdown menus with organizer content *** */
+
 #zoneA #filterFieldWrapper.contentItem {
     margin: 0;
     padding: 0 2rem;
@@ -23,22 +24,44 @@
     height: 4rem;
 }
 
+
 /* *** square corners on keyword input *** */
+
 #filterField .form-control {
     border-radius: 0;
 }
 
+
 /* *** square corners on dropdowns *** */
+
 #filterField .form-select {
     border-radius: 0;
 }
 
+
+/* reduce input font sizes */
+
+#filterField select {
+    font-size: 1.25rem;
+}
+
+#filterField input[type="text"] {
+    font-size: 1.25rem;
+}
+
+
 /* *** hide items that are not in the users filter *** */
-.hideByText, .hideByAudience, .hideByTopic, .hideResultsMessage {
+
+.hideByText,
+.hideByAudience,
+.hideByTopic,
+.hideResultsMessage {
     display: none;
 }
 
+
 /* *** style the no results message box *** */
+
 .noResultsToShow {
     background: #e3e3da;
     padding: 30px;
@@ -47,11 +70,14 @@
 
 
 /* *** Organizer adjustments *** */
+
 #zoneA .organizerWrapper.contentItem {
     margin: 0;
 }
 
+
 /* *** Announcement adjustments *** */
-#zoneA .announcement.contentItem  {
+
+#zoneA .announcement.contentItem {
     margin: 0;
 }
