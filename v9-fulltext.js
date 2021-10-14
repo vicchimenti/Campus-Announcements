@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.27
+ *     @version 6.28
  */
 
 
@@ -132,17 +132,14 @@ try {
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
     var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
-    // var linkString = '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    // var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
     var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
     var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
-    // var byLine = '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
     var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
@@ -155,14 +152,10 @@ try {
      *  Parse for external link
      * 
      * */
-    // if (contentDict.sectionLink.content) {
-
-    //     linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
-    // }
-
     var linkString =    (contentDict.sectionLink.content)
                         ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
                         : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
+
 
 
 
@@ -170,12 +163,6 @@ try {
      *  Parse for author
      * 
      * */
-    // if (contentDict.articleAuthor.content) {
-
-    //     byLine = '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>';
-    // }
-
-
     var byLine =        (contentDict.articleAuthor.content)
                         ? '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>'
                         : '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
@@ -185,17 +172,10 @@ try {
 
     /***
      *  Parse for Priority
-     *  Currently a hidden sort field
      * 
      * */
-    // if (contentDict.priority.content) {
-
-    //     prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
-    // }
-
-
     var prioityString = (contentDict.priority.content)
-                        ? '<span class="priority">' + contentDict.priority.content + '</span>'
+                        ? '<span class="priority visually-hidden">' + contentDict.priority.content + '</span>'
                         : '<span class="priority hidden visually-hidden">No Priority Entered</span>';
 
 
