@@ -152,7 +152,7 @@ try {
     var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
-    var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    var topicList = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
@@ -234,17 +234,11 @@ try {
      * */
     if (contentDict.topics.content) {
 
-        
         let arrayOfTags = contentDict.topics.content.split(',');
-
-        // for (let i = 0; i < arrayOfTags.length; i++) {
-
-        //     listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-        // }
-
         let listItems = assignList(arrayOfTags);
+
         // Print any tags that were selected
-        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
+        topicList = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
     }
 
 
@@ -257,17 +251,12 @@ try {
     if (contentDict.audience.content) {
 
         let audienceArray = contentDict.audience.content.split(',');
-
-        // for (let i = 0; i < audienceArray.length; i++) {
-
-        //     audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-        // }
-
         let audienceItems = assignList(audienceArray);
 
         // Print any tags that were selected
         audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
     }
+
 
 
 
@@ -292,7 +281,7 @@ try {
             dateString,
             byLine,
             closePublishDetails,
-            listOfTags,
+            topicList,
             audienceList,
             bodyBorder,
             bodyString,
