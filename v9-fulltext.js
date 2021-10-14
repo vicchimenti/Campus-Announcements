@@ -6,8 +6,12 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.34
+ *     @version 6.35
  */
+
+
+
+
 
 
 
@@ -138,18 +142,20 @@ try {
 
     /***
      *  default html initializations
+     *  including required content fields for fulltext
      * 
      * */
+    var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
+    var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
+    var titleHeader = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
     var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" title="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
     var endingHTML = '</div></div>';
     var bodyBorder = '<hr class="articleBorderBottom">';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
-    var titleLink = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
-    var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var topicList = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
@@ -158,7 +164,7 @@ try {
     var closeImageWrapper = '</figure>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
-    var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
+
 
 
 
@@ -268,7 +274,7 @@ try {
         [
             beginningHTML,
             contentDict.anchorTag.content,
-            titleLink,
+            titleHeader,
             openImageWrapper,
             imageString,
             captionString,
