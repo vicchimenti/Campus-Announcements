@@ -187,6 +187,7 @@ try {
      * */
     if (contentDict.articleImage.content) {
 
+        openImageWrapper = '<figure class="figure">';
         var imageID = content.get('Image').getID();
         var mediaInfo = getMediaInfo(imageID);
         var media = readMedia(imageID);
@@ -206,26 +207,6 @@ try {
         var photoCreditWrapper =    (contentDict.articlePhotoCredit.content)
                                     ? '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>'
                                     : '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
-        // if (info.check()) {
-
-        //     imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
-
-        // } else {
-
-        //     imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
-        // }
-
-        // if (contentDict.articleCaption.content) {
-
-        //     captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
-        // }
-
-        // if (contentDict.articlePhotoCredit.content) {
-
-        //     photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
-        // }
-
-        openImageWrapper = '<figure class="figure">';
     }
     
 
