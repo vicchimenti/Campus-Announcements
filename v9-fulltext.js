@@ -1,7 +1,8 @@
 /***
  *     @author Victor Chimenti, MSCS
  *     @file v9-fulltext.js
- *     v9/fulltext
+ *     @see v9/fulltext Campus Announcement
+ *              ID: 5580
  *
  *     Document will write client side once when the page loads
  *
