@@ -139,7 +139,7 @@ try {
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
     // var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
-    var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
+    // var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
     var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
@@ -193,16 +193,19 @@ try {
         var info = new ImageInfo;
         info.setInput(media);
 
-        imageString =   (info.check())
-                        ? '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
-                        : '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+        imageString =               (info.check())
+                                    ? '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
+                                    : '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
 
         
-        var captionString = (contentDict.articleCaption.content)
-                            ? '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>'
-                            : '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
+        var captionString =         (contentDict.articleCaption.content)
+                                    ? '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>'
+                                    : '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
 
         
+        var photoCreditWrapper =    (contentDict.articlePhotoCredit.content)
+                                    ? '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>'
+                                    : '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
         // if (info.check()) {
 
         //     imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
@@ -217,14 +220,14 @@ try {
         //     captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
         // }
 
-        if (contentDict.articlePhotoCredit.content) {
+        // if (contentDict.articlePhotoCredit.content) {
 
-            photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
-        }
+        //     photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
+        // }
 
         openImageWrapper = '<figure class="figure">';
     }
-
+    
 
 
 
