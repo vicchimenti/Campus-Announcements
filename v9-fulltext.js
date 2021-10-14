@@ -210,12 +210,6 @@ try {
 
 
 
-
-
-
-
-
-
     /***
      *  parse the list of topics tags, add <li> tags
      * 
