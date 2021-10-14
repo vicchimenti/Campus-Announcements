@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.31
+ *     @version 6.32
  */
 
 
@@ -80,10 +80,19 @@ function readMedia(mediaID) {
 
     let listValues = '';
 
-    for (let i = 0; i < arrayOfValues.length; i++) {
 
-        listValues += '<li class="tag">' + arrayOfValues[i].trim() + '</li>';
-    }
+    arrayOfValues.forEach (function (listItem) {
+
+        listValues += '<li class="tag">' + arrayOfValues[listItem].trim() + '</li>';
+
+    })
+
+
+
+    // for (let i = 0; i < arrayOfValues.length; i++) {
+
+    //     listValues += '<li class="tag">' + arrayOfValues[i].trim() + '</li>';
+    // }
 
     return listValues;
 }
@@ -140,7 +149,7 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
+    var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" title="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
     var endingHTML = '</div></div>';
     var bodyBorder = '<hr class="articleBorderBottom">';
     var openRow = '<div class="row summaryWrapper">';
