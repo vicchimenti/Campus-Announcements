@@ -5,7 +5,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.23
+ *     @version 6.25
  */
 
 
@@ -154,7 +154,7 @@ try {
      *  Parse for external link
      * 
      * */
-    if (contentDict.sectionLink.content !="") {
+    if (contentDict.sectionLink.content) {
 
         linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
     }
@@ -166,7 +166,7 @@ try {
      *  Parse for author
      * 
      * */
-    if (contentDict.articleAuthor.content !="") {
+    if (contentDict.articleAuthor.content) {
 
         byLine = '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>';
     }
@@ -179,7 +179,7 @@ try {
      *  Currently a hidden sort field
      * 
      * */
-    if (contentDict.priority.content !="") {
+    if (contentDict.priority.content) {
 
         prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
     }
@@ -191,7 +191,7 @@ try {
      *  Parse for image
      * 
      * */
-    if (contentDict.articleImage.content !="") {
+    if (contentDict.articleImage.content) {
 
         var imageID = content.get('Image').getID();
         var mediaInfo = getMediaInfo(imageID);
@@ -208,12 +208,12 @@ try {
             imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
         }
 
-        if (contentDict.articleCaption.content !="") {
+        if (contentDict.articleCaption.content) {
 
             captionString = '<figcaption class="figure-caption">' + contentDict.articleCaption.content + '</figcaption>';
         }
 
-        if (contentDict.articlePhotoCredit.content !="") {
+        if (contentDict.articlePhotoCredit.content) {
 
             photoCreditWrapper = '<span class="imageCredit"><em> - Image Credit: ' + contentDict.articlePhotoCredit.content + '</em></span>';
         }
@@ -228,7 +228,7 @@ try {
      *  parse the list of topics tags, add <li> tags
      * 
      * */
-    if (contentDict.topics.content !="") {
+    if (contentDict.topics.content) {
 
         let listItems = '';
         let arrayOfTags = contentDict.topics.content.split(',');
@@ -249,7 +249,7 @@ try {
      *  parse the list of audience tags, add <li> tags
      * 
      * */
-    if (contentDict.audience.content !="") {
+    if (contentDict.audience.content) {
 
         let audienceItems = '';
         let audienceArray = contentDict.audience.content.split(',');
