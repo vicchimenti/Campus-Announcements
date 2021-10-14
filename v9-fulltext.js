@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.26
+ *     @version 6.27
  */
 
 
@@ -142,7 +142,7 @@ try {
     var closeImageWrapper = '</figure>';
     var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
     var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
-    var byLine = '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
+    // var byLine = '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
     var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
@@ -170,10 +170,15 @@ try {
      *  Parse for author
      * 
      * */
-    if (contentDict.articleAuthor.content) {
+    // if (contentDict.articleAuthor.content) {
 
-        byLine = '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>';
-    }
+    //     byLine = '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>';
+    // }
+
+
+    var byLine =        (contentDict.articleAuthor.content)
+                        ? '<p class="card-text author"><strong>By: ' + contentDict.articleAuthor.content + '</strong></p>'
+                        : '<p class="card-text hidden visually-hidden"><strong class="author">No Author entered</strong></p>';
     
 
 
