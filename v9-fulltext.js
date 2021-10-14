@@ -22,22 +22,17 @@ importClass(com.terminalfour.media.utils.ImageInfo);
 
 
 
-
-
-
-
 /***
  *      Extract values from T4 element tags
  *      and confirm valid existing content item field
  */
-function getContentValues(tag) {
-
+ function getContentValues(tag) {
     try {
+        var _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
         return {
             isError: false,
-            content: BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+            content: _tag == '' ? null : _tag
         }
-
     } catch (error) {
         return {
             isError: true,
