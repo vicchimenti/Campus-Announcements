@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 6.28
+   *     @version 6.29
    */
 
 
@@ -24,10 +24,7 @@ importClass(com.terminalfour.publish.utils.BrokerUtils);
 importClass(com.terminalfour.media.utils.ImageInfo);
 
 
-// var tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
-// return {
-//     isError: false,
-//     content: (tag == '' ? null : tag)
+
 
 /***
  *      Extract values from T4 element tags
