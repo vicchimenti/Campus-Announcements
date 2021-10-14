@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.32
+ *     @version 6.33
  */
 
 
@@ -81,11 +81,17 @@ function readMedia(mediaID) {
     let listValues = '';
 
 
-    arrayOfValues.forEach (function (listItem) {
+    // arrayOfValues.forEach (function (listItem) {
+
+    //     listValues += '<li class="tag">' + arrayOfValues[listItem].trim() + '</li>';
+
+    // })
+
+    for (let listItem of arrayOfValues) {
 
         listValues += '<li class="tag">' + arrayOfValues[listItem].trim() + '</li>';
+    }
 
-    })
 
 
 
