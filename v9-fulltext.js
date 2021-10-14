@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.30
+ *     @version 6.31
  */
 
 
@@ -68,6 +68,24 @@ function readMedia(mediaID) {
     var oMediaStream = mediaObj.getMedia();
 
     return oMediaStream;
+}
+
+
+
+
+/***
+ *      Returns an array of list items
+ */
+ function assignList(arrayOfValues) {
+
+    let listValues = '';
+
+    for (let i = 0; i < arrayOfValues.length; i++) {
+
+        listValues += '<li class="tag">' + arrayOfValues[i].trim() + '</li>';
+    }
+
+    return listValues;
 }
 
 
@@ -216,14 +234,15 @@ try {
      * */
     if (contentDict.topics.content) {
 
-        let listItems = '';
+        
         let arrayOfTags = contentDict.topics.content.split(',');
 
-        for (let i = 0; i < arrayOfTags.length; i++) {
+        // for (let i = 0; i < arrayOfTags.length; i++) {
 
-            listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-        }
+        //     listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
+        // }
 
+        let listItems = assignList(arrayOfTags);
         // Print any tags that were selected
         listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
     }
@@ -237,13 +256,14 @@ try {
      * */
     if (contentDict.audience.content) {
 
-        let audienceItems = '';
         let audienceArray = contentDict.audience.content.split(',');
 
-        for (let i = 0; i < audienceArray.length; i++) {
+        // for (let i = 0; i < audienceArray.length; i++) {
 
-            audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-        }
+        //     audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
+        // }
+
+        let audienceItems = assignList(audienceArray);
 
         // Print any tags that were selected
         audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
