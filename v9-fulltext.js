@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.28
+ *     @version 6.29
  */
 
 
@@ -138,8 +138,6 @@ try {
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
-    // var captionString = '<figcaption class="figure-caption hidden visually-hidden">No Caption Provided</figcaption>';
-    // var photoCreditWrapper = '<span class="imageCredit hidden visually-hidden">No Photo Credit</span>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
     var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
