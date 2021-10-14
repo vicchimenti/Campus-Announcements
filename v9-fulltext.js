@@ -136,7 +136,7 @@ try {
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
+    // var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openImageWrapper = '<figure class="figure hidden visually-hidden">';
     var closeImageWrapper = '</figure>';
@@ -188,10 +188,15 @@ try {
      *  Currently a hidden sort field
      * 
      * */
-    if (contentDict.priority.content) {
+    // if (contentDict.priority.content) {
 
-        prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
-    }
+    //     prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
+    // }
+
+
+    var prioityString = (contentDict.priority.content)
+                        ? '<span class="priority">' + contentDict.priority.content + '</span>'
+                        : '<span class="priority hidden visually-hidden">No Priority Entered</span>';
 
 
 
