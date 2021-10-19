@@ -128,7 +128,7 @@ function writeDocument(array) {
       var closeBodyWrapper = '</div>';
       var imageString = '<img class="hidden visually-hidden" />';
       var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
-      var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
+      var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
       var linkString = '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
       var openSortFields = '<div class="sortFields hidden visually-hidden">';
       var closeSortFields = '</div>';
