@@ -9,6 +9,15 @@
     margin: 0;
 }
 
+.filterFieldInstructions h2 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 2.8rem;
+    line-height: 1.25;
+    margin: 0 0 3rem 0;
+}
+
+
 #filterField .container-fluid {
     padding-right: unset;
     padding-left: unset;
