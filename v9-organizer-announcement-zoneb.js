@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.10
+   *     @version 7.11
    */
 
 
@@ -223,8 +223,8 @@ try {
             openBodyWrapper,
             linkString,
             lastModifiedString,
-            summaryString,
             openSortFields,
+            summaryString,
             listOfTags,
             audienceList,
             prioityString,
