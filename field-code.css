@@ -17,6 +17,10 @@
     margin: 0 0 3rem 0;
 }
 
+#filterField {
+    padding: 1rem 0;
+}
+
 
 #filterField .container-fluid {
     padding-right: unset;
