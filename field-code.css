@@ -33,6 +33,13 @@
     height: 4rem;
 }
 
+#filterFieldWrapper hr.articleBorderBottom {
+    border-top: 3px solid #e5e5e5;
+    display: block;
+    height: 3px;
+    margin: 0 20px 20px 20px;
+}
+
 
 /* *** square corners on keyword input *** */
 
