@@ -290,8 +290,6 @@ try {
             dateString,
             byLine,
             closePublishDetails,
-            topicList,
-            audienceList,
             bodyBorder,
             bodyString,
             bodyBorder,
@@ -300,6 +298,8 @@ try {
             closeSortFields,
             closeBodyWrapper,
             openFooter,
+            topicList,
+            audienceList,
             closeFooter,
             closeRow,
             endingHTML
