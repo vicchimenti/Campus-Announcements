@@ -231,7 +231,8 @@ try {
             closeBodyWrapper,
             closeRow,
             endingHTML
-        ]);
+        ]
+    );
 
 
 
