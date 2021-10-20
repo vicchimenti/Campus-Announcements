@@ -252,16 +252,24 @@ try {
      *  parse the list of topics tags, add <li> tags
      * 
      * */
+    // if (contentDict.topics.content) {
+
+    //     let listItems = '';
+    //     let arrayOfTags = contentDict.topics.content.split(',');
+    //     for (let i = 0; i < arrayOfTags.length; i++) {
+    //         listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
+    //     }
+
+    //     listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
+    // }
+
     if (contentDict.topics.content) {
 
-        let listItems = '';
         let arrayOfTags = contentDict.topics.content.split(',');
-        for (let i = 0; i < arrayOfTags.length; i++) {
-            listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-        }
+        let listItems = assignList(arrayOfTags);
 
         // Print any tags that were selected
-        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
+        topicList = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
     }
 
 
