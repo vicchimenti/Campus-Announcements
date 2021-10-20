@@ -176,7 +176,7 @@ try {
     // }
 
     var titleLink = contentDict.articleFullBody.content
-                    ? '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>'
+                    ? '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>'
                     : '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
 
 
