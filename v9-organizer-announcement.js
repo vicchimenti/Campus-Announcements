@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.43
+     *     @version 6.44
      */
 
 
@@ -208,7 +208,7 @@ try {
 
         imageString =   info.check()
                         ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
-                        : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+                        : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="" loading="auto" />';
   
         openImageWrapper = '<span class="newsImage">';
     }
