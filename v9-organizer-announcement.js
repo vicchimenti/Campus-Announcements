@@ -206,7 +206,7 @@ try {
         var info = new ImageInfo;
         info.setInput(media);
 
-        let altText = info.check () ? media.getDescription() : "";
+        let altText = info.check () ? mediaInfo.getDescription() : "";
         imageString =   info.check()
                         ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + altText + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                         : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="" loading="auto" />';
