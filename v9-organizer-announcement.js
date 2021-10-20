@@ -279,13 +279,22 @@ try {
      *  parse the list of audience tags, add <li> tags
      * 
      * */
+    // if (contentDict.audience.content) {
+
+    //     let audienceItems = '';
+    //     let audienceArray = contentDict.audience.content.split(',');
+    //     for (let i = 0; i < audienceArray.length; i++) {
+    //         audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
+    //     }
+
+    //     audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
+    // }
+
+
     if (contentDict.audience.content) {
 
-        let audienceItems = '';
         let audienceArray = contentDict.audience.content.split(',');
-        for (let i = 0; i < audienceArray.length; i++) {
-            audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-        }
+        let audienceItems = assignList(audienceArray);
 
         // Print any tags that were selected
         audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
