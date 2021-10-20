@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.13
+   *     @version 7.14
    */
 
 
@@ -120,24 +120,29 @@ try {
      *  default html initializations
      * 
      * */
+    var lastModifiedString = '<p class="card-text lastModified"><em class="text-muted">Updated: ' + contentDict.lastModified.content + '</em></p>';
+    var titleLink = '<h4 class="card-title">' + contentDict.articleTitle.content + '</h4>';
+    var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
     var beginningHTML = '<article class="suTodayWrapper newsItemWrapper announcementZoneb contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zoneb" aria-label="Recent Updates: ' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
-    var titleLink = '<h4 class="card-title">' + contentDict.articleTitle.content + '</h4>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
-    var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
-    var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
+    // var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
-    var openSortFields = '<div class="sortFields hidden visually-hidden">';
-    var closeSortFields = '</div>';
-    var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
-    var lastModifiedString = '<p class="card-text lastModified"><em class="text-muted">Updated: ' + contentDict.lastModified.content + '</em></p>';
-    var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    // var openSortFields = '<div class="sortFields hidden visually-hidden">';
+    // var closeSortFields = '</div>';
+    // var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    // var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
+    // var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
 
-
+    // openSortFields,
+    // summaryString,
+    // listOfTags,
+    // audienceList,
+    // prioityString,
+    // closeSortFields,
 
 
     /***
@@ -223,13 +228,6 @@ try {
             openBodyWrapper,
             linkString,
             lastModifiedString,
-            openSortFields,
-            summaryString,
-            listOfTags,
-            audienceList,
-            prioityString,
-            dateString,
-            closeSortFields,
             closeBodyWrapper,
             closeRow,
             endingHTML
