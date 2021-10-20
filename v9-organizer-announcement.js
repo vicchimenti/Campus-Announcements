@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.41
+     *     @version 6.42
      */
 
 
@@ -252,18 +252,18 @@ try {
      *  Parse for external link
      * 
      * */
-        var linkString =    contentDict.sectionLink.content
-                            ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
-                            : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
+    var linkString =    contentDict.sectionLink.content
+                        ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
+                        : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
 
 
 
 
     /***
-    *  Parse for Priority
-    *  Currently a hidden sort field
-    * 
-    * */
+     *  Parse for Priority
+     *  Currently a hidden sort field
+     * 
+     * */
     var prioityString = contentDict.priority.content
                         ? '<span class="priority">' + contentDict.priority.content + '</span>'
                         : '<span class="priority hidden visually-hidden">No Priority Entered</span>';
