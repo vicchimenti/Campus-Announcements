@@ -115,7 +115,7 @@
 
 
 
-    
+
 /***
  *  Main
  */
@@ -148,17 +148,15 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<div class="newsItemWrapper announcement contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<div class="newsItemWrapper announcement contentItem card border-0" id="id' + contentDict.contentID.content + '" title="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
-    var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
     var imageString = '<img class="hidden visually-hidden" />';
     var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
-    var linkString = '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
@@ -174,9 +172,14 @@ try {
      *  check for fulltext content
      * 
      * */
-    if (contentDict.articleFullBody.content) {
-        titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-    }
+    // if (contentDict.articleFullBody.content) {
+    //     titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+    // }
+
+    var titleLink = contentDict.articleFullBody.content
+                    ? '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>'
+                    : '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
+
 
 
 
@@ -185,9 +188,15 @@ try {
      *  Parse for external link
      * 
      * */
-    if (contentDict.sectionLink.content) {
-        linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
-    }
+    // if (contentDict.sectionLink.content) {
+    //     linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
+    // }
+
+
+    var linkString =    contentDict.sectionLink.content
+                        ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
+                        : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
+
 
 
 
