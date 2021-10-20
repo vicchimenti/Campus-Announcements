@@ -5,29 +5,6 @@
 
 
 /* expand small images to fill available space on all browsers */
-
-.announcement.newsItemWrapper img.card-img-top {
-    padding: 2rem 2rem 0 2rem;
-    width: 100%;
-    width: -moz-available;
-    width: -webkit-fill-available;
-    width: fill-available;
-}
-
-.announcement.newsItemWrapper {
-    padding: 0;
-    border: none;
-    margin: 0;
-}
-
-.announcement.newsItemWrapper:first-child {
-    padding: 0;
-    border: none;
-    margin: 0;
-}
-
-
-
 .suTodayWrapper.announcement img.card-img-top {
     padding: 2rem 2rem 0 2rem;
     width: 100%;
