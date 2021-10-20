@@ -292,7 +292,6 @@ try {
             closePublishDetails,
             bodyBorder,
             bodyString,
-            bodyBorder,
             openSortFields,
             prioityString,
             closeSortFields,
@@ -301,6 +300,7 @@ try {
             topicList,
             audienceList,
             closeFooter,
+            bodyBorder,
             closeRow,
             endingHTML
         ]);
