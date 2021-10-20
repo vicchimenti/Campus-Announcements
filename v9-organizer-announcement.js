@@ -1,274 +1,305 @@
-  /***
-   *     @author Victor Chimenti, MSCS
-   *     @file v9-organizer-announcement.js
-   *     v9/organizer/announcement
-   *     id:5580
-   *
-   *     This content type will work in conjunction with the Organizer and each item
-   *     will contain one announcement.
-   *
-   *     Document will write once when the page loads
-   *
-   *     @version 6.30
-   */
+    /***
+     *     @author Victor Chimenti, MSCS
+     *     @file v9-organizer-announcement.js
+     *     v9/organizer/announcement
+     *     id:5580
+     *
+     *     This content type will work in conjunction with the Organizer and each item
+     *     will contain one announcement.
+     *
+     *     Document will write once when the page loads
+     *
+     *     @version 6.30
+     */
 
 
 
 
-/***
- *      Import T4 Utilities
- */
-importClass(com.terminalfour.media.IMediaManager);
-importClass(com.terminalfour.spring.ApplicationContextProvider);
-importClass(com.terminalfour.publish.utils.BrokerUtils);
-importClass(com.terminalfour.media.utils.ImageInfo);
 
 
 
 
-/***
- *      Extract values from T4 element tags
- *      and confirm valid existing content item field
- */
+    /***
+     *      Import T4 Utilities
+     */
+    importClass(com.terminalfour.media.IMediaManager);
+    importClass(com.terminalfour.spring.ApplicationContextProvider);
+    importClass(com.terminalfour.publish.utils.BrokerUtils);
+    importClass(com.terminalfour.media.utils.ImageInfo);
+    
+    
+    
+    
+    /***
+     *      Extract values from T4 element tags
+     *      and confirm valid existing content item field
+     */
     function getContentValues(tag) {
-    try {
-        var _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
-        return {
-            isError: false,
-            content: _tag == '' ? null : _tag
-        }
-    } catch (error) {
-        return {
-            isError: true,
-            message: error.message
+        try {
+            var _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+            return {
+                isError: false,
+                content: _tag == '' ? null : _tag
+            }
+        } catch (error) {
+            return {
+                isError: true,
+                message: error.message
+            }
         }
     }
-}
-
-
-
-
-/***
- *      Returns a media object
- */
-function getMediaInfo(mediaID) {
-
-    var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-    var media = mediaManager.get(mediaID, language);
-
-    return media;
-}
-
-
-
-
-/***
- *      Returns a media stream object
- */
-function readMedia(mediaID) {
-
-    var mediaObj = getMediaInfo(mediaID);
-    var oMediaStream = mediaObj.getMedia();
-
-    return oMediaStream;
-}
-
-
-
-
-/***
- *      Write the document
- */
-function writeDocument(array) {
-    for (var i = 0; i < array.length; i++) {
-        document.write(array[i]);
+    
+    
+    
+    
+    /***
+     *      Returns a media object
+     */
+    function getMediaInfo(mediaID) {
+    
+        var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
+        var media = mediaManager.get(mediaID, language);
+    
+        return media;
     }
-}
+    
+    
+    
+    
+    /***
+     *      Returns a media stream object
+     */
+    function readMedia(mediaID) {
+    
+        var mediaObj = getMediaInfo(mediaID);
+        var oMediaStream = mediaObj.getMedia();
+    
+        return oMediaStream;
+    }
+    
+    
+    
+    
+    /***
+     *      Returns an array of list items
+     */
+    function assignList(arrayOfValues) {
+    
+        let listValues = '';
+    
+        for (let i = 0; i < arrayOfValues.length; i++) {
+    
+            listValues += '<li class="tag">' + arrayOfValues[i].trim() + '</li>';
+        }
+    
+        return listValues;
+    }
+    
+    
+    
+    
+    /***
+     *      Write the document
+     */
+    function writeDocument(array) {
+    
+        for (let i = 0; i < array.length; i++) {
+    
+            document.write(array[i]);
+        }
+    }
 
 
 
 
+
+
+
+    
 /***
- *      Main
+ *  Main
  */
-  try {
+try {
 
 
-      /***
-       *      Dictionary of content
-       * */
-      var contentDict = {
-          contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
-          articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
-          articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
-          publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
-          articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
-          articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
-          audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
-          topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
-          priority: getContentValues('<t4 type="content" name="Priority" output="normal" display_field="value" />'),
-          sectionLink: getContentValues('<t4 type="content" name="Section Link 1" output="linkurl" modifiers="nav_sections" />'),
-          sectionLinkText: getContentValues('<t4 type="content" name="Section Link" output="linktext" modifiers="nav_sections" />'),
-          fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
-          contentID: getContentValues('<t4 type="meta" meta="content_id" />')
-      };
-
-
-
-      /***
-       *  default html initializations
-       * 
-       * */
-      var beginningHTML = '<div class="newsItemWrapper announcement contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
-      var endingHTML = '<hr class="articleBorderBottom"></div>';
-      var openRow = '<div class="row summaryWrapper">';
-      var closeRow = '</div>';
-      var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-      var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
-      var closeBodyWrapper = '</div>';
-      var imageString = '<img class="hidden visually-hidden" />';
-      var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
-      var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
-      var linkString = '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
-      var openSortFields = '<div class="sortFields hidden visually-hidden">';
-      var closeSortFields = '</div>';
-      var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-      var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
-      var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-      var openPublishDetails = '<div class="publishDetails">';
-      var closePublishDetails = '</div>';
+    /***
+     *      Dictionary of content
+     * */
+    var contentDict = {
+        contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
+        articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
+        articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
+        publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
+        articleImage: getContentValues('<t4 type="content" name="Image" output="normal" formatter="path/*" />'),
+        articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
+        audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
+        topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
+        priority: getContentValues('<t4 type="content" name="Priority" output="normal" display_field="value" />'),
+        sectionLink: getContentValues('<t4 type="content" name="Section Link 1" output="linkurl" modifiers="nav_sections" />'),
+        sectionLinkText: getContentValues('<t4 type="content" name="Section Link" output="linktext" modifiers="nav_sections" />'),
+        fullTextLink: getContentValues('<t4 type="content" name="Name" output="fulltext" use-element="true" filename-element="Article Title" modifiers="striptags,htmlentities" />'),
+        contentID: getContentValues('<t4 type="meta" meta="content_id" />')
+    };
 
 
 
 
-      /***
-       *  check for fulltext content
-       * 
-       * */
-      if (contentDict.articleFullBody.content) {
-          titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-      }
+    /***
+     *  default html initializations
+     * 
+     * */
+    var beginningHTML = '<div class="newsItemWrapper announcement contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
+    var endingHTML = '<hr class="articleBorderBottom"></div>';
+    var openRow = '<div class="row summaryWrapper">';
+    var closeRow = '</div>';
+    var titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
+    var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
+    var closeBodyWrapper = '</div>';
+    var imageString = '<img class="hidden visually-hidden" />';
+    var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
+    var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
+    var linkString = '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
+    var openSortFields = '<div class="sortFields hidden visually-hidden">';
+    var closeSortFields = '</div>';
+    var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
+    var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    var openPublishDetails = '<div class="publishDetails">';
+    var closePublishDetails = '</div>';
 
 
 
 
-      /***
-       *  Parse for external link
-       * 
-       * */
-      if (contentDict.sectionLink.content) {
-          linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
-      }
+    /***
+     *  check for fulltext content
+     * 
+     * */
+    if (contentDict.articleFullBody.content) {
+        titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+    }
 
 
 
 
-      /***
-       *  Parse for Priority
-       *  Currently a hidden sort field
-       * 
-       * */
-      if (contentDict.priority.content) {
-          prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
-      }
+    /***
+     *  Parse for external link
+     * 
+     * */
+    if (contentDict.sectionLink.content) {
+        linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
+    }
 
 
 
 
-      /***
-       *  Parse for image
-       * 
-       * */
-      if (contentDict.articleImage.content) {
-
-          var imageID = content.get('Image').getID();
-          var mediaInfo = getMediaInfo(imageID);
-          var media = readMedia(imageID);
-          var info = new ImageInfo;
-          info.setInput(media);
-
-          if (info.check()) {
-
-              imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
-
-          } else {
-
-              imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
-
-          }
-
-          openImageWrapper = '<span class="newsImage">';
-      }
+    /***
+     *  Parse for Priority
+     *  Currently a hidden sort field
+     * 
+     * */
+    if (contentDict.priority.content) {
+        prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
+    }
 
 
 
 
-      /***
-       *  parse the list of topics tags, add <li> tags
-       * 
-       * */
-      if (contentDict.topics.content) {
+    /***
+     *  Parse for image
+     * 
+     * */
+    if (contentDict.articleImage.content) {
 
-          let listItems = '';
-          let arrayOfTags = contentDict.topics.content.split(',');
-          for (let i = 0; i < arrayOfTags.length; i++) {
-              listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-          }
+        var imageID = content.get('Image').getID();
+        var mediaInfo = getMediaInfo(imageID);
+        var media = readMedia(imageID);
+        var info = new ImageInfo;
+        info.setInput(media);
 
-          // Print any tags that were selected
-          listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
-      }
+        if (info.check()) {
 
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
 
+        } else {
 
+            imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
 
-      /***
-       *  parse the list of audience tags, add <li> tags
-       * 
-       * */
-      if (contentDict.audience.content) {
+        }
 
-          let audienceItems = '';
-          let audienceArray = contentDict.audience.content.split(',');
-          for (let i = 0; i < audienceArray.length; i++) {
-              audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-          }
-
-          // Print any tags that were selected
-          audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
-      }
-
-
-
-      /***
-       *  write document once
-       * 
-       * */
-      writeDocument(
-          [
-              beginningHTML,
-              imageString,
-              openRow,
-              openBodyWrapper,
-              titleLink,
-              openPublishDetails,
-              linkString,
-              dateString,
-              closePublishDetails,
-              summaryString,
-              listOfTags,
-              audienceList,
-              openSortFields,
-              prioityString,
-              closeSortFields,
-              closeBodyWrapper,
-              closeRow,
-              endingHTML
-          ]);
+        openImageWrapper = '<span class="newsImage">';
+    }
 
 
 
 
-  } catch (err) {
-      document.write(err.message);
-  }
+    /***
+     *  parse the list of topics tags, add <li> tags
+     * 
+     * */
+    if (contentDict.topics.content) {
+
+        let listItems = '';
+        let arrayOfTags = contentDict.topics.content.split(',');
+        for (let i = 0; i < arrayOfTags.length; i++) {
+            listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
+        }
+
+        // Print any tags that were selected
+        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
+    }
+
+
+
+
+    /***
+     *  parse the list of audience tags, add <li> tags
+     * 
+     * */
+    if (contentDict.audience.content) {
+
+        let audienceItems = '';
+        let audienceArray = contentDict.audience.content.split(',');
+        for (let i = 0; i < audienceArray.length; i++) {
+            audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
+        }
+
+        // Print any tags that were selected
+        audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
+    }
+
+
+
+
+    /***
+     *  write document once
+     * 
+     * */
+    writeDocument(
+        [
+            beginningHTML,
+            imageString,
+            openRow,
+            openBodyWrapper,
+            titleLink,
+            openPublishDetails,
+            linkString,
+            dateString,
+            closePublishDetails,
+            summaryString,
+            listOfTags,
+            audienceList,
+            openSortFields,
+            prioityString,
+            closeSortFields,
+            closeBodyWrapper,
+            closeRow,
+            endingHTML
+        ]
+    );
+
+
+
+
+} catch (err) {
+    document.write(err.message);
+}
