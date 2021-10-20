@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.35
+     *     @version 6.36
      */
 
 
@@ -154,7 +154,7 @@ try {
     var closeRow = '</div>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
-    var imageString = '<img class="hidden visually-hidden" />';
+    var imageString = '<span class="imageString hidden visually-hidden" />No Image Provided</span>';
     var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
