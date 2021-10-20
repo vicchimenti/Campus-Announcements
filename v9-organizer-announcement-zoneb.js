@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.17
+   *     @version 7.18
    */
 
 
@@ -110,7 +110,7 @@ try {
      * 
      * */
     if (contentDict.articleFullBody.content) {
-        titleLink = '<h4 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h4>';
+        titleLink = '<h4 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h4>';
     }
 
 
