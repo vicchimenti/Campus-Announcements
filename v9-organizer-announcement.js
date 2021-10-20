@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.45
+     *     @version 6.46
      */
 
 
@@ -163,6 +163,8 @@ try {
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
     var imageString = '<span class="imageString hidden visually-hidden" />No Image Provided</span>';
+    var openImageWrapper = '<figure class="figure hidden visually-hidden">';
+    var closeImageWrapper = '</figure>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var topicList = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
@@ -206,12 +208,16 @@ try {
         var info = new ImageInfo;
         info.setInput(media);
 
-        let altText = info.check () ? mediaInfo.getDescription() : "";
-        imageString =   info.check()
-                        ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + altText + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
-                        : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="" loading="auto" />';
+        imageString =   (info.check())
+                        ? '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
+                        : '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+
+        // let altText = info.check () ? mediaInfo.getDescription() : "";
+        // imageString =   info.check()
+        //                 ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + altText + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
+        //                 : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="" loading="auto" />';
   
-        openImageWrapper = '<span class="newsImage">';
+        openImageWrapper = '<figure class="figure">';
     }
 
 
@@ -283,7 +289,9 @@ try {
     writeDocument(
         [
             beginningHTML,
+            openImageWrapper,
             imageString,
+            closeImageWrapper,
             openRow,
             openBodyWrapper,
             titleLink,
