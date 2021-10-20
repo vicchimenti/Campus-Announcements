@@ -159,7 +159,7 @@ try {
     var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
-    var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
+    var topicList = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
@@ -302,7 +302,7 @@ try {
             dateString,
             closePublishDetails,
             summaryString,
-            listOfTags,
+            topicList,
             audienceList,
             openSortFields,
             prioityString,
