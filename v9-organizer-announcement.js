@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.36
+     *     @version 6.37
      */
 
 
@@ -270,12 +270,12 @@ try {
             dateString,
             closePublishDetails,
             summaryString,
+            closeBodyWrapper,
             openSortFields,
             topicList,
             audienceList,
             prioityString,
             closeSortFields,
-            closeBodyWrapper,
             closeRow,
             endingHTML
         ]
