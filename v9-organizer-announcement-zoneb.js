@@ -172,9 +172,9 @@ try {
      *  Currently a hidden sort field
      * 
      * */
-    if (contentDict.priority.content != "") {
-        prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
-    }
+    // if (contentDict.priority.content != "") {
+    //     prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
+    // }
 
 
 
@@ -183,17 +183,16 @@ try {
      *  parse the list of topics tags, add <li> tags
      * 
      * */
-    if (contentDict.topics.content != "") {
+    // if (contentDict.topics.content != "") {
 
-        let listItems = '';
-        let arrayOfTags = contentDict.topics.content.split(',');
-        for (let i = 0; i < arrayOfTags.length; i++) {
-            listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-        }
+    //     let listItems = '';
+    //     let arrayOfTags = contentDict.topics.content.split(',');
+    //     for (let i = 0; i < arrayOfTags.length; i++) {
+    //         listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
+    //     }
 
-        // Print any tags that were selected
-        listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
-    }
+    //     listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
+    // }
 
 
 
@@ -202,17 +201,16 @@ try {
      *  parse the list of audience tags, add <li> tags
      * 
      * */
-    if (contentDict.audience.content != "") {
+    // if (contentDict.audience.content != "") {
 
-        let audienceItems = '';
-        let audienceArray = contentDict.audience.content.split(',');
-        for (let i = 0; i < audienceArray.length; i++) {
-            audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-        }
+    //     let audienceItems = '';
+    //     let audienceArray = contentDict.audience.content.split(',');
+    //     for (let i = 0; i < audienceArray.length; i++) {
+    //         audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
+    //     }
 
-        // Print any tags that were selected
-        audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
-    }
+    //     audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
+    // }
 
 
 
