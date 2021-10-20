@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.16
+   *     @version 7.17
    */
 
 
@@ -18,10 +18,8 @@
 /***
  *      Import T4 Utilities
  */
-importClass(com.terminalfour.media.IMediaManager);
 importClass(com.terminalfour.spring.ApplicationContextProvider);
 importClass(com.terminalfour.publish.utils.BrokerUtils);
-importClass(com.terminalfour.media.utils.ImageInfo);
 
 
 
@@ -42,34 +40,6 @@ function getContentValues(tag) {
             message: error.message
         }
     }
-}
-
-
-
-
-/***
- *      Returns a media object
- */
-function getMediaInfo(mediaID) {
-
-    var mediaManager = ApplicationContextProvider.getBean(IMediaManager);
-    var media = mediaManager.get(mediaID, language);
-
-    return media;
-}
-
-
-
-
-/***
- *      Returns a media stream object
- */
-function readMedia(mediaID) {
-
-    var mediaObj = getMediaInfo(mediaID);
-    var oMediaStream = mediaObj.getMedia();
-
-    return oMediaStream;
 }
 
 
