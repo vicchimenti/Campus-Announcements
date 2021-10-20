@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.39
+     *     @version 6.40
      */
 
 
@@ -148,7 +148,7 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="su-today' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="su-today' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var titleLink = '<span class="card-title visually-hidden">No Valid Title Found</span>';
     var bodyString = '<span class="fullTextBody visually-hidden">No Main Body Content Provided</span>';
