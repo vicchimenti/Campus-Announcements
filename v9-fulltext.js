@@ -6,7 +6,7 @@
  *
  *     Document will write client side once when the page loads
  *
- *     @version 6.35
+ *     @version 6.36
  */
 
 
@@ -164,6 +164,9 @@ try {
     var closeImageWrapper = '</figure>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
+    var openFooter = '<div class="card-footer border-0 bg-transparent">';
+    var closeFooter = '</div>';
+
 
 
 
@@ -296,6 +299,8 @@ try {
             prioityString,
             closeSortFields,
             closeBodyWrapper,
+            openFooter,
+            closeFooter,
             closeRow,
             endingHTML
         ]);
