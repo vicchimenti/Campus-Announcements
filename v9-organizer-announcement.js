@@ -171,10 +171,6 @@ try {
      *  check for fulltext content
      * 
      * */
-    // if (contentDict.articleFullBody.content) {
-    //     titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-    // }
-
     var titleLink = contentDict.articleFullBody.content
                     ? '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>'
                     : '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
@@ -187,11 +183,6 @@ try {
      *  Parse for external link
      * 
      * */
-    // if (contentDict.sectionLink.content) {
-    //     linkString = '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>';
-    // }
-
-
     var linkString =    contentDict.sectionLink.content
                         ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
                         : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
@@ -205,11 +196,6 @@ try {
      *  Currently a hidden sort field
      * 
      * */
-    // if (contentDict.priority.content) {
-    //     prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
-    // }
-
-
     var prioityString = contentDict.priority.content
                         ? '<span class="priority">' + contentDict.priority.content + '</span>'
                         : '<span class="priority hidden visually-hidden">No Priority Entered</span>';
@@ -230,16 +216,6 @@ try {
         var info = new ImageInfo;
         info.setInput(media);
 
-        // if (info.check()) {
-
-        //     imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />';
-
-        // } else {
-
-        //     imageString = '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
-
-        // }
-
         imageString =   info.check()
                         ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                         : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
@@ -252,17 +228,6 @@ try {
      *  parse the list of topics tags, add <li> tags
      * 
      * */
-    // if (contentDict.topics.content) {
-
-    //     let listItems = '';
-    //     let arrayOfTags = contentDict.topics.content.split(',');
-    //     for (let i = 0; i < arrayOfTags.length; i++) {
-    //         listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-    //     }
-
-    //     listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
-    // }
-
     if (contentDict.topics.content) {
 
         let arrayOfTags = contentDict.topics.content.split(',');
@@ -279,18 +244,6 @@ try {
      *  parse the list of audience tags, add <li> tags
      * 
      * */
-    // if (contentDict.audience.content) {
-
-    //     let audienceItems = '';
-    //     let audienceArray = contentDict.audience.content.split(',');
-    //     for (let i = 0; i < audienceArray.length; i++) {
-    //         audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-    //     }
-
-    //     audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
-    // }
-
-
     if (contentDict.audience.content) {
 
         let audienceArray = contentDict.audience.content.split(',');
