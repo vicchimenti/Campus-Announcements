@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.31
+     *     @version 6.32
      */
 
 
@@ -241,7 +241,7 @@ try {
         // }
 
         imageString =   info.check()
-                        ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" title="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
+                        ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                         : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
     }
 
@@ -319,9 +319,9 @@ try {
             dateString,
             closePublishDetails,
             summaryString,
+            openSortFields,
             topicList,
             audienceList,
-            openSortFields,
             prioityString,
             closeSortFields,
             closeBodyWrapper,
