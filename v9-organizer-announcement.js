@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.40
+     *     @version 6.41
      */
 
 
@@ -144,10 +144,16 @@ try {
 
 
 
+
+
+
+
     /***
      *  default html initializations
      * 
      * */
+    var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
+    var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>'; 
     var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var titleLink = '<span class="card-title visually-hidden">No Valid Title Found</span>';
@@ -157,14 +163,16 @@ try {
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
     var imageString = '<span class="imageString hidden visually-hidden" />No Image Provided</span>';
-    var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
-    var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>';
     var openSortFields = '<div class="sortFields hidden visually-hidden">';
     var closeSortFields = '</div>';
     var topicList = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
     var openPublishDetails = '<div class="publishDetails">';
     var closePublishDetails = '</div>';
+
+
+
+
 
 
 
@@ -192,7 +200,6 @@ try {
      * */
     if (contentDict.articleImage.content) {
 
-        openImageWrapper = '<span class="newsImage">';
         var imageID = content.get('Image').getID();
         var mediaInfo = getMediaInfo(imageID);
         var media = readMedia(imageID);
@@ -202,6 +209,8 @@ try {
         imageString =   info.check()
                         ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                         : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
+  
+        openImageWrapper = '<span class="newsImage">';
     }
 
 
@@ -265,7 +274,7 @@ try {
 
 
 
-                        
+
     /***
      *  write document once
      * 
