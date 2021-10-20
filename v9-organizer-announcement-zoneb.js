@@ -31,9 +31,10 @@ importClass(com.terminalfour.media.utils.ImageInfo);
  */
 function getContentValues(tag) {
     try {
+        var _tag = BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
         return {
             isError: false,
-            content: BrokerUtils.processT4Tags(dbStatement, publishCache, section, content, language, isPreview, tag)
+            content: _tag == '' ? null : _tag
         }
     } catch (error) {
         return {
@@ -149,7 +150,7 @@ try {
      *  check for fulltext content
      * 
      * */
-    if (contentDict.articleFullBody.content != "") {
+    if (contentDict.articleFullBody.content) {
         titleLink = '<h4 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h4>';
     }
 
@@ -160,7 +161,7 @@ try {
      *  Parse for external link
      * 
      * */
-    if (contentDict.sectionLink.content != "") {
+    if (contentDict.sectionLink.content) {
         linkString = '<span class="externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></span>';
     }
 
