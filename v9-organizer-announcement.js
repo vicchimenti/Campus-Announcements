@@ -148,7 +148,7 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="su-today' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var titleLink = '<span class="card-title visually-hidden">No Valid Title Found</span>';
     var bodyString = '<span class="fullTextBody visually-hidden">No Main Body Content Provided</span>';
@@ -173,17 +173,6 @@ try {
      *  check for fulltext content
      * 
      * */
-    // var titleLink = contentDict.articleFullBody.content
-    //                 ? '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>'
-    //                 : '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-
-
-
-
-    /***
-     *  check for fulltext content
-     * 
-     * */
     if (contentDict.articleFullBody.content) {
 
         titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
@@ -192,33 +181,7 @@ try {
     } else {
 
         titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
-
     }
-
-    
-
-
-
-
-    /***
-     *  Parse for external link
-     * 
-     * */
-    var linkString =    contentDict.sectionLink.content
-                        ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
-                        : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
-
-
-
-
-    /***
-     *  Parse for Priority
-     *  Currently a hidden sort field
-     * 
-     * */
-    var prioityString = contentDict.priority.content
-                        ? '<span class="priority">' + contentDict.priority.content + '</span>'
-                        : '<span class="priority hidden visually-hidden">No Priority Entered</span>';
 
 
 
@@ -276,6 +239,33 @@ try {
 
 
 
+    /***
+     *  Parse for external link
+     * 
+     * */
+        var linkString =    contentDict.sectionLink.content
+                            ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
+                            : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
+
+
+
+
+    /***
+    *  Parse for Priority
+    *  Currently a hidden sort field
+    * 
+    * */
+    var prioityString = contentDict.priority.content
+                        ? '<span class="priority">' + contentDict.priority.content + '</span>'
+                        : '<span class="priority hidden visually-hidden">No Priority Entered</span>';
+
+
+
+
+
+
+
+                        
     /***
      *  write document once
      * 
