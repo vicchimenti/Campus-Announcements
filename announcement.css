@@ -176,25 +176,25 @@
 
 /* ZoneB Defaults */
 
-.announcementZoneb.newsItemWrapper {
+.suTodayWrapper.announcementZoneb {
     padding: 0;
     border: none;
     margin: 0;
 }
 
-.announcementZoneb.newsItemWrapper .externalLink a {
+.suTodayWrapper.announcementZoneb .externalLink a {
     font-size: 1.35rem;
 }
 
 
 
-.announcementZoneb.newsItemWrapper {
+.suTodayWrapper.announcementZoneb {
     padding: 0;
     border: none;
     margin: 0;
 }
 
-.announcementZoneb.newsItemWrapper .externalLink a {
+.suTodayWrapper.announcementZoneb .externalLink a {
     font-size: 1.35rem;
 }
 
