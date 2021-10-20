@@ -124,7 +124,7 @@ try {
     var lastModifiedString = '<p class="card-text lastModified"><em class="text-muted">Updated: ' + contentDict.lastModified.content + '</em></p>';
     var titleLink = '<h4 class="card-title">' + contentDict.articleTitle.content + '</h4>';
     var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
-    var beginningHTML = '<article class="suTodayWrapper newsItemWrapper announcementZoneb contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zoneb" aria-label="Recent Updates: ' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<article class="suTodayWrapper announcementZoneb contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zoneb" aria-label="Recent Updates: ' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
