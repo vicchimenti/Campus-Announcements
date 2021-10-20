@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.32
+     *     @version 6.33
      */
 
 
@@ -178,7 +178,6 @@ try {
 
 
 
-
     /***
      *  Parse for external link
      * 
@@ -186,7 +185,6 @@ try {
     var linkString =    contentDict.sectionLink.content
                         ? '<p class="card-text externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></p>'
                         : '<p class="card-text externalLink hidden visually-hidden">No Proper Link Provided</p>';
-
 
 
 
