@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.15
+   *     @version 7.16
    */
 
 
@@ -130,20 +130,9 @@ try {
     var closeRow = '</div>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
     var closeBodyWrapper = '</div>';
-    // var dateString = '<p class="card-text"><em class="publishDate text-muted">' + contentDict.publishDate.content + '</em></p>';
     var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
-    // var openSortFields = '<div class="sortFields hidden visually-hidden">';
-    // var closeSortFields = '</div>';
-    // var listOfTags = '<div class="newsroomArticle tags topics hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
-    // var prioityString = '<span class="priority hidden visually-hidden">No Priority Entered</span>';
-    // var audienceList = '<div class="newsroomArticle tags audience hidden visually-hidden"><ul class="categories"><li class="tag">No Topic Provided</li></ul></div>';
 
-    // openSortFields,
-    // summaryString,
-    // listOfTags,
-    // audienceList,
-    // prioityString,
-    // closeSortFields,
+
 
 
     /***
@@ -165,53 +154,6 @@ try {
         linkString = '<span class="externalLink"><a href="' + contentDict.sectionLink.content + '" class="card-link" title="For more information visit: ' + contentDict.sectionLinkText.content + '" target="_blank"><em>' + contentDict.sectionLinkText.content + '</em></a></span>';
     }
 
-
-
-
-    /***
-     *  Parse for Priority
-     *  Currently a hidden sort field
-     * 
-     * */
-    // if (contentDict.priority.content != "") {
-    //     prioityString = '<span class="priority">' + contentDict.priority.content + '</span>';
-    // }
-
-
-
-
-    /***
-     *  parse the list of topics tags, add <li> tags
-     * 
-     * */
-    // if (contentDict.topics.content != "") {
-
-    //     let listItems = '';
-    //     let arrayOfTags = contentDict.topics.content.split(',');
-    //     for (let i = 0; i < arrayOfTags.length; i++) {
-    //         listItems += '<li class="tag">' + arrayOfTags[i].trim() + '</li>';
-    //     }
-
-    //     listOfTags = '<div class="newsroomArticle tags topics"><ul class="categories">' + listItems + '</ul></div><br>';
-    // }
-
-
-
-
-    /***
-     *  parse the list of audience tags, add <li> tags
-     * 
-     * */
-    // if (contentDict.audience.content != "") {
-
-    //     let audienceItems = '';
-    //     let audienceArray = contentDict.audience.content.split(',');
-    //     for (let i = 0; i < audienceArray.length; i++) {
-    //         audienceItems += '<li class="tag">' + audienceArray[i].trim() + '</li>';
-    //     }
-
-    //     audienceList = '<div class="newsroomArticle tags audience"><ul class="categories">' + audienceItems + '</ul></div>';
-    // }
 
 
 
