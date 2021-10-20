@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.42
+     *     @version 6.43
      */
 
 
@@ -184,7 +184,7 @@ try {
     if (contentDict.articleFullBody.content) {
 
         titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-        bodyString = '<div class="fullTextBody visually-hidden">' + contentDict.articleFullBody.content + '</div>';
+        bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
 
     } else {
 
