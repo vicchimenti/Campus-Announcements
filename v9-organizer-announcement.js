@@ -151,8 +151,7 @@ try {
     var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="id' + contentDict.contentID.content + '" aria-label="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var titleLink = '<span class="card-title visually-hidden">No Valid Title Found</span>';
-    var fullBodyString = '<span class=" visually-hidden">No Body Content Provided</span>';
-
+    var bodyString = '<div class="fullTextBody visually-hidden">No Main Body Content Provided</div>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
     var openBodyWrapper = '<div class="articleSummary col-12 card-body border-0">';
@@ -188,7 +187,7 @@ try {
     if (contentDict.articleFullBody.content) {
 
         titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
-
+        bodyString = '<div class="fullTextBody visually-hidden">' + contentDict.articleFullBody.content + '</div>';
 
     } else {
 
