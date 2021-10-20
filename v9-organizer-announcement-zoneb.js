@@ -120,7 +120,7 @@ try {
      *  default html initializations
      * 
      * */
-    var beginningHTML = '<article class="newsItemWrapper announcementZoneb contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zoneb" aria-label="Recent Updates: ' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<article class="suTodayWrapper newsItemWrapper announcementZoneb contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zoneb" aria-label="Recent Updates: ' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';

@@ -148,7 +148,7 @@ try {
     var bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
     var dateString = '<p class="card-text publishDate"><em class="text-muted">' + contentDict.publishDate.content + '</em></p>';
     var titleHeader = '<div class="card-header border-0"><h1 id="pageTitle">' + contentDict.articleTitle.content + '</h1></div>';
-    var beginningHTML = '<div class="newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" title="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
+    var beginningHTML = '<div class="suTodayWrapper newsArticleWrapper announcementFullText contentItem card border-0" id="id' + contentDict.contentID.content + '" title="' + contentDict.articleTitle.content + '" data-position-default="ZoneA" data-position-selected="ZoneA"><div class="article standardContent">';
     var endingHTML = '</div></div>';
     var bodyBorder = '<hr class="articleBorderBottom">';
     var openRow = '<div class="row summaryWrapper">';
