@@ -11,7 +11,7 @@
  * 
  */
 
-
+ 
 
 
 importClass(com.terminalfour.sitemanager.cache.CachedContent);
@@ -290,6 +290,12 @@ function byCustomElements(cid, elements) {
                     result = byDate(cid, currentElement)(a, b);
                     break;
                 case 'Article Title':
+                    result = byName(cid, currentElement)(a, b);
+                    break;
+                case 'Last Name':
+                    result = byName(cid, currentElement)(a, b);
+                    break;
+                case 'First Name':
                     result = byName(cid, currentElement)(a, b);
                     break;
                 default:
