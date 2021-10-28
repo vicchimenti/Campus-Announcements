@@ -211,11 +211,6 @@ try {
         imageString =   (info.check())
                         ? '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + mediaInfo.getDescription() + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
                         : '<img src="' + contentDict.articleImage.content + '" class="articleImage figure-img card-img-top" alt="' + contentDict.articleTitle.content + '" loading="auto" />';
-
-        // let altText = info.check () ? mediaInfo.getDescription() : "";
-        // imageString =   info.check()
-        //                 ? '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" aria-label="' + mediaInfo.getName() + '" alt="' + altText + '" width="' + info.getWidth() + '" height="' + info.getHeight() + '" loading="auto" />'
-        //                 : '<img src="' + contentDict.articleImage.content + '" class="articleImage card-img-top" alt="" loading="auto" />';
   
         openImageWrapper = '<figure class="figure">';
     }
