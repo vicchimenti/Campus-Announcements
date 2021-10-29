@@ -103,6 +103,7 @@
       var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
       var openSortFields = '<div class="sortFields hidden visually-hidden">';
       var closeSortFields = '</div>';
+      let publishedDateline = '<span class="publishedDate"></span>';
 
 
 
@@ -142,6 +143,8 @@
               openBodyWrapper,
               linkString,
               lastModifiedString,
+              openSortFields,
+              closeSortFields,
               closeBodyWrapper,
               closeRow,
               endingHTML
