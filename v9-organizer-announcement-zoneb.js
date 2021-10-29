@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.18
+   *     @version 7.19
    */
 
 
@@ -103,7 +103,7 @@
       var linkString = '<span class="externalLink hidden">No Proper Link Provided</span>';
       var openSortFields = '<div class="sortFields hidden visually-hidden">';
       var closeSortFields = '</div>';
-      let publishedDateline = '<span class="publishedDate"></span>';
+      let publishedDateline = '<span class="publishedDate visually-hidden">Published: ' + contentDict.publishDate.content + '</span>';
 
 
 
@@ -144,6 +144,7 @@
               linkString,
               lastModifiedString,
               openSortFields,
+              publishedDateline,
               closeSortFields,
               closeBodyWrapper,
               closeRow,
