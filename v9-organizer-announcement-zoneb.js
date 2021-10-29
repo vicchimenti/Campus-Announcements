@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.19
+   *     @version 7.20
    */
 
 
@@ -72,7 +72,7 @@
           contentName: getContentValues('<t4 type="content" name="Name" output="normal" modifiers="striptags,htmlentities" />'),
           articleTitle: getContentValues('<t4 type="content" name="Article Title" output="normal" display_field="value" />'),
           articleSummary: getContentValues('<t4 type="content" name="Summary" output="normal" modifiers="striptags,htmlentities" />'),
-          publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy" />'),
+          publishDate: getContentValues('<t4 type="content" name="Publish Date" output="normal" date_format="MMMM d, yyyy HH:mm:ss z" />'),
           articleFullBody: getContentValues('<t4 type="content" name="Article Body" output="normal" display_field="value" />'),
           audience: getContentValues('<t4 type="content" name="Audience" output="normal" display_field="value" />'),
           topics: getContentValues('<t4 type="content" name="Topic" output="normal" display_field="value" />'),
