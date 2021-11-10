@@ -1,5 +1,5 @@
 /***
-*       Custom Styles for the Campus Announcement Content Type
+*       Campus Announcement Content Type
 *       ID: 5580
 */
 
@@ -39,11 +39,6 @@
     margin: 0;
     padding: 0;
 }
-
-
-
-
-
 
 .announcement .row.summaryWrapper {
     margin: 0;
@@ -186,8 +181,6 @@
     font-size: 1.35rem;
 }
 
-
-
 .suTodayWrapper.announcementZoneb {
     padding: 0;
     border: none;
@@ -197,9 +190,6 @@
 .suTodayWrapper.announcementZoneb .externalLink a {
     font-size: 1.35rem;
 }
-
-
-
 
 
 .announcementZoneb .row.summaryWrapper {
