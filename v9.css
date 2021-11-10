@@ -11783,6 +11783,251 @@ h3.degreeItemHeaderButtonTitle {
 }
 
 
+
+/* ==========================================================================================
+   ===== SU Today === Campus Announcements ===== Content Type: #5580 ========================
+   ==========================================================================================
+   SU Today - Campus Announcements Content Type requires Organizer
+   Last revised 20211110 - Victor  
+*/
+
+
+/* expand small images to fill available space on all browsers */
+.suTodayWrapper.announcement img.card-img-top {
+    padding: 2rem 2rem 0 2rem;
+    width: 100%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+}
+
+.suTodayWrapper.announcement {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+.suTodayWrapper.announcement:first-child {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+.suTodayWrapper .externalLink a {
+    color: #088099;
+    font-size: 1.6rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.suTodayWrapper.announcement .publishDetails p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.announcement .row.summaryWrapper {
+    margin: 0;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.announcement h3.card-title {
+    color: #AA0000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.announcement h3.card-title a {
+    color: #AA0000;
+}
+
+.announcement h3.card-title a:hover,
+.announcement h3.card-title a:focus {
+    color: #AA0000;
+}
+
+.announcement .publishDetails {
+    margin: 1.6rem 0;
+}
+
+.announcement .articleSummary p {
+    font-weight: 500;
+}
+
+.announcement .articleSummary p.summary {
+    font-size: 1.8rem;
+    line-height: 1.6;
+}
+
+.announcement div.newsroomArticle.tags {
+    display: inline-flex;
+    width: auto;
+}
+
+.announcement ul.categories {
+    margin-bottom: 0;
+    margin-left: 0;
+}
+
+.announcement ul.categories li {
+    background: none;
+    border: none;
+    color: #AA0000;
+    display: inline-block !important;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 0.5rem 2rem 0 0;
+}
+
+.announcement .audience ul.categories li {
+    color: #55B31B;
+}
+
+.announcement ul.categories li:before {
+    content: unset;
+}
+
+.announcement .articleSummary .panelLinks {
+    padding-top: 30px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    margin: auto auto;
+    list-style-type: none;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.announcement .articleSummary .panelLinks a {
+    color: #aa0000;
+    display: block;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.announcement .articleSummary .panelLinks li {
+    border: 1px solid #088099;
+    display: flex;
+    flex: 0 1 calc(50% - 7px);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.announcement .articleSummary ul.panelLinks li:before {
+    content: '';
+    padding-right: 0px;
+}
+
+.announcement .articleSummary .panelLinks li:hover,
+.panelInner .panelLinks li:focus,
+.announcement .articleSummary .panelLinks li a:hover,
+.panelInner .panelLinks li a:focus {
+    background: #088099;
+    color: #ffffff;
+}
+
+.suTodayWrapper .externalLink a:hover,
+.suTodayWrapper .externalLink a:focus {
+    text-decoration: underline;
+}
+
+.announcement hr.articleBorderBottom {
+    border-top: 3px solid #e5e5e5;
+    display: block;
+    height: 3px;
+    margin: 0 20px 20px 20px;
+}
+
+
+/* Mobile layouts below 992 */
+
+@media screen and (max-width: 991.99px) {
+    .announcement div.newsroomArticle.tags {
+        width: unset;
+    }
+}
+
+
+/* ZoneB Defaults */
+
+.suTodayWrapper.announcementZoneb {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+.suTodayWrapper.announcementZoneb .externalLink a {
+    font-size: 1.35rem;
+}
+
+.suTodayWrapper.announcementZoneb {
+    padding: 0;
+    border: none;
+    margin: 0;
+}
+
+.suTodayWrapper.announcementZoneb .externalLink a {
+    font-size: 1.35rem;
+}
+
+
+.announcementZoneb .row.summaryWrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.announcementZoneb h4.card-title {
+    color: #AA0000;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.announcementZoneb h4.card-title a {
+    color: #AA0000;
+}
+
+.announcementZoneb h4.card-title a:hover,
+.announcementZoneb h4.card-title a:focus {
+    color: #AA0000;
+}
+
+.announcementZoneb .articleSummary p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.announcementZoneb hr.articleBorderBottom {
+    border-top: 3px solid #e5e5e5;
+    display: block;
+    height: 3px;
+    margin: 0;
+}
+
+
+/* Mobile layouts below 992 */
+
+@media screen and (max-width: 991.99px) {
+    #zoneA .announcementZoneb {
+        padding: 0 2rem;
+    }
+    .announcement div.newsroomArticle.tags {
+        width: unset;
+    }
+}
+
+
+
 /* ==========================================================================================
    ===== Sullivan Scholars ===== Content Type: #398 ========================================= 
    ==========================================================================================
