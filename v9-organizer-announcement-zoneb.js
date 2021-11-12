@@ -9,7 +9,7 @@
    *
    *     Document will write once when the page loads
    *
-   *     @version 7.20
+   *     @version 7.21
    */
 
 
@@ -92,7 +92,7 @@
        * 
        * */
       var lastModifiedString = '<p class="card-text lastModified"><em class="text-muted">Updated: ' + contentDict.lastModified.content + '</em></p>';
-      var titleLink = '<h4 class="card-title">' + contentDict.articleTitle.content + '</h4>';
+      var titleLink = '<h4 class="card-title border-0">' + contentDict.articleTitle.content + '</h4>';
       var summaryString = '<p class="summary card-text">' + contentDict.articleSummary.content + '</p>';
       var beginningHTML = '<article class="suTodayWrapper announcementZoneb card border-0" id="sutoday' + contentDict.contentID.content + 'zoneb" aria-label="Recent Updates: ' + contentDict.articleTitle.content + '">';
       var endingHTML = '<hr class="articleBorderBottom"></article>';
@@ -114,7 +114,7 @@
        * 
        * */
       if (contentDict.articleFullBody.content) {
-          titleLink = '<h4 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h4>';
+          titleLink = '<h4 class="card-title border-0"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full post: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h4>';
       }
 
 
