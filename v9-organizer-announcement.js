@@ -154,7 +154,7 @@ try {
      * */
     var summaryString = '<p class="card-text summary">' + contentDict.articleSummary.content + '</p>';
     var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>'; 
-    var beginningHTML = '<article class="suTodayWrapper announcement contentItem card border-0" id="sutoday' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
+    var beginningHTML = '<article class="suTodayWrapper announcement card border-0" id="sutoday' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
     var titleLink = '<span class="card-title visually-hidden">No Valid Title Found</span>';
     var bodyString = '<span class="fullTextBody visually-hidden">No Main Body Content Provided</span>';
