@@ -9,7 +9,7 @@
      *
      *     Document will write once when the page loads
      *
-     *     @version 6.46
+     *     @version 6.47
      */
 
 
@@ -156,7 +156,7 @@ try {
     var dateString = '<p class="card-text publishDate"><em class="text-muted">Posted: ' + contentDict.publishDate.content + '</em></p>'; 
     var beginningHTML = '<article class="suTodayWrapper announcement card border-0" id="sutoday' + contentDict.contentID.content + 'zonea" aria-label="' + contentDict.articleTitle.content + '">';
     var endingHTML = '<hr class="articleBorderBottom"></article>';
-    var titleLink = '<span class="card-title visually-hidden">No Valid Title Found</span>';
+    var titleLink = '<span class="card-title border-0 visually-hidden">No Valid Title Found</span>';
     var bodyString = '<span class="fullTextBody visually-hidden">No Main Body Content Provided</span>';
     var openRow = '<div class="row summaryWrapper">';
     var closeRow = '</div>';
@@ -185,12 +185,12 @@ try {
      * */
     if (contentDict.articleFullBody.content) {
 
-        titleLink = '<h3 class="card-title"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
+        titleLink = '<h3 class="card-title border-0"><a href="' + contentDict.fullTextLink.content + '" class="card-link" title="Read the full announcement: ' + contentDict.articleTitle.content + '">' + contentDict.articleTitle.content + '</a></h3>';
         bodyString = '<div class="fullTextBody">' + contentDict.articleFullBody.content + '</div>';
 
     } else {
 
-        titleLink = '<h3 class="card-title">' + contentDict.articleTitle.content + '</h3>';
+        titleLink = '<h3 class="card-title border-0">' + contentDict.articleTitle.content + '</h3>';
     }
 
 
