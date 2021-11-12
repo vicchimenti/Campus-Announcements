@@ -11952,6 +11952,11 @@ h3.degreeItemHeaderButtonTitle {
 /* Mobile layouts below 992 */
 
 @media screen and (max-width: 991.99px) {
+
+    .organizerWrapper .suTodayWrapper h3.card-title {
+        padding: 0;
+    }
+
     .announcement div.newsroomArticle.tags {
         width: unset;
     }
