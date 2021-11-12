@@ -93,3 +93,13 @@
 #zoneA .organizerWrapper.contentItem {
     margin: 0;
 }
+
+
+/* Mobile layouts below 992 */
+
+@media screen and (max-width: 991.99px) {
+
+    #zoneA #filterFieldWrapper.contentItem {
+        padding-top:  2rem;
+    }
+}
