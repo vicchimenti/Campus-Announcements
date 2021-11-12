@@ -5971,14 +5971,14 @@ a:not([href]) {
    ===== Faculty and Staff Bio ===== Content Type #203 ====================================== 
    ==========================================================================================
    Biographical information about a faculty or staff member with fulltext option.
-   Last revised 01/16/18 by Dozie
+   Last revised 20211112 Vic
 */
 
 
 /* ------------------------------  Bio Box: text/html  ------------------------------  */
 
 .staffBioBoxWrapper {
-    margin-bottom: 30px;
+    margin-bottom: 30px 0;
 }
 
 .staffBioBox {}
