@@ -11838,6 +11838,7 @@ h3.degreeItemHeaderButtonTitle {
     font-family: "Montserrat", sans-serif;
     font-size: 2.2rem;
     font-weight: 500;
+    padding: 0;
 }
 
 .announcement h3.card-title a {
