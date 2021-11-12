@@ -5978,7 +5978,7 @@ a:not([href]) {
 /* ------------------------------  Bio Box: text/html  ------------------------------  */
 
 .staffBioBoxWrapper {
-    margin-bottom: 30px 0;
+    margin: 30px 0;
 }
 
 .staffBioBox {}
