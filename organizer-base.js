@@ -7,7 +7,7 @@
  *     Pulls specific content types regardless of category
  *     Can sort by multiple comma seperated Custom Elements
  *
- *     @version 5.3
+ *     @version 5.4
  * 
  */
 
@@ -326,7 +326,7 @@ function main(header, midder, footer) {
          * Declarations
          * 
          */
-        var title = content.hasElement('Title') ? content.get('Title') : "";
+        var title = content.hasElement('Title') ? content.get('Title') : content.get('Article Title') ;
         var choice = content.get('Content type and layout').publish();
         var CID = new java.lang.Integer(choice.split(";")[0]);
         var LAYOUT = choice.split(";")[1];
