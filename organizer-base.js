@@ -1,6 +1,6 @@
 /***
  *     @author Victor Chimenti, MSCS
- *     @file organizerBase.js
+ *     @file organizer-base.js
  *     ID: 163514
  *     organizer base
  *
