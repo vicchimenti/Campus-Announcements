@@ -1,6 +1,6 @@
     /***
      *     @author Victor Chimenti, MSCS
-     *     @file v9-organizer-announcement.js
+     *     @file output-sutoday.js
      *     output/sutoday
      *     id:5580
      *
