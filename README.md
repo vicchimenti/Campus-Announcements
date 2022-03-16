@@ -10,3 +10,5 @@ A searchable, sortable campus announcement system
 - [] create generic layout for multiple content types
 - [] create organizer for multiple content types
 - [] create 1 liner summary feed for excel list style feed
+- [] Prepare for new archive structure
+- [] Newroom Commons link retirement
